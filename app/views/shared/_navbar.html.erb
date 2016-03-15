@@ -17,7 +17,7 @@
     </form>
 
     <!-- Different navigation if login or not -->
-    <% if user_signed_in? %>
+    <% if client_signed_in? %>
 
       <!-- Notification -->
       <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
@@ -43,7 +43,7 @@
               <% end %>
             </li>
             <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
+              <%= link_to destroy_client_session_path, method: :delete do %>
                 <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
               <% end %>
             </li>
@@ -54,7 +54,7 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_client_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% end %>
 
