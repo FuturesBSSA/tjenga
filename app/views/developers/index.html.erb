@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>All available developers</h1>
+
+  <% @developers.each do |developer| %>
+    <p><%= developer.first_name %> <%= developer.last_name %></p>
+  <% end %>
+</div>
+
