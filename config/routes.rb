@@ -1,5 +1,20 @@
 Rails.application.routes.draw do
-  root to: 'pages#home'
+  root to: "pages#home"
+
+  devise_for :developers
+  devise_for :clients
+
+  resource :developers
+
+  resource :clients do
+    resources :applications, only: [:index, :show] do
+      member do
+        patch :accept
+        patch :decline
+      end
+    end
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,1 +1,52 @@
 // Your footer style
+// Your footer style
+.footer-container {
+  background-color: rgb(20,20,20);
+  text-align: center;
+  postion: absolute;
+  bottom: 0;
+}
+
+// .footer {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   background-color: rgb(20,20,20);
+//   list-style: none;
+// }
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-icon {
+  height: 50px;
+  padding: 5px;
+  color: white;
+  font-size: 10px;
+  transition: color 0.3s, ease-in;
+  &:hover {
+    color: rgb(100,100,100);
+  }
+}
+
+.footer-text {
+  margin-top: 50px;
+  color: rgb(250,250,250);
+  transition: color 0.3s, ease-in;
+  &:hover {
+    color: rgb(100,100,100);
+  }
+}
+
+.footer-spacing {
+  border-bottom: solid;
+  border-color: rgb(100,100,100);
+  border-width: 1px;
+  margin-bottom: 15px;
+}
+
+#follow-text {
+  color: rgb(250,250,250);
+}
+
