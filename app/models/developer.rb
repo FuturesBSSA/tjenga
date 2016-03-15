@@ -5,8 +5,14 @@ class Developer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, :last_name, presence: true
+  validates :price_per_hour, presence: true, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/}
 
-  has_many :job_applications
-  has_many :tools
-  has_many :works
+  has_many :job_applications, dependent: :destroy
+  has_many :tools, dependent: :destroy
+  has_many :works, dependent: :destroy
+  has_many :programming_languages, dependent: :destroy
+
+  has_many :references, class_name: "Recommendation", dependent: :destroy
+  has_many :recommendations, as: :author, dependent: :destroy
+  has_many :reviews, as: :author, dependent: :destroy
 end

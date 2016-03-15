@@ -4,8 +4,11 @@ class Client < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :jobs
+  has_many :jobs, dependent: :destroy
   has_many :job_applications, through: :jobs
+
+  has_many :recommendations, as: :author, dependent: :destroy
+  has_many :reviews, as: :author, dependent: :destroy
 
   validates :first_name, :last_name, presence: true
 end

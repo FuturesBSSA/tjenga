@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315142954) do
+ActiveRecord::Schema.define(version: 20160315152911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,4 +68,99 @@ ActiveRecord::Schema.define(version: 20160315142954) do
   add_index "developers", ["email"], name: "index_developers_on_email", unique: true, using: :btree
   add_index "developers", ["reset_password_token"], name: "index_developers_on_reset_password_token", unique: true, using: :btree
 
+  create_table "job_applications", force: :cascade do |t|
+    t.integer  "developer_id"
+    t.integer  "job_id"
+    t.text     "motivation"
+    t.string   "status"
+    t.integer  "price"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "job_applications", ["developer_id"], name: "index_job_applications_on_developer_id", using: :btree
+  add_index "job_applications", ["job_id"], name: "index_job_applications_on_job_id", using: :btree
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "difficulty_level"
+    t.integer  "budget"
+    t.string   "duration"
+    t.date     "start_date"
+    t.date     "deadline"
+    t.string   "request_type"
+    t.string   "status"
+    t.integer  "client_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
+
+  add_index "jobs", ["client_id"], name: "index_jobs_on_client_id", using: :btree
+
+  create_table "programming_languages", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "developer_id"
+    t.integer  "level"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "programming_languages", ["developer_id"], name: "index_programming_languages_on_developer_id", using: :btree
+
+  create_table "recommendations", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.integer  "developer_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "recommendations", ["author_type", "author_id"], name: "index_recommendations_on_author_type_and_author_id", using: :btree
+  add_index "recommendations", ["developer_id"], name: "index_recommendations_on_developer_id", using: :btree
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer  "rating"
+    t.text     "description"
+    t.integer  "author_id"
+    t.string   "author_type"
+    t.integer  "job_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reviews", ["author_type", "author_id"], name: "index_reviews_on_author_type_and_author_id", using: :btree
+  add_index "reviews", ["job_id"], name: "index_reviews_on_job_id", using: :btree
+
+  create_table "tools", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "developer_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "tools", ["developer_id"], name: "index_tools_on_developer_id", using: :btree
+
+  create_table "works", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "developer_id"
+    t.text     "description"
+    t.string   "photo"
+    t.string   "client_name"
+    t.string   "website_url"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "works", ["developer_id"], name: "index_works_on_developer_id", using: :btree
+
+  add_foreign_key "job_applications", "developers"
+  add_foreign_key "job_applications", "jobs"
+  add_foreign_key "jobs", "clients"
+  add_foreign_key "programming_languages", "developers"
+  add_foreign_key "recommendations", "developers"
+  add_foreign_key "reviews", "jobs"
+  add_foreign_key "tools", "developers"
+  add_foreign_key "works", "developers"
 end
