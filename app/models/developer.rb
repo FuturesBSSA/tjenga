@@ -5,4 +5,8 @@ class Developer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, :last_name, presence: true
+
+  has_many :job_applications
+  has_many :tools
+  has_many :works
 end
