@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :developers, only: [:index, :show] do
-    resources :recommandations, only: [:new, :create]
+    resources :recommendations, only: [:new, :create]
   end
 
   namespace :developer do
