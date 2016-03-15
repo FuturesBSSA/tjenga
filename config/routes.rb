@@ -1,12 +1,40 @@
 Rails.application.routes.draw do
   root to: "pages#home"
 
-  devise_for :developers
+  devise_for :developers #, :controllers => { registrations: 'registrations' }
   devise_for :clients
 
-  resource :developers
+  resources :jobs, only: [:index, :show] do
+    resources :applications, only: [:new, :create]
+  end
 
-  resource :clients do
+  resources :developers, only: [:index, :show] do
+    resources :recommandations, only: [:new, :create]
+  end
+
+  namespace :developer do
+    resource :profile, only: [:show, :edit, :update]
+
+    resources :applications, only: [:index, :show] do
+      member do
+        get :confirmation
+      end
+
+      resources :reviews, only: [:new, :create]
+    end
+  end
+
+  namespace :client do
+    resource :profile, only: [:show, :edit, :update]
+
+    resources :jobs do
+      member do
+        patch  :close
+      end
+
+      resources :reviews, only: [:new, :create]
+    end
+
     resources :applications, only: [:index, :show] do
       member do
         patch :accept
