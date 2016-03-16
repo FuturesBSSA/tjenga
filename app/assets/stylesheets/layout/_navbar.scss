@@ -10,6 +10,31 @@
   justify-content: space-between;
 }
 
+.pages-home,
+.developers-index {
+  .navbar-wagon {
+    position: absolute;
+    background: transparent;
+    box-shadow: none;
+    left: 0;
+    right: 0;
+
+    .navbar-wagon-link {
+      color: white;
+    }
+
+    .navbar-wagon-button {
+      border: 2px solid white;
+      background: none;
+      color: #FFFFFF;
+    }
+
+    .dropdown {
+      color: white;
+    }
+  }
+}
+
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
