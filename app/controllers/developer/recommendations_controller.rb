@@ -1,4 +1,4 @@
-class Developers::RecommendationsController < ApplicationController
+class Developers::RecommendationsController < Developer::BaseController
   def new
 
   end

@@ -1,4 +1,4 @@
-class Developers::ProfileController < ApplicationController
+class Developers::ProfileController < Developer::BaseController
   def show
 
   end
