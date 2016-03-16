@@ -1,4 +1,4 @@
-class JobApplication < ActiveRecord::Base
+class Application < ActiveRecord::Base
   belongs_to :developer
   belongs_to :job
 

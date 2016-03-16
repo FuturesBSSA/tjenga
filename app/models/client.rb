@@ -5,7 +5,7 @@ class Client < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable
 
   has_many :jobs, dependent: :destroy
-  has_many :job_applications, through: :jobs
+  has_many :applications, through: :jobs
 
   has_many :recommendations, as: :author, dependent: :destroy
   has_many :reviews, as: :author, dependent: :destroy
