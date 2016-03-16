@@ -67,4 +67,6 @@ end
   )
 end
 
+  application = Application.create!(developer_id: 15, job_id: 10, motivation: Faker::Lorem.paragraph(2, false, 4), price: 50)
+
 
