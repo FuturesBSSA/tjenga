@@ -1,4 +1,4 @@
-class Clients::JobApplicationsController < ApplicationController
+class Clients::ApplicationsController < ApplicationController
   before_action :find_job_application, except: (:index)
   def index
     @job_applications = Job_applications.all
