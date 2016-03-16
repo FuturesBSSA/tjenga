@@ -1,12 +1,12 @@
 
 
-<div class="container">
-  <div class="wrapper">
+<div class="banner">
   <h1>Find a kick ass developer</h1>
   <h3>Search by</h3>
+</div>
 
-
-    <div class="cards">
+<div class="container">
+  <div class="cards">
       <% @developers.each do |developer| %>
         <p><%= developer.first_name %> <%= developer.last_name %></p>
         <p><%= developer.price_per_hour %></p>
@@ -17,6 +17,5 @@
           <%= w.photo %>
         <% end %></p>
       <% end %>
-    </div>
   </div>
 </div>
