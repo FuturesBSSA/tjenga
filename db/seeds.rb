@@ -12,6 +12,7 @@ available_photos = ["profile_1.jpg", "profile_2.jpg", "profile_3.jpg", "profile_
 available_languages = ["Ruby", "Python", "Javascript", "CSS", "HTML"]
 available_tools = ["git", "github", "sketch", "photoshop", "command line", "bootstrap", "middleman"]
 available_works = ["work_1.jpg", "work_2.jpg", "work_3.jpg", "work_4.jpg", "work_5.jpg"]
+# eerste 20 emails zijn clients, laatste 20 developers
 available_emails = ["rianne1@hotmail.com", "matthias2@email.com", "roy3@email.com", "jeroen4@hotmail.com", "melchior5@hotmail.com", "matthijs6@live.nl", "nicolas7@hotmail.com", "cecile8@hotmail.com", "anne9@lewagon.org", "irene10@hotmail.com", "fien11@kpn.nl", "joes12@email.com", "paul@email.com", "hans@gmail.com", "elise@hotmail.com", "laura@gmail.com", "nosh@gmail.com", "vlinder@gmail.com", "fee@gmail.com", "david@gmail.com", "rianne@hotmail.com", "matthias@email.com", "roy@email.com", "jeroen@hotmail.com", "melchior@hotmail.com", "matthijs@live.nl", "nicolas@hotmail.com", "cecile@hotmail.com", "anne@lewagon.org", "iwestgeest@hotmail.com", "fientje@kpn.nl", "joesemans@email.com", "paula@email.com", "hansje@gmail.com", "elise35@hotmail.com", "laura36@gmail.com", "nosh37@gmail.com", "vlinder38@gmail.com", "fee39@gmail.com", "david40@gmail.com" ]
 
 20.times do
@@ -64,6 +65,7 @@ end
     deadline: Faker::Date.between(1.year.from_now, 2.year.from_now),
     request_type: ["full-time", "part-time", "project base"].sample,
     status: ["open", "interviews started", "fullfilled"].sample,
+    client_id: client
   )
 end
 
