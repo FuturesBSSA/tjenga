@@ -23,4 +23,10 @@ class Developer::ApplicationsController < ApplicationController
       render :new
     end
   end
+
+  private
+
+  def set_job
+    @job = Job.find(params[:id])
+  end
 end
