@@ -2,7 +2,7 @@ class Client::JobsController < Client::BaseController
   before_action :find_job, only: [:show, :edit, :update, :destroy]
 
   def index
-    @jobs = Job.all
+    @jobs = current_client.jobs
   end
 
   def show
@@ -10,10 +10,14 @@ class Client::JobsController < Client::BaseController
 
   def new
     @job = Job.new
+    @client = current_client
   end
 
   def create
-    @job.create!(job_param)
+    @job = Job.new(job_param)
+    @client = current_client
+    @job.client = @client
+    @job.save!
     redirect_to client_job_path(@job)
   end
 
@@ -33,12 +37,11 @@ class Client::JobsController < Client::BaseController
   private
 
   def find_job
-    Job.find(params[:id])
+    @job = Job.find(params[:id])
   end
 
   def job_param
-    params.require(:job).permit(:title, :description, :difficulty_level, :budget, :duration, :start_date, :deadline, :request_type]
-    end)
+    params.require(:job).permit(:title, :description, :difficulty_level, :budget, :duration, :start_date, :deadline, :request_type)
   end
 
 end

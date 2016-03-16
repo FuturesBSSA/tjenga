@@ -1,7 +1,5 @@
-module Client
-  class BaseController < ApplicationController
-    # layout "client"
+class Client::BaseController < ApplicationController
+  # layout "client"
 
-    before_action :authenticate_client!
-  end
+  before_action :authenticate_client!
 end

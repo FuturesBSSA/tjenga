@@ -11,10 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316101142) do
+ActiveRecord::Schema.define(version: 20160316144421) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "applications", force: :cascade do |t|
+    t.integer  "developer_id"
+    t.integer  "job_id"
+    t.text     "motivation"
+    t.string   "status",       default: "Pending"
+    t.integer  "price"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "applications", ["developer_id"], name: "index_applications_on_developer_id", using: :btree
+  add_index "applications", ["job_id"], name: "index_applications_on_job_id", using: :btree
 
   create_table "clients", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -67,19 +80,6 @@ ActiveRecord::Schema.define(version: 20160316101142) do
 
   add_index "developers", ["email"], name: "index_developers_on_email", unique: true, using: :btree
   add_index "developers", ["reset_password_token"], name: "index_developers_on_reset_password_token", unique: true, using: :btree
-
-  create_table "job_applications", force: :cascade do |t|
-    t.integer  "developer_id"
-    t.integer  "job_id"
-    t.text     "motivation"
-    t.string   "status",       default: "Pending"
-    t.integer  "price"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
-  end
-
-  add_index "job_applications", ["developer_id"], name: "index_job_applications_on_developer_id", using: :btree
-  add_index "job_applications", ["job_id"], name: "index_job_applications_on_job_id", using: :btree
 
   create_table "jobs", force: :cascade do |t|
     t.string   "title"
@@ -155,8 +155,8 @@ ActiveRecord::Schema.define(version: 20160316101142) do
 
   add_index "works", ["developer_id"], name: "index_works_on_developer_id", using: :btree
 
-  add_foreign_key "job_applications", "developers"
-  add_foreign_key "job_applications", "jobs"
+  add_foreign_key "applications", "developers"
+  add_foreign_key "applications", "jobs"
   add_foreign_key "jobs", "clients"
   add_foreign_key "programming_languages", "developers"
   add_foreign_key "recommendations", "developers"
