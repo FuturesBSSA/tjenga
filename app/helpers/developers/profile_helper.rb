@@ -1,0 +1,2 @@
+module Developers::ProfileHelper
+end
