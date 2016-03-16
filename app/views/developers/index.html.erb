@@ -1,8 +1,14 @@
+
+
 <div class="container">
-  <h1>All available developers</h1>
 
-  <% @developers.each do |developer| %>
-    <p><%= developer.first_name %> <%= developer.last_name %></p>
-  <% end %>
+  <h1>Find a kick ass developer</h1>
+
+  <div class="cards">
+    <% @developers.each do |developer| %>
+      <p><%= developer.first_name %> <%= developer.last_name %></p>
+      <p><%= developer.price_per_hour %>
+      <p><%= developer.programming_languages.name %>
+    <% end %>
+  </div>
 </div>
-
