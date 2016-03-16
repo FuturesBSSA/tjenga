@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :clients
 
   resources :jobs, only: [:index, :show] do
-    resources :applications, only: [:new, :create]
+    resources :applications, only: [:new, :create], controller: 'developer/applications'
   end
 
   resources :developers, only: [:index, :show] do

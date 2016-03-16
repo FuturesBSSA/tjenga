@@ -1,6 +1,5 @@
-module Developer
-  class BaseController < ApplicationController
+class Developer::BaseController < ApplicationController
 
-    before_action :authenticate_developer!
-  end
+  before_action :authenticate_developer!
 end
+
