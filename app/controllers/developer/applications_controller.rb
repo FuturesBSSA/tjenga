@@ -1,4 +1,4 @@
-class Developer::ApplicationsController < ApplicationController
+class Developer::ApplicationsController < Developer::BaseController
   before_action :set_job, only: [:show]
 
   def index
@@ -22,5 +22,11 @@ class Developer::ApplicationsController < ApplicationController
     else
       render :new
     end
+  end
+
+  private
+
+  def set_job
+    @job = Job.find(params[:id])
   end
 end
