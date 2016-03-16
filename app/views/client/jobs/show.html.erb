@@ -1,0 +1,10 @@
+<h1><%=  @job.title %></h1>
+
+<%= @job.description %>
+<%= @job.budget %>
+
+<%= link_to "Edit", edit_client_job_path(@job), class: "btn btn-primary" %>
+
+<%= link_to "Delete", client_job_path(@job), class: "btn btn-primary",
+method: :delete,
+data: { confirm: "Are you sure?" } %>
