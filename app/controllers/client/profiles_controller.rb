@@ -1,2 +1,2 @@
-class Clients::ProfilesController < ApplicationController
+class Client::ProfilesController < Client::BaseController
 end
