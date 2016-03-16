@@ -1,14 +1,22 @@
 
 
 <div class="container">
-
+  <div class="wrapper">
   <h1>Find a kick ass developer</h1>
+  <h3>Search by</h3>
 
-  <div class="cards">
-    <% @developers.each do |developer| %>
-      <p><%= developer.first_name %> <%= developer.last_name %></p>
-      <p><%= developer.price_per_hour %>
-      <p><%= developer.programming_languages.name %>
-    <% end %>
+
+    <div class="cards">
+      <% @developers.each do |developer| %>
+        <p><%= developer.first_name %> <%= developer.last_name %></p>
+        <p><%= developer.price_per_hour %></p>
+        <p><% developer.programming_languages.each do |l| %>
+          <%= l.name %>
+        <% end %></p>
+        <p><% developer.works.each do |w| %>
+          <%= w.photo %>
+        <% end %></p>
+      <% end %>
+    </div>
   </div>
 </div>
