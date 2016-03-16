@@ -1,5 +1,5 @@
 class Client::ApplicationsController < Client::BaseController
-  before_action :find_job_application, except: (:index)
+  before_action :find_application, except: (:index)
   def index
     @applications = current_client.applications
   end
@@ -20,7 +20,7 @@ class Client::ApplicationsController < Client::BaseController
   private
 
   def find_application
-    @application = Applications.find(params[:id])
+    @application = current_client.application.find(params[:id])
   end
 
 end
