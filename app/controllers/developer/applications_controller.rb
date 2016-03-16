@@ -2,7 +2,7 @@ class Developer::ApplicationsController < Developer::BaseController
   before_action :set_job, only: [:show]
 
   def index
-    @applications = Job.all
+    @applications = current_developer.applications.all
   end
 
   def show
