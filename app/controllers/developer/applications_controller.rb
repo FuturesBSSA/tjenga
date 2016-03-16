@@ -3,10 +3,11 @@ class Developer::ApplicationsController < Developer::BaseController
 
   def index
     @applications = current_developer.applications.all
+    @developer = current_developer
   end
 
   def show
-    @fullname = Client.find(@application.client_id).first_name + ' ' + Client.find(@application.client_id).last_name
+    # @fullname = Client.find(@application.client_id).first_name + ' ' + Client.find(@application.client_id).last_name
   end
 
   def new
