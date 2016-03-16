@@ -50,12 +50,10 @@ end
     company: Faker::Company.name,
     city: Faker::Address.city,
     address: Faker::Address.street_address,
-    photo: photo,
+    photo: photo
   )
-end
 
-20.times do
-  job = Job.create!(
+  Job.create!(
     title: Faker::Lorem.words,
     description: Faker::Lorem.paragraph(2, false, 4),
     difficulty_level: ["beginner", "senior", "junior"].sample,
@@ -65,7 +63,7 @@ end
     deadline: Faker::Date.between(1.year.from_now, 2.year.from_now),
     request_type: ["full-time", "part-time", "project base"].sample,
     status: ["open", "interviews started", "fullfilled"].sample,
-    client_id: client
+    client: client
   )
 end
 
