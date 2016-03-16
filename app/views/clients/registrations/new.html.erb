@@ -1,17 +1,22 @@
-<h2>Sign up</h2>
+<div class="form-in text-center">
+  <h2>Sign up as Client</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :first_name, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
+    <%= f.input :last_name, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
+    <%= f.input :email, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
+    <%= f.input :password_confirmation, required: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
-<% end %>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+
+</div>
