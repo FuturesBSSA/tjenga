@@ -37,7 +37,7 @@ class Client::JobsController < Client::BaseController
   private
 
   def find_job
-    @job = Job.find(params[:id])
+    @job = current_client.jobs.find(params[:id])
   end
 
   def job_param

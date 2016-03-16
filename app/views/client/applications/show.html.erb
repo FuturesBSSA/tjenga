@@ -3,4 +3,9 @@
 <%= @application.motivation %>
 <%= @application.price %>
 
+<p> Please accept or deny this booking within 2 days. </p>
+<hr>
+<%= link_to "Accept", accept_client_application_path(@application.id), method: :patch, class: "btn btn-primary" %>
+<%= link_to "Decline", decline_client_application_path(@application.id), method: :patch, class: "btn btn-primary"%>
+
 <%= link_to "Back", client_applications_path, class: "btn btn-primary" %>
