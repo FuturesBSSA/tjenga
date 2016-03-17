@@ -1,3 +1,5 @@
 <h1>SHOW VIEW</h1>
 
 <%= @job.title %>
+
+<%= link_to "Apply", new_job_application_path(@job), class: "btn btn-primary" %>

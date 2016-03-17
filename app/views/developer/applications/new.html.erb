@@ -1,1 +1,16 @@
-<h1>New Application</h1>
+<div class="container">
+  <div class="text-center">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <h1>New Application</h1>
+        <hr style="width: 20em;">
+        <%= simple_form_for(@applications, url: job_applications_path(@job)) do |f| %>
+        <%= f.error_notification %>
+        <%= f.input :price, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
+        <%= f.input :motivation, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
+        <%= f.submit class: "btn btn-primary", :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
