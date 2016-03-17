@@ -1,3 +1,6 @@
 <h1>INDEX VIEW</h1>
 
-<h2> <%= @jobs.name %> </h2>
+<% @jobs.each do |job| %>
+<h3> <%= job.title %> </h3>
+<%= link_to "view", job_path(job), class: "btn btn-primary" %>
+<% end %>
