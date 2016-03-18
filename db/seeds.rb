@@ -53,7 +53,7 @@ end
     photo: photo
   )
 
-  Job.create!(
+    Job.create!(
     title: Faker::Lorem.words,
     description: Faker::Lorem.paragraph(2, false, 4),
     difficulty_level: ["beginner", "senior", "junior"].sample,
@@ -67,6 +67,11 @@ end
   )
 end
 
-  application = Application.create!(developer_id: 15, job_id: 10, motivation: Faker::Lorem.paragraph(2, false, 4), price: 50)
+  melchior = Developer.create!(email: "melchior@develop.com", password: "12345678", first_name: "Melchior", last_name: "Rutte", phone_number: Faker::PhoneNumber.cell_phone, city: "Amsterdam",
+    address: Faker::Address.street_address, photo: "profile_1.jpg", price_per_hour: 110, expertise: "full-stack", availability: "available")
+  hamza = Client.create!(email: "hamza@manpower.nl", password: "12345678", first_name: "Hamza", last_name: "de Groot", company: "Manpower", city: "Amsterdam", address: Faker::Address.street_address, photo: "profile_2.jpg" )
+  ruby_job = Job.create!(title: "Cool platform to connect people", description: Faker::Lorem.paragraph(2, false, 4), difficulty_level: "junior", budget: "unknown", duration: "half year", start_date: Faker::Date.between(Date.today, 1.year.from_now), deadline: Faker::Date.between(1.year.from_now, 2.year.from_now), request_type: "full-time", status: "open", client: hamza)
+
+  application = Application.create!(developer: melchior, job: ruby_job, motivation: Faker::Lorem.paragraph(2, false, 4), price: 50)
 
 
