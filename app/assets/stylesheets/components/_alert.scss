@@ -6,6 +6,16 @@
   margin: 0;
   text-align: center;
   color: white;
+  margin-top: 0;
+  transition: margin-top .3s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  &.is-hidden {
+    margin-top: -56px;
+  }
 }
 .alert-info {
   background: $green;

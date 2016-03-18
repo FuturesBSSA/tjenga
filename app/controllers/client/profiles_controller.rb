@@ -6,15 +6,18 @@ class Client::ProfilesController < Client::BaseController
   end
 
   def edit
-    @client = current_client.find(params[:id])
+    @client = current_client
   end
 
   def update
-    @client = params.require(:client).permit(:email,:first_name, :last_name, :company, :phone_number, :city, :address, :photo)
-    @client.update!
+    @client = current_client
+    @client.update!(client_params)
     redirect_to client_profile_path
   end
 
+  private
+
+  def client_params
+    params.require(:client).permit(:email,:first_name, :last_name, :company, :phone_number, :city, :address, :photo)
+  end
 end
-
-

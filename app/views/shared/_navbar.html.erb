@@ -2,7 +2,13 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-  <%= image_tag "logo_wit.png"%>
+  <% if current_page?(root_url)  %>
+
+  <%= image_tag "logo_wit.png", class: "white-logo grow" %>
+  <% else %>
+  <%= image_tag "logo.png", class: "black-logo grow" %>
+  <% end %>
+
   <% end %>
 
   <!-- Right Navigation -->
@@ -52,7 +58,7 @@
       <i class="fa fa-envelope-o"></i>
       <div class="badge badge-blue">3</div>
     </div>
-    <%= link_to current_developer.first_name, client_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
+    <%= link_to current_developer.first_name, developer_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
     <% end %>
 
     <!-- Profile picture and dropdown -->
@@ -84,34 +90,34 @@
     <!-- Button (call-to-action) -->
     <div class="dropdown">
       <%= link_to t(".top_call_to_action", default: "Sign-up"), new_developer_registration_path, class: "navbar-wagon-item navbar-wagon-button btn dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li  class="dropdown-element">
-              <%= link_to new_client_registration_path do %>
-               <%= t ".profile", default: "Client" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to new_developer_registration_path do %>
-                <%= t ".profile", default: "Developer" %>
-              <% end %>
-            </li>
-          </ul>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li  class="dropdown-element">
+          <%= link_to new_client_registration_path do %>
+          <%= t ".profile", default: "Client" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_developer_registration_path do %>
+          <%= t ".profile", default: "Developer" %>
+          <% end %>
+        </li>
+      </ul>
     </div>
 
     <div class="dropdown">
       <%= link_to t(".top_call_to_action", default: "Login"), new_developer_registration_path, class: "navbar-wagon-item navbar-wagon-button btn dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li class="dropdown-element">
-              <%= link_to new_client_session_path do %>
-                <%= t ".profile", default: "Client" %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to new_developer_session_path do %>
-                <%= t ".profile", default: "Developer" %>
-              <% end %>
-            </li>
-          </ul>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li class="dropdown-element">
+          <%= link_to new_client_session_path do %>
+          <%= t ".profile", default: "Client" %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_developer_session_path do %>
+          <%= t ".profile", default: "Developer" %>
+          <% end %>
+        </li>
+      </ul>
       <% end %>
     </div>
   </div>
@@ -132,6 +138,18 @@
 
   <% elsif developer_signed_in? %>
   <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><%= link_to "Profile", developer_profile_path %></li>
+        <li><a href="#">Other one</a></li>
+        <li><a href="#">Other one</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <% else %>
   <div class="navbar-wagon-item hidden-md hidden-lg">
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>

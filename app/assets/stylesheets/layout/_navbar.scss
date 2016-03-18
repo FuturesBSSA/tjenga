@@ -156,6 +156,13 @@
   border-top: 1px solid #E6E6E6;
 }
 
+.grow {
+  transition: transform .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
+}
 .navbar-wagon .dropdown-menu{
   min-width: auto;
 }
