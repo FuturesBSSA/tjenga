@@ -20,7 +20,7 @@ class Client::ApplicationsController < Client::BaseController
   private
 
   def find_application
-    @application = current_client.application.find(params[:id])
+    @application = current_client.applications.find(params[:id])
   end
 
 end
