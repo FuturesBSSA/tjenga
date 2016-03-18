@@ -2,11 +2,11 @@
   <div class="banner-content">
     <h1>Tjenga</h1>
     <p>Where kick-ass developers meet awesome clients</p>
-    <div class="form-width">
+    <div class="form-group">
       <%= form_tag developers_path, method: "get", class: "flex-form" do %>
         <%= text_field_tag :programming_language, @search, placeholder: "Search by programming language" %>
         <%= text_field_tag :budget, @search, placeholder: "Budget" %>
-        <%= submit_tag("Search") %>
+        <%= submit_tag "Search", class: 'btn btn-success' %>
       <% end %>
     </div>
   </div>
