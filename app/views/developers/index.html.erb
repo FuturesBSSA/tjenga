@@ -15,6 +15,27 @@
   <div class="row">
         <% @developers.each do |developer| %>
           <div class="col-xs-12">
+
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('banner.jpg');" >
+
+            <%= developer.first_name %> <%= developer.last_name %>
+            <%= developer.price_per_hour %>
+            <% developer.programming_languages.each do |l| %>
+              <%= l.name %>
+            <% end %>
+
+            </div>
+          </div>
+        <% end %>
+  </div>
+</div>
+
+
+
+<!-- <div class="container">
+  <div class="row">
+        <% @developers.each do |developer| %>
+          <div class="col-xs-12">
               <% developer.works.each do |w| %>
                 <%= w.photo %>
               <% end %>
@@ -33,7 +54,7 @@
     </div>
   </div>
 </div>
-
+ -->
 
 
 
