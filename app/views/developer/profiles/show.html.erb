@@ -1,1 +1,21 @@
-<h1>Welcome To your profile <%= @developer.first_name %></h1>
+<div class="container">
+
+  <h1>Welcome To your profile <%= @developer.first_name %></h1>
+  <ul>
+    <h4>City</h4>
+    <li> <%= @developer.city %> </li>
+    <h4>Address</h4>
+    <li> <%= @developer.address %> </li>
+    <h4>Email</h4>
+    <li> <%= @developer.email %> </li>
+    <h4>Expertise</h4>
+    <li> <%= @developer.expertise %> </li>
+    <h4>Availability</h4>
+    <li> <%= @developer.availability %> </li>
+  </ul>
+
+
+  <%= link_to "Edit profile", edit_developer_profile_path %>
+</div>
+
+

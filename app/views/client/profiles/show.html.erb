@@ -4,5 +4,13 @@
 
     <h2> I am <%= @fullname %>, yeahhhh baby!! </h2>
 
+    <ul>
+      <li> <%= @client.city %> </li>
+      <li> <%= @client.address %> </li>
+      <li> <%= @client.email %> </li>
+
+    </ul>
+    <%= link_to "Edit profile", edit_client_profile_path %>
+
   </div>
 </div>
