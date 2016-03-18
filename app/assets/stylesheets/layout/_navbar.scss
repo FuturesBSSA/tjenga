@@ -10,6 +10,7 @@
   justify-content: space-between;
 }
 
+
 .pages-home,
 .developers-index {
   .navbar-wagon {
@@ -158,6 +159,14 @@
 .grow {
   transition: transform .2s ease-in-out;
 }
+
 .grow:hover {
   transform: scale(1.1);
+}
+.navbar-wagon .dropdown-menu{
+  min-width: auto;
+}
+
+.dropdown-element {
+  border-bottom: 1px solid #B7B7B7;
 }
