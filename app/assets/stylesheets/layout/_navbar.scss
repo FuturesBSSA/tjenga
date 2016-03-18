@@ -10,6 +10,7 @@
   justify-content: space-between;
 }
 
+
 .pages-home,
 .developers-index {
   .navbar-wagon {
@@ -153,4 +154,8 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+.navbar-wagon .dropdown-menu{
+  min-width: auto;
 }
