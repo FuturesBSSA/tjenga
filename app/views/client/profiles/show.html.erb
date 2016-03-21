@@ -3,8 +3,11 @@
 
 
     <h2> I am <%= @fullname %>, yeahhhh baby!! </h2>
-
+    <% if current_client.photo.nil? %>
+    <%= image_tag "http://tinyurl.com/jp4gcp8", class: "avatar-profile" %>
+    <% else %>
     <%= cl_image_tag current_client.photo, height: 100, width: 100, crop: :fill, class: "avatar-profile" %>
+    <% end %>
     <div class="client-description">
 
       <ul>
