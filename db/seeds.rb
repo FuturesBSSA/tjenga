@@ -34,7 +34,7 @@ available_emails = ["rianne1@hotmail.com", "matthias2@email.com", "roy3@email.co
   )
 
   developer.programming_languages.create!(name: available_languages.sample, level: (1..5).to_a.sample)
-  developer.works.create!(title: Faker::Lorem.words, description: Faker::Lorem.paragraph(2, false, 4), photo: work, client_name: Faker::Company.name, website_url: Faker::Internet.url)
+  developer.works.create!(title: Faker::Lorem.word, description: Faker::Lorem.paragraph(2, false, 4), photo: work, client_name: Faker::Company.name, website_url: Faker::Internet.url)
   developer.tools.create!(name: available_tools.sample)
   developer.recommendations.create!(content: Faker::Lorem.paragraph(2, false, 4), author_id: developer, author_type: "developer")
 end

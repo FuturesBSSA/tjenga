@@ -1,0 +1,15 @@
+<h1>Your portfolio projects</h1>
+
+<div class="container">
+  <% @works.each do |work| %>
+    <div class="container">
+    <%= work.title %>
+    <%= work.description %>
+    <%= work.client_name %>
+    <%= work.website_url %>
+    <%= work.photo %>
+    <hr>
+    </div>
+  <% end %>
+</div>
+
