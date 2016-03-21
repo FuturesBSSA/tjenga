@@ -18,13 +18,13 @@
       <div>
         <%= simple_fields_for :programming_languages do |programming_language| %>
           <%= render 'programming_language_fields', f: programming_language %>
-          <%= link_to_add_association 'add programming language', f, :programming_languages %>
+          <%= link_to_add_association 'add more programming languages', f, :programming_languages, class: "btn btn-primary" %>
         <% end %>
       </div>
       <div>
         <%= simple_fields_for :tools do |tool| %>
           <%= render 'tool_fields', f: tool %>
-          <%= link_to_add_association 'add tool', f, :tools %>
+          <%= link_to_add_association 'add more tools', f, :tools, class: "btn btn-primary" %>
         <% end %>
       </div>
     <%= f.submit class: "btn btn-primary", :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
