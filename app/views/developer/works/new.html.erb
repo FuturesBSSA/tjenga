@@ -1,0 +1,18 @@
+
+  <div class="container" style="text-align: center;">
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <h1>Add a new project to your portfolio</h1>
+        <hr style="width: 40em;">
+        <%= simple_form_for(@work, url: developer_profile_works_path(@developer)) do |f| %>
+          <%= f.error_notification %>
+          <%= f.input :title %>
+          <%= f.input :client_name %>
+          <%= f.input :website_url %>
+          <%= f.input :description %>
+          <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
