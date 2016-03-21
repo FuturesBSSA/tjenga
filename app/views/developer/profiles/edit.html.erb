@@ -13,7 +13,7 @@
     <%= f.input :phone_number %>
     <%= f.input :city %>
     <%= f.input :address %>
-    <%#= f.input :expertise %>
+    <%= f.input :expertise %>
     <%= f.input :availability, :collection => @status %>
       <div>
         <%= simple_fields_for :programming_languages do |programming_language| %>

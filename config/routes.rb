@@ -13,15 +13,17 @@ Rails.application.routes.draw do
   end
 
   namespace :developer do
-    resource :profile, only: [:show, :edit, :update]
-
-    resources :applications, only: [:index, :show] do
-      member do
-        get :confirmation
-      end
-
-      resources :reviews, only: [:new, :create]
+    resource :profile, only: [:show, :edit, :update] do
+      resources :works, only: [:index, :new, :create, :edit, :update, :destroy ]
     end
+
+      resources :applications, only: [:index, :show] do
+        member do
+          get :confirmation
+        end
+
+        resources :reviews, only: [:new, :create]
+      end
   end
 
   namespace :client do
