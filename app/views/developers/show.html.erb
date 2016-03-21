@@ -1,6 +1,13 @@
 <div class="container">
   <h1>Developer: <%= @developer.first_name %> <%= @developer.last_name %></h1>
 
+  <h2>Recommended by:</h2>
+  <%  @recommendations.each do |recommendation|%>
+    <p>- <%= recommendation.content  %></p>
+  <% end %>
+
+  <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
+
   <h2>Reviews:</h2>
   <% @reviews.each do |review| %>
   <% review.rating.times do %>
