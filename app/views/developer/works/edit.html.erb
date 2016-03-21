@@ -1,0 +1,16 @@
+<div class="container form">
+  <div class="form-container">
+    <h1 class='text-center'>Edit a portfolio project</h1>
+    <hr style="width: 20em;">
+    <%= simple_form_for(@work, url: developer_profile_work_path(@work)) do |f| %>
+    <%= f.error_notification %>
+    <%= f.input :title %>
+    <%= f.input :client_name %>
+    <%= f.input :website_url %>
+    <%= f.input :description %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.submit class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

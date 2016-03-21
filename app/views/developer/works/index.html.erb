@@ -1,15 +1,19 @@
 <h1>Your portfolio projects</h1>
 
-<div class="container">
-  <% @works.each do |work| %>
-    <div class="container">
-    <%= work.title %>
-    <%= work.description %>
-    <%= work.client_name %>
-    <%= work.website_url %>
-    <%= work.photo %>
-    <hr>
-    </div>
-  <% end %>
+<div class="container form">
+  <div class="form-container">
+
+    <% @works.each do |work| %>
+      <div class="container">
+      <p><%= work.title %></p>
+      <p><%= work.description %></p>
+      <%= work.client_name %>
+      <%= work.website_url %>
+      <%= cl_image_tag work.photo, height: 300, width: 400, crop: :fill %>
+      <%= button_to "Delete", developer_profile_works_path, method: :delete, data: { confirm: "Are you sure?" } %>
+      <hr>
+      </div>
+    <% end %>
+  </div>
 </div>
 

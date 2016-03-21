@@ -7,7 +7,7 @@ class Developer::ApplicationsController < Developer::BaseController
 
   def show
     # @fullname = Client.find(@application.client_id).first_name + ' ' + Client.find(@application.client_id).last_name
-    @application = Application.find(params[:id])
+    @application = current_developer.applications.find(params[:id])
   end
 
   def new

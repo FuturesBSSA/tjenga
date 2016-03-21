@@ -2,7 +2,7 @@ class Developer::WorksController < Developer::BaseController
   before_action :find_work, only: [:edit, :update, :destroy]
 
   def index
-    @works = Work.all
+    @works = current_developer.works
   end
 
   def new
@@ -14,7 +14,7 @@ class Developer::WorksController < Developer::BaseController
     @developer = current_developer
     @work.developer = @developer
     @work.save!
-    redirect_to edit_developer_profile_work_path(@developer)
+    redirect_to developer_profile_works_path
   end
 
   def edit
@@ -22,12 +22,12 @@ class Developer::WorksController < Developer::BaseController
 
   def update
     @work.update!(work_param)
-    redirect_to developer_profile_works_path(@work)
+    redirect_to developer_profile_works_path(@developer)
   end
 
   def destroy
     @work.destroy!
-    redirect_to developer_profile__works_path(@work)
+    redirect_to developer_profile_works_path
   end
 
   private
@@ -37,6 +37,6 @@ class Developer::WorksController < Developer::BaseController
   end
 
   def find_work
-    @work = current_user.works.find(params[:id])
+    @work = current_developer.works.find(params[:id])
   end
 end
