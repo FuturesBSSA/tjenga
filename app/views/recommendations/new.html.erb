@@ -5,7 +5,7 @@
       <hr style="width: 40em;">
       <%= simple_form_for(@recommendation, url:  developer_recommendations_path(@developer)) do |f| %>
         <%= f.error_notification %>
-        <%= f.input :content%>
+        <%= f.input :content %>
         <%= f.submit class: "btn btn-primary" %>
       <% end %>
     </div>
