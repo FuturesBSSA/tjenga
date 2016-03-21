@@ -16,7 +16,19 @@ class Developer::ProfilesController < Developer::BaseController
   end
 
   private
+
   def find_params
-    @developer = params.require(:developer).permit(:email,:first_name, :last_name, :phone_number, :city, :address, :photo, :photo_cache)
+    @developer = params.require(:developer).permit(
+      :email,
+      :first_name,
+      :last_name,
+      :phone_number,
+      :city,
+      :address,
+      :photo,
+      programming_languages_attributes: [:id, :name, :level, :_destroy],
+      tools_attributes: [:id, :name, :_destroy],
+      :photo, :photo_cache
+    )
   end
 end

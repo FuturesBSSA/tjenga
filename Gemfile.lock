@@ -60,6 +60,7 @@ GEM
     cloudinary (1.1.2)
       aws_cf_signer
       rest-client
+    cocoon (1.2.8)
     coderay (1.1.1)
     concurrent-ruby (1.0.1)
     debug_inspector (0.0.2)
@@ -202,6 +203,7 @@ DEPENDENCIES
   bootstrap-sass
   carrierwave
   cloudinary
+  cocoon
   devise
   faker
   figaro
