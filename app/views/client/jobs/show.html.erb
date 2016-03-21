@@ -1,13 +1,41 @@
-<h1><%=  @job.title %></h1>
+<div class="container">
 
-<%= @job.description %>
-<%= @job.budget %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
 
-<%= link_to "Edit", edit_client_job_path(@job), class: "btn btn-primary" %>
+      <div class="box-job">
 
-<%= link_to "Delete", client_job_path(@job), class: "btn btn-primary",
-method: :delete,
-data: { confirm: "Are you sure?" } %>
+        <h1><%=  @job.title %></h1>
+        <hr>
 
+        <%= @job.description %>
+        <%= @job.budget %>
 
-<%= link_to "Back", client_jobs_path, class: "btn btn-primary" %>
+        <ul class="list-inline padded">
+          <li><%= link_to "Edit", edit_client_job_path(@job), class: "btn btn-primary" %></li>
+          <li><%= link_to "Delete", client_job_path(@job), class: "btn btn-primary",
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <% if @job.status != "Closed" && @job.status != "Finished"  %>
+    <%= link_to "Close", close_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
+    data: { confirm: "Are you sure?" } %>
+    <% end %>
+    <% if @job.status != "Finished"  %>
+    <%= link_to "Finish", finish_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
+    data: { confirm: "Are you sure?" } %>
+    <% end %>
+    <% if @job.status == "Finished"  %>
+    <%= link_to "Add Review", new_client_job_review_path(@job), class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+
+  <div class="text-center">
+    <%= link_to "Back", client_jobs_path, class: "btn btn-primary" %>
+  </div>

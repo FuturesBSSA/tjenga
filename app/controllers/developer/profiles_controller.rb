@@ -27,7 +27,8 @@ class Developer::ProfilesController < Developer::BaseController
       :address,
       :photo,
       programming_languages_attributes: [:id, :name, :level, :_destroy],
-      tools_attributes: [:id, :name, :_destroy]
+      tools_attributes: [:id, :name, :_destroy],
+      :photo, :photo_cache
     )
   end
 end

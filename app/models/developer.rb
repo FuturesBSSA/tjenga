@@ -15,6 +15,7 @@ class Developer < ActiveRecord::Base
   has_many :references, class_name: "Recommendation", dependent: :destroy
   has_many :recommendations, as: :author, dependent: :destroy
   has_many :reviews, as: :author, dependent: :destroy
+  mount_uploader :photo, PhotoUploader
 
   accepts_nested_attributes_for :programming_languages, reject_if: :all_blank, allow_destroy: true
   accepts_nested_attributes_for :tools, reject_if: :all_blank, allow_destroy: true

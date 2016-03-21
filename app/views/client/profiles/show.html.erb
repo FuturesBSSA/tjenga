@@ -4,13 +4,31 @@
 
     <h2> I am <%= @fullname %>, yeahhhh baby!! </h2>
 
-    <ul>
-      <li> <%= @client.city %> </li>
-      <li> <%= @client.address %> </li>
-      <li> <%= @client.email %> </li>
+    <%= cl_image_tag current_client.photo, height: 100, width: 100, crop: :fill, class: "avatar-profile" %>
+    <div class="client-description">
 
-    </ul>
-    <%= link_to "Edit profile", edit_client_profile_path %>
+      <ul>
+        <li> <%= @client.city %> </li>
+        <li> <%= @client.address %> </li>
+        <li> <%= @client.email %> </li>
 
+      </ul>
+      <%= link_to "Edit profile", edit_client_profile_path, class: "btn btn-primary" %>
+    </div>
+
+  </div>
+  <hr>
+  <div class="text-center">
+
+    <h1>list of your jobs</h1>
+
+    <div class="container">
+      <div class="text-center">
+        <% @jobs.each do |job| %>
+        <%= job.title %>
+        <%= link_to "View", client_job_path(job), class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

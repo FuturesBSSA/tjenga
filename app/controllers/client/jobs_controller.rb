@@ -1,5 +1,5 @@
 class Client::JobsController < Client::BaseController
-  before_action :find_job, only: [:show, :edit, :update, :destroy]
+  before_action :find_job, only: [:show, :edit, :update, :destroy, :close, :finish]
 
   def index
     @jobs = current_client.jobs
@@ -31,6 +31,16 @@ class Client::JobsController < Client::BaseController
 
   def destroy
     @job.destroy!
+    redirect_to client_jobs_path
+  end
+
+  def close
+    @job.update!(status: "Closed" )
+    redirect_to client_jobs_path
+  end
+
+  def finish
+    @job.update!(status: "Finished")
     redirect_to client_jobs_path
   end
 
