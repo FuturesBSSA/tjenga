@@ -9,5 +9,17 @@
 method: :delete,
 data: { confirm: "Are you sure?" } %>
 
+<hr>
+<% if @job.status != "Closed" && @job.status != "Finished"  %>
+<%= link_to "Close", close_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
+data: { confirm: "Are you sure?" } %>
+<% end %>
+<% if @job.status != "Finished"  %>
+<%= link_to "Finish", finish_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
+data: { confirm: "Are you sure?" } %>
+<% end %>
+<% if @job.status == "Finished"  %>
+<%= link_to "Add Review", new_client_job_review_path(@job), class: "btn btn-primary" %>
+<% end %>
 
 <%= link_to "Back", client_jobs_path, class: "btn btn-primary" %>

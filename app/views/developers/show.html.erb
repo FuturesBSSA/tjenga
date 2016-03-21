@@ -1,3 +1,9 @@
 <div class="container">
   <h1>Developer: <%= @developer.first_name %> <%= @developer.last_name %></h1>
+
+  <h2>Reviews:</h2>
+   <% @developer.reviews.each do |review| %>
+  <%= review.rating %>
+  <%= review.description %>
+  <% end %>
 </div>

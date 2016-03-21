@@ -1,0 +1,21 @@
+<% @ratings = [1, 2, 3, 4, 5] %>
+<div class="container">
+  <div class="text-center">
+
+
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <h1>Creat a new Job</h1>
+        <hr style="width: 20em;">
+        <%= simple_form_for(@review, url: client_job_reviews_path(@job)) do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.input :description, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
+        <%= f.input :rating, :collection => @ratings, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
+        <%= f.submit class: "btn btn-primary", :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

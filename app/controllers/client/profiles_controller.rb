@@ -3,6 +3,7 @@ class Client::ProfilesController < Client::BaseController
     @jobs = current_client.jobs
     @applications = current_client.applications
     @fullname = current_client.first_name + " " + current_client.last_name
+    @client = current_client
   end
 
   def edit

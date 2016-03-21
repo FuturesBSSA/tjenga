@@ -13,4 +13,18 @@
     <%= link_to "Edit profile", edit_client_profile_path %>
 
   </div>
+
+  <div class="text-center">
+
+    <h1>list of your jobs</h1>
+
+    <div class="container">
+      <div class="text-center">
+        <% @jobs.each do |job| %>
+        <%= job.title %>
+        <%= link_to "View", client_job_path(job) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
