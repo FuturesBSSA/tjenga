@@ -5,8 +5,14 @@
       <hr style="width: 40em;">
       <%= simple_form_for(@recommendation, url:  developer_recommendations_path(@developer)) do |f| %>
         <%= f.error_notification %>
-        <%= f.input :content %>
+        <% f.input :first_name, value: @author.first_name %>
+        <% f.input :last_name, value: @author.last_name %>
+        <% f.input :author_id, value: @author.id %>
+        <%= f.input :title, placeholder: 'What kind of work did you do together?' %>
+        <%= f.input :content, placeholder: "What was working with #{@developer.first_name} like?" %>
+        <%= f.input :author_type, label: 'Relation', collection: ['Colleague', 'Manager', 'Client', 'Developer', 'Classmate'] %>
         <%= f.submit class: "btn btn-primary" %>
+        <% f.input :status, value: 'pending' %>
       <% end %>
     </div>
   </div>
