@@ -5,6 +5,7 @@ class DevelopersController < ApplicationController
 
   def show
     @developer = Developer.find(params[:id])
-    @recommendations = @developer.recommendations
+    @reviews = @developer.job_reviews
+    @recommendations =  @developer.recommendations
   end
 end
