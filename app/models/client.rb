@@ -11,4 +11,5 @@ class Client < ActiveRecord::Base
   has_many :reviews, as: :author, dependent: :destroy
 
   validates :first_name, :last_name, presence: true
+  mount_uploader :photo, PhotoUploader
 end

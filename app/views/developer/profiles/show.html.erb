@@ -16,6 +16,18 @@
 
 
   <%= link_to "Edit profile", edit_developer_profile_path %>
+
+
+  <h2>Reviews</h2>
+  <% @reviews.current_developer.each do |review| %>
+  <% review.rating.times do %>
+  <i class="fa fa-star"></i>
+  <% end %>
+  <% (5 - review.rating).times do %>
+  <i class="fa fa-star-o"></i>
+  <% end %>
+  <%= review.description %>
+  <% end %>
 </div>
 
 

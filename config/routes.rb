@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     resources :jobs do
       member do
         patch  :close
+        patch  :finish
       end
 
       resources :reviews, only: [:new, :create]
