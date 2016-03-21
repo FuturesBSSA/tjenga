@@ -8,6 +8,9 @@ class Developer < ActiveRecord::Base
   validates :price_per_hour, presence: true, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/}
 
   has_many :applications, dependent: :destroy
+  has_many :accepted_applications, -> { where(status: "Accepted") }, class_name: "Application"
+  has_many :accepted_jobs, through: :accepted_applications, source: :job
+  has_many :job_reviews, through: :accepted_jobs, source: :reviews
   has_many :tools, dependent: :destroy
   has_many :works, dependent: :destroy
   has_many :programming_languages, dependent: :destroy

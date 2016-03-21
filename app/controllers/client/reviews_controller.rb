@@ -9,10 +9,11 @@ class Client::ReviewsController < ApplicationController
     @job = current_client.jobs.find(params[:job_id])
     @review = Review.new(review_params)
     @review.job = @job
+    @review.author = current_client
 
     if @review.valid?
       @review.save!
-      redirect_to developer_path(@developer)
+      redirect_to developer_path(@job.accepted_developer)
     else
       render :new
     end
