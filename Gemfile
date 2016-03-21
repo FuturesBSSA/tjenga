@@ -19,6 +19,7 @@ gem 'autoprefixer-rails'
 gem 'faker'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'cocoon'
 
 group :development, :test do
   gem 'binding_of_caller'
