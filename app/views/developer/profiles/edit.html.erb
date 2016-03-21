@@ -18,6 +18,8 @@
         <%= f.input :expertise, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
         <%= f.input :availability, :collection => @status, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
         <%= f.submit class: "btn btn-primary", :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
+        <%= f.input :photo, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
+        <%= f.input :photo_cache, as: :hidden %>
         <% end %>
       </div>
     </div>

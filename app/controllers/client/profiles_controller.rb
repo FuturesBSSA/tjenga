@@ -19,6 +19,6 @@ class Client::ProfilesController < Client::BaseController
   private
 
   def client_params
-    params.require(:client).permit(:email,:first_name, :last_name, :company, :phone_number, :city, :address, :photo)
+    params.require(:client).permit(:email,:first_name, :last_name, :company, :phone_number, :city, :address, :photo, :photo_cache)
   end
 end

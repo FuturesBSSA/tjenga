@@ -4,6 +4,7 @@
 
     <h2> I am <%= @fullname %>, yeahhhh baby!! </h2>
 
+    <%= cl_image_tag current_client.photo, height: 100, width: 100, crop: :fill, class: "avatar-profile" %>
     <ul>
       <li> <%= @client.city %> </li>
       <li> <%= @client.address %> </li>
@@ -13,7 +14,7 @@
     <%= link_to "Edit profile", edit_client_profile_path, class: "btn btn-primary" %>
 
   </div>
-<hr>
+  <hr>
   <div class="text-center">
 
     <h1>list of your jobs</h1>
