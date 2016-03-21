@@ -1,14 +1,24 @@
 <div class="container">
   <h1>Developer: <%= @developer.first_name %> <%= @developer.last_name %></h1>
+</div>
 
-  <h2>Reviews:</h2>
-  <% @reviews.each do |review| %>
-  <% review.rating.times do %>
-  <i class="fa fa-star"></i>
-  <% end %>
-  <% (5 - review.rating).times do %>
-  <i class="fa fa-star-o"></i>
-  <% end %>
-  <%= review.description %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-4">
+      <h2>Reviews</h2>
+      <% @reviews.each do |review| %>
+      <div class="product">
+      </div>
+      <div class="product-body">
+        <% review.rating.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+        <% (5 - review.rating).times do %>
+        <i class="fa fa-star-o"></i>
+        <% end %>
+        <%= review.description %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

@@ -2,6 +2,7 @@ class Developer::ProfilesController < Developer::BaseController
   def show
     @developer = current_developer
     @applications = current_developer.applications
+    @reviews = @developer.job_reviews
     @fullname = current_developer.first_name + " " + current_developer.last_name
   end
 
