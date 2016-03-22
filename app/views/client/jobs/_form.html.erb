@@ -1,8 +1,8 @@
 <%  @categories = ['Portfolio', 'Webshop', 'Internal application'] %>
 
-<div class="container form">
+<!-- <div class="container form"> -->
   <div class="form-container">
-    <h1 class='text-center'>Creat a new Job</h1>
+    <h1 class='text-center'>CREATE A NEW JOB</h1>
     <hr style="width: 20em;">
       <%= simple_form_for([:client, @job]) do |f| %>
       <%= f.error_notification %>
@@ -18,4 +18,4 @@
       <%= f.submit class: "btn btn-primary" %>
       <% end %>
   </div>
-</div>
+<!-- </div> -->

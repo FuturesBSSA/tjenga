@@ -16,17 +16,21 @@
     <%= f.input :availability, :collection => @status %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-    <div>
-      <%= simple_fields_for :programming_languages do |programming_language| %>
-      <%= render 'programming_language_fields', f: programming_language %>
-      <%= link_to_add_association 'add more programming languages', f, :programming_languages, class: "btn btn-primary" %>
+    <div id="programming_languages">
+      <%= f.simple_fields_for :programming_languages do |programming_language| %>
+        <%= render 'programming_language_fields', f: programming_language %>
       <% end %>
+      <div class="links">
+        <%= link_to_add_association 'add more programming languages', f, :programming_languages, class: "btn btn-primary" %>
+      </div>
     </div>
-    <div>
-      <%= simple_fields_for :tools do |tool| %>
-      <%= render 'tool_fields', f: tool %>
-      <%= link_to_add_association 'add more tools', f, :tools, class: "btn btn-primary" %>
+    <div id="tools">
+      <%= f.simple_fields_for :tools do |tool| %>
+        <%= render 'tool_fields', f: tool %>
       <% end %>
+      <div class="links">
+        <%= link_to_add_association 'add more tools', f, :tools, class: "btn btn-primary" %>
+      </div>
     </div>
     <%= f.submit class: "btn btn-primary", :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
     <% end %>
