@@ -12,6 +12,12 @@
     <li> <%= @developer.expertise %> </li>
     <h4>Availability</h4>
     <li> <%= @developer.availability %> </li>
+    <h4>Programming Languages</h4>
+    <% @developer.programming_languages.each do |pl| %>
+          <li>name: <%= pl.name %></li>
+          <li>level: <%= pl.level %></li>
+          <hr>
+        <% end %>
   </ul>
 
 
