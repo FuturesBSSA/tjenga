@@ -1,27 +1,21 @@
 <%  @categories = ['Portfolio', 'Webshop', 'Internal application'] %>
 
-<div class="container">
-  <div class="text-center">
+<div class="container form">
+  <div class="form-container">
+    <h1 class='text-center'>Creat a new Job</h1>
+    <hr style="width: 20em;">
+      <%= simple_form_for([:client, @job]) do |f| %>
+      <%= f.error_notification %>
 
-
-    <div class="row">
-      <div class="col-xs-12 col-md-6 col-md-offset-3">
-        <h1>Creat a new Job</h1>
-        <hr style="width: 20em;">
-        <%= simple_form_for([:client, @job]) do |f| %>
-        <%= f.error_notification %>
-
-        <%= f.input :title, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
-        <%= f.input :description, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
-        <%= f.input :budget, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
-        <%= f.input :duration, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
-        <%= f.input :difficulty_level, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
-        <%= f.input :start_date %>
-        <%= f.input :deadline %>
-        <%= f.input :request_type, :collection => @categories, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
-        <%= f.submit class: "btn btn-primary", :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
-        <% end %>
-      </div>
-    </div>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :budget %>
+      <%= f.input :duration %>
+      <%= f.input :difficulty_level %>
+      <%= f.input :start_date %>
+      <%= f.input :deadline %>
+      <%= f.input :request_type, :collection => @categories %>
+      <%= f.submit class: "btn btn-primary" %>
+      <% end %>
   </div>
 </div>
