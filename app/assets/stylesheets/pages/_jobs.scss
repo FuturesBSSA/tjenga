@@ -1,0 +1,32 @@
+.wrapper-darkblue {
+  color: white;
+  background: #01081C;
+  height: 50vh;
+  .btn-primary {
+    background: #33E036;
+    font-weight: bold;
+    border-radius: 10%;
+  }
+}
+
+.btn-primary:hover {
+  background: #2BBC2D;
+  border-style: solid 5px #33E036 ;
+}
+
+
+.job {
+  display: flex;
+  position: relative;
+
+  .title {
+    position: absolute;
+    left: 100px;
+    top: 50px;
+  }
+  .apply {
+    position: absolute;
+    right: 100px;
+    top: 120px;
+  }
+}
