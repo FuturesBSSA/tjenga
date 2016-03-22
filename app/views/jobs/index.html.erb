@@ -1,6 +1,35 @@
-<h1>INDEX VIEW</h1>
+<div class="banner">
+  <div class="banner-content">
+    <h1>Find an awesome job</h1>
+  </div>
+</div>
 
-<% @jobs.each do |job| %>
-<h3> <%= job.title %> </h3>
-<%= link_to "view", job_path(job), class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+<h1>Search for a job</h1>
+
+    <% @jobs.each do |job| %>
+      <div class="job-box">
+        <div class="job-link">
+          <div class="job-title-box">
+            <div class="job-title">
+              <%= job.title %>
+            </div>
+          </div>
+          <div class="job-date">
+            <p>Apply before: <%= job.start_date %></p>
+            <p>Enddate: <%= job.deadline %></p>
+          </div>
+          <div class="job-budget">
+            <i class="fa fa-money"></i><%= job.budget %>
+          </div>
+          <div class="job-button">
+            <%= link_to "view", job_path(job), class: "btn btn-primary" %>
+          </div>
+          <div class="job-img">
+
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+</div>

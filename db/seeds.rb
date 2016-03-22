@@ -54,7 +54,7 @@ end
   )
 
     Job.create!(
-    title: Faker::Lorem.words,
+    title: Faker::Lorem.word,
     description: Faker::Lorem.paragraph(2, false, 4),
     difficulty_level: ["beginner", "senior", "junior"].sample,
     budget: [50, 100, 250, 1000, "unknown", "negotiable"].sample,
