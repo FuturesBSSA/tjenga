@@ -6,7 +6,7 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
-    @client = Client.find(params[:id])
+    @client = Client.find(@job.client_id)
     @full_name = @job.client.first_name + " " + @job.client.last_name
   end
 end
