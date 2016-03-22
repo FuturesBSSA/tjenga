@@ -1,17 +1,51 @@
-<div class="container">
-  <div class="text-center">
-  <h1>Dev: <%= @developer.first_name %> <%= @developer.last_name %></h1>
+<div class="dev-banner">
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-xs-12 col-sm-3">
+       <div class="photo avatar-profile">
+        <%= cl_image_tag @developer.photo %>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="dev-name">
+        <ul>
+          <h3><%= @developer.first_name %> <%= @developer.last_name %></h3>
+          <li> <%= @developer.expertise.capitalize %> </li>
+          <li> <%= @developer.availability.capitalize %> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="dev-details">
+        <ul>
+          <h3>Contact Details</h3>
+          <li> <%= @developer.address.capitalize %> </li>
+          <li> <%= @developer.city.capitalize %> </li>
+          <li> <%= @developer.email %> </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-1">
+      <div class="dev-btn">
+        <%= link_to "Work with me", "#", class: "btn btn-primary" %>
+      </div>
+    </div>
   </div>
+</div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-7 col-sm-offset-4">
 
-      <h2>Reviews</h2>
-      <% @reviews.each do |review| %>
+    <h2 class="text-center">Reviews</h2>
+    <hr>
+    <% @reviews.each do |review| %>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="product">
         <div class="product-image">
+        <%= cl_image_tag @client.photo, class: "product-image hidden-xs" %>
         </div>
         <div class="product-body">
           <% review.rating.times do %>
@@ -23,13 +57,13 @@
           <%= review.description %>
         </div>
       </div>
-      <% end %>
     </div>
+    <% end %>
   </div>
 
   <h2>Recommended by:</h2>
   <%  @recommendations.each do |recommendation|%>
-    <p>- <%= recommendation.content  %></p>
+  <p>- <%= recommendation.content  %></p>
   <% end %>
 
   <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
