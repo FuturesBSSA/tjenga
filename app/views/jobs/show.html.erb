@@ -1,5 +1,57 @@
-<h1>SHOW VIEW</h1>
+<div class="wrapper-darkblue">
+  <div class="container">
+    <div class="job">
+      <div class="title">
+        <h2> <%= @job.title %> </h2>
+      </div>
+      <div class="apply">
+        <%= link_to "Apply", new_job_application_path(@job), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= @job.title %>
+<div class="container">
+  <div class="text-center">
 
-<%= link_to "Apply", new_job_application_path(@job), class: "btn btn-primary" %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
+        <div class="card-job">
+          <h4>Start date: </h4>
+          <%= @job.start_date %>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="card-job">
+          <h4>Deadline: </h4>
+          <%= @job.deadline %>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="card-job">
+          <h4>Budget: </h4>
+          <%= @job.budget %>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-3">
+        <div class="card-job">
+          <h4>Difficulty: </h4>
+          <%= @job.difficulty_level %>
+        </div>
+      </div>
+
+    </div>
+    <hr>
+  </div>
+</div>
+
+<div class="container">
+
+  <h3>Description</h3>
+
+</div>
+
+
