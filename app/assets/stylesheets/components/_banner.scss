@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
@@ -23,5 +24,11 @@
 .developers-index {
   .banner {
     height: 500px;
+  }
+}
+
+.client-jobs-new {
+  .banner {
+    height: auto;
   }
 }

@@ -2,7 +2,35 @@
   width: 100%;
 }
 
+.form submit {
+  width: auto;
+}
+
 .form-container {
   max-width: 500px;
   margin: auto;
+  padding-bottom: 90px
+}
+
+.job-form-container {
+  display: flex;
+
+  @media (max-width: 700px) {
+    flex-flow: column;
+  }
+
+  .banner, .job-form {
+    flex: 1;
+  }
+}
+
+
+form {
+  .form-control {
+    &:focus {
+      outline: 0;
+      border-color: #CCCCCC;
+      box-shadow: none;
+    }
+  }
 }

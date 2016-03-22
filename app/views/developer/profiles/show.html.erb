@@ -1,6 +1,8 @@
+<div class="dev-banner">
+
 <div class="container">
 
-  <h1>Welcome To your profile <%= @developer.first_name %></h1>
+  <h1> <%= @fullname %></h1>
   <ul>
     <h4>City</h4>
     <li> <%= @developer.city %> </li>
@@ -12,8 +14,15 @@
     <li> <%= @developer.expertise %> </li>
     <h4>Availability</h4>
     <li> <%= @developer.availability %> </li>
+    <h4>Programming Languages</h4>
+    <% @developer.programming_languages.each do |pl| %>
+          <li>name: <%= pl.name %></li>
+          <li>level: <%= pl.level %></li>
+          <hr>
+        <% end %>
   </ul>
 
+</div>
 
   <%= link_to "Edit profile", edit_developer_profile_path %>
 </div>
