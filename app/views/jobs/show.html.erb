@@ -3,9 +3,11 @@
     <div class="job">
       <div class="title">
         <h2> <%= @job.title %> </h2>
+        <p><%= @full_name %></p>
       </div>
       <div class="apply">
         <%= link_to "Apply", new_job_application_path(@job), class: "btn btn-primary" %>
+
       </div>
     </div>
   </div>
@@ -49,9 +51,41 @@
 </div>
 
 <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-5">
+      <h3 class="text-center">About</h3>
+      <div class="job-about">
+        <div class="image">
+          <ul>
+          <li> <%= cl_image_tag @client.photo, height: 20, width: 20, crop: :fill, class: "avatar-profile" %> </li>
+            <br>
+            <h4>City:</h4>
+            <li> <%= @client.city %> </li>
+          </ul>
+        </div>
 
-  <h3>Description</h3>
+        <div class="details">
+          <ul>
+            <h4>Client:</h4>
+            <li><%= @full_name %></li>
+            <br>
+            <h4>Company:</h4>
+            <li><%= @client.company %></li>
+          </ul>
 
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-xs-12 col-sm-7">
+      <h3 class="text-center">Description</h3>
+      <div class="job-description">
+        <%= @job.description %>
+      </div>
+
+    </div>
+  </div>
 </div>
 
 

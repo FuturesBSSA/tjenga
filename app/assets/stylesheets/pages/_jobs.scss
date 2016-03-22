@@ -1,11 +1,13 @@
 .wrapper-darkblue {
   color: white;
   background: #01081C;
-  height: 50vh;
+  height: 40vh;
   .btn-primary {
     background: #33E036;
     font-weight: bold;
     border-radius: 10%;
+    font-size: 20px;
+    letter-spacing: 2px;
   }
 }
 
@@ -22,11 +24,42 @@
   .title {
     position: absolute;
     left: 100px;
-    top: 50px;
+    top: 120px;
   }
   .apply {
     position: absolute;
     right: 100px;
-    top: 120px;
+    top: 150px;
   }
+}
+
+hr {
+  height: 15px;
+}
+
+.job-about {
+  position: relative;
+  height: 250px;
+
+  .image {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  padding-bottom: 10px;
+  }
+  .details {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding-bottom: 10px;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+.job-description {
+  padding: 10px;
+  height: 250px;
 }
