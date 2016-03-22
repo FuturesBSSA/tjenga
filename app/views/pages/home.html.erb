@@ -1,21 +1,27 @@
-<div class="wrapper">
+<div class="wrapper-home-page">
   <div class="landing-page">
     <div class="client-section">
       <div class="section-content">
-        <h3>Awesome</h3>
-        <h1>Client?</h1>
-        <p>Looking for a new website? Or something bigger? Post it!</p>
+        <p style="margin-bottom: 0px;">Awesome</p>
+        <h1 style="margin-top: 0px;">Client?</h1>
+        <%= link_to "Post a job ", new_client_job_path, class: 'btn btn-danger' %>
+        <p class="section-description">Looking for a new website? Or something bigger?</p>
         <%= image_tag 'client.png' %>
       </div>
     </div>
 
     <div class="developer-section">
       <div class="section-content">
-        <h3>Kick-ass</h3>
-        <h1>Developer?</h1>
-        <p>New exiting assignments start here</p>
+        <p style="margin-bottom: 0px;">Kick-ass</p>
+        <h1 style="margin-top: 0px;">Developer?</h1>
+        <%= link_to "Search Jobs", jobs_path, class: 'btn btn-danger' %>
+        <p class="section-description">Epic new jobs start here, for beginners to experts.</p>
         <%= image_tag 'developer.png' %>
       </div>
     </div>
   </div>
+</div>
+
+<div class="wrapper-footer">
+
 </div>
