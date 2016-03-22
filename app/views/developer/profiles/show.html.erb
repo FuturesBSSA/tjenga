@@ -1,6 +1,8 @@
+<div class="dev-banner">
+
 <div class="container">
 
-  <h1>Welcome To your profile <%= @developer.first_name %></h1>
+  <h1> <%= @fullname %></h1>
   <ul>
     <h4>City</h4>
     <li> <%= @developer.city %> </li>
@@ -14,6 +16,7 @@
     <li> <%= @developer.availability %> </li>
   </ul>
 
+</div>
 
   <%= link_to "Edit profile", edit_developer_profile_path %>
 </div>

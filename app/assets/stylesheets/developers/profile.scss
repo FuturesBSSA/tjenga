@@ -2,6 +2,41 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.dev-banner {
+  background: #03040F;
+  height: 40vh;
+  color: white;
+  h3 {
+    font-weight: bold;
+  }
+}
+
+
+.dev-name {
+  margin-top: 120px;
+}
+
+.dev-btn {
+  margin-top: 160px;
+
+  .btn-primary {
+    font-weight: bold;
+    background-color: #549961;
+  }
+}
+
+.photo {
+  margin-top: 160px;
+}
+
+.dev-details {
+  margin-top: 120px;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .product {
   display: flex;
   align-items: center;
