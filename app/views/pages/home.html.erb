@@ -1,13 +1,27 @@
-<div class="banner home_image" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_path('Background-tjenga-small.png') %>);">
-  <div class="banner-content">
-    <h1>Tjenga</h1>
-    <p>Where kick-ass developers meet awesome clients</p>
-    <div class="form-group">
-      <%= form_tag developers_path, method: "get", class: "flex-form" do %>
-        <%= text_field_tag :programming_language, @search, placeholder: "Search by programming language" %>
-        <%= text_field_tag :budget, @search, placeholder: "Budget" %>
-        <%= submit_tag "Search", class: 'btn btn-success' %>
-      <% end %>
+<div class="wrapper-home-page">
+  <div class="landing-page">
+    <div class="client-section">
+      <div class="section-content">
+        <p style="margin-bottom: 0px;">Awesome</p>
+        <h1 style="margin-top: 0px;">Client?</h1>
+        <%= link_to "Post a job ", new_client_job_path, class: 'btn btn-danger' %>
+        <p class="section-description">Looking for a new website? Or something bigger?</p>
+        <%= image_tag 'client.png' %>
+      </div>
+    </div>
+
+    <div class="developer-section">
+      <div class="section-content">
+        <p style="margin-bottom: 0px;">Kick-ass</p>
+        <h1 style="margin-top: 0px;">Developer?</h1>
+        <%= link_to "Search Jobs", jobs_path, class: 'btn btn-danger' %>
+        <p class="section-description">Epic new jobs start here, for beginners to experts.</p>
+        <%= image_tag 'developer.png' %>
+      </div>
     </div>
   </div>
+</div>
+
+<div class="wrapper-footer">
+
 </div>
