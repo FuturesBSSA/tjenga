@@ -10,7 +10,7 @@
       <%= work.client_name %>
       <%= work.website_url %>
       <%= cl_image_tag work.photo, height: 300, width: 400, crop: :fill %>
-      <%= button_to "Delete", developer_profile_works_path, method: :delete, data: { confirm: "Are you sure?" } %>
+      <%= button_to "Delete", developer_profile_work_path(work), method: :delete, data: { confirm: "Are you sure?" } %>
       <hr>
       </div>
     <% end %>

@@ -27,7 +27,7 @@ class Developer::WorksController < Developer::BaseController
 
   def destroy
     @work.destroy!
-    redirect_to developer_profile_works_path
+    redirect_to developer_profile_works_path(@developer)
   end
 
   private
