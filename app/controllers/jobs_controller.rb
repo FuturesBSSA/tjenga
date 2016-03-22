@@ -10,3 +10,4 @@ class JobsController < ApplicationController
     @full_name = @job.client.first_name + " " + @job.client.last_name
   end
 end
+
