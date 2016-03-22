@@ -26,10 +26,9 @@ class Developer::ProfilesController < Developer::BaseController
       :phone_number,
       :city,
       :address,
-      :photo,
+      :photo, :photo_cache,
       programming_languages_attributes: [:id, :name, :level, :_destroy],
-      tools_attributes: [:id, :name, :_destroy],
-      :photo, :photo_cache
+      tools_attributes: [:id, :name, :_destroy]
     )
   end
 end
