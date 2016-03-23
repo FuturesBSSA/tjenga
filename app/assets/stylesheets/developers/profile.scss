@@ -43,8 +43,13 @@
 
   .btn-primary {
     font-weight: bold;
-    background-color: #549961;
+    background-color: $nnude;
+    opacity: 0.8;
+    transition: all 0.3s ease 0s;
   }
+  .btn-primary:hover {
+   opacity: 1;
+ }
 }
 
 .photo {
@@ -69,9 +74,10 @@ ul {
   transition: all 0.15s ease;
   width: 650px;
   padding-left: 80px;
-  background: #D8F7FF;
+  background: #D3D3D3;
   margin-top: 20px;
   margin-bottom: 20px;
+  transition: all 0.3s ease 0s;
 }
 
 /* Body design */
@@ -156,7 +162,7 @@ ul {
 
 /* Hover effects */
 .review:hover {
-  background: yellow;
+  background: $ggray;
   cursor: pointer;
 
   a:hover {
@@ -171,3 +177,8 @@ ul {
 // .review:hover .review-controls-hidden a { color: #E6E6E6 }
 // .review-upvote:hover .review-arrow { border-bottom: 9px solid #5898f1 }
 
+.work-description {
+  h4 {
+    font-weight: bold;
+  }
+}
