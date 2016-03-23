@@ -39,6 +39,38 @@
 </div>
 </div>
 
+d
+<div class="container">
+  <div class="row">
+   <h2 class="text-center">Work</h2>
+   <hr>
+   <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+     <div class="work">
+       <% @works.each do |work| %>
+       <div class="work-image">
+         <%= link_to work.website_url do %>
+         <%= cl_image_tag work.photo, height: 250, width: 300, crop: :fill %>
+         <% end %>
+         <div class="work-description">
+           <h4><%= work.title %></h4>
+           <%= work.description %>
+         </div>
+       </div>
+       <div class="work-image">
+         <%= link_to work.website_url do %>
+         <%= cl_image_tag work.photo, height: 250, width: 300, crop: :fill %>
+         <% end %>
+         <div class="work-description">
+           <h4><%= work.title %></h4>
+           <%= work.description %>
+         </div>
+       </div>
+       <% end %>
+     </div>
+   </div>
+ </div>
+</div>
+
 <div class="container">
   <div class="row">
 
@@ -48,7 +80,7 @@
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
       <div class="review">
         <div class="review-image">
-        <%= cl_image_tag review.author.photo, class: "avatar-large" %>
+          <%= cl_image_tag review.author.photo, class: "avatar-large" %>
         </div>
         <div class="review-body">
           <% review.rating.times do %>
