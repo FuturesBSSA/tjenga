@@ -17,15 +17,17 @@
 
 .landing-page {
   width: 100vw;
+  display: flex;
 }
 
 .client-section {
   color: #3a4750;
   background-color: #eeeeee;
   width: 50vw;
-  float: left;
-  p {
-    font-weight: lighter;
+  flex: 1;
+  hr {
+    width: 5em;
+    border-top: solid 1px #3a4750;
   }
 }
 
@@ -33,9 +35,10 @@
   color: #eeeeee;
   background-color: #3a4750;
   width: 50vw;
-  float: left;
-  p {
-    font-weight: lighter;
+  flex: 1;
+  hr {
+    width: 5em;
+    border-top: solid 1px #eeeeee;
   }
 }
 
@@ -52,13 +55,14 @@
     position: absolute;
     max-width:100%;
     max-height:100%;
-    left: 25%;
+    left: 21%;
     bottom: 0;
   }
 
   .btn-danger {
     padding: 15px 30px 15px 30px;
-    margin-top: 40px;
+    margin-top: 20px;
+    font-weight: bold;
   }
 
   h1 {
@@ -66,11 +70,82 @@
     font-weight: bold;
   }
 
+  p {
+    font-weight: 300;
+  }
+
+  .info-icon {
+    position: relative;
+    display: block;
+    bottom: -15%;
+    transition: all 0.2s ease;
+  }
+
+  // .client-section,
+  // .info-icon:hover {
+  //   color: #4f616e;
+  // }
+
+  // .developer-section,
+  // .info-icon:hover {
+  //   color: red;
+  // }
 }
 
 .section-description {
-  padding-top: 40px;
   font-size: 14px;
+}
+
+.info-developer {
+
+}
+
+.info-client {
+
+}
+
+.landing-client {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #f1f1ef;
+  display: block;
+}
+
+.landing-developer {
+  height: 300px;
+  background-color: #302b2c;
+  display: block;
+}
+
+
+// client
+.list-images {
+  display: flex;
+  padding-top: 6em;
+  font-weight: bold;
+  li {
+    flex: 1;
+  }
+
+  img {
+    width: 50%;
+  }
+}
+
+.client-info {
+  display: flex;
+}
+
+.client-info-left {
+  flex: 1;
+  padding-right: 100px;
+  padding-left: 100px;
+}
+
+.client-info-right {
+  flex: 1;
+  padding-right: 100px;
+  padding-left: 100px;
 }
 
 
