@@ -43,7 +43,7 @@
 
   .btn-primary {
     font-weight: bold;
-    background-color: #549961;
+    background-color: $nnude;
   }
 }
 
@@ -69,7 +69,7 @@ ul {
   transition: all 0.15s ease;
   width: 650px;
   padding-left: 80px;
-  background: #D8F7FF;
+  background: $offwhite;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -156,7 +156,7 @@ ul {
 
 /* Hover effects */
 .review:hover {
-  background: yellow;
+  background: $ggray;
   cursor: pointer;
 
   a:hover {
