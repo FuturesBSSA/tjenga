@@ -3,21 +3,43 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .dev-banner {
-  background: #03040F;
-  height: 40vh;
+  background: $blue-grayer;
   color: white;
   h3 {
     font-weight: bold;
   }
+  p {
+    margin: 0 0 1px;
+  }
 }
 
 
-.dev-name {
-  margin-top: 120px;
+@media(max-width: 770px) {
+  .dev.banner {
+    height: 100vh;
+  }
+  .dev-name {
+    text-align: center;
+    margin-left: 0px;
+  }
+  .dev-details {
+    text-align: center;
+  }
+  .photo {
+    text-align: center;
+  }
+}
+
+@media(min-width: $screen-sm) {
+  .dev-name {
+    margin-top: 120px;
+    margin-left: 50px;
+  }
 }
 
 .dev-btn {
-  margin-top: 160px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
   .btn-primary {
     font-weight: bold;
@@ -26,7 +48,7 @@
 }
 
 .photo {
-  margin-top: 160px;
+  margin-top: 120px;
 }
 
 .dev-details {
@@ -37,7 +59,9 @@ ul {
   list-style-type: none;
 }
 
-.product {
+
+// review lay-out
+.review {
   display: flex;
   align-items: center;
   padding: 20px;
@@ -51,67 +75,79 @@ ul {
 }
 
 /* Body design */
-.product-body {
+.review-body {
   flex: 1 1 auto;
+  .fa-star:before {
+    // color: #D38312;
+    // background: linear-gradient(to left, #D38312 , #A83279);
+    background: linear-gradient(to left, #F0C27B , #4B1248);
+
+    display: initial;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+  .fa-star-o {
+    color: grey;
+  }
 }
-.product-body h3 {
+.review-body h3 {
   font-weight: bold;
   font-size: 23px;
   margin-top: 0;
 }
-.product-body p {
-  font-weight: lighter;
-  color: #999999;
+.review-body p {
+  color: black;
   margin-bottom: 0;
 }
 
-/* Product image */
-.product-image {
+/* review image */
+.review-image {
   border-radius: 10px;
   margin-right: 20px;
   width: 175px;
 }
 
 /* Upvote design */
-.product-upvote {
-  padding-right: 20px;
-  text-align: center;
-  transition: all 0.15s ease;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 20px;
-}
-.product-count {
-  margin: 2px 0 0;
-}
-.product-arrow {
-  transition: all 0.15s ease;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-bottom: 9px solid black;
-  border-radius: 2px;
-  margin: auto;
-}
+// .review-upvote {
+//   padding-right: 20px;
+//   text-align: center;
+//   transition: all 0.15s ease;
+//   font-weight: bold;
+//   font-size: 13px;
+//   line-height: 20px;
+// }
+// .review-count {
+//   margin: 2px 0 0;
+// }
+// .review-arrow {
+//   transition: all 0.15s ease;
+//   width: 0;
+//   height: 0;
+//   border-left: 6px solid transparent;
+//   border-right: 6px solid transparent;
+//   border-top: 6px solid transparent;
+//   border-bottom: 9px solid black;
+//   border-radius: 2px;
+//   margin: auto;
+// }
 
 /* Controls design */
-.product-controls {
+.review-controls {
   display: flex;
   align-items: center;
   text-align: center;
   margin: 0px;
 }
-.product-controls a {
+.review-controls a {
   padding: 0 20px;
   font-size: 17px;
   color: #E6E6E6;
 }
-.product-controls a:hover {
+.review-controls a:hover {
   color: #D3473C !important
 }
-.product-controls-hidden a {
+.review-controls-hidden a {
   color: transparent;
   font-size: 15px;
   transition: all 0.15s ease;
@@ -119,19 +155,19 @@ ul {
 }
 
 /* Hover effects */
-.product:hover {
-  background: #ffffff;
+.review:hover {
+  background: yellow;
   cursor: pointer;
 
   a:hover {
     text-decoration: none !important;
   }
 }
-.product-upvote:hover {
-  color: #5898f1;
-  cursor: pointer;
-}
-.product:hover .product-upvote { transform: scale(1.2) }
-.product:hover .product-controls-hidden a { color: #E6E6E6 }
-.product-upvote:hover .product-arrow { border-bottom: 9px solid #5898f1 }
+// .review-upvote:hover {
+//   color: #5898f1;
+//   cursor: pointer;
+// }
+// .review:hover .review-upvote { transform: scale(1.2) }
+// .review:hover .review-controls-hidden a { color: #E6E6E6 }
+// .review-upvote:hover .review-arrow { border-bottom: 9px solid #5898f1 }
 

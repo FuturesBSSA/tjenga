@@ -3,34 +3,37 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-xs-12 col-sm-3">
-       <div class="photo avatar-profile">
-        <%= cl_image_tag @developer.photo %>
+      <div class="col-xs-12 col-sm-1 col-sm-offset-2">
+       <div class="photo">
+        <%= cl_image_tag @developer.photo, class: "avatar-xlarge" %>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="dev-name">
-        <ul>
-          <h3><%= @developer.first_name %> <%= @developer.last_name %></h3>
-          <li> <%= @developer.expertise.capitalize %> </li>
-          <li> <%= @developer.availability.capitalize %> </li>
-        </ul>
+        <h3><%= @developer.first_name %> <%= @developer.last_name %></h3>
+        <p><%= @developer.expertise.capitalize %></p>
+        <p><%= @developer.availability.capitalize %></p>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
       <div class="dev-details">
-        <ul>
-          <h3>Contact Details</h3>
-          <li> <%= @developer.address.capitalize %> </li>
-          <li> <%= @developer.city.capitalize %> </li>
-          <li> <%= @developer.email %> </li>
-        </ul>
+
+        <h3>Contact Details</h3>
+        <p><%= @developer.address.capitalize %> </p>
+        <p> <%= @developer.city.capitalize %> </p>
+        <p> <%= @developer.email %> </p>
+
       </div>
     </div>
-    <div class="col-xs-12 col-sm-1">
-      <div class="dev-btn">
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <% if developer_signed_in? || client_signed_in? %>
+      <div class="dev-btn text-center">
         <%= link_to "Work with me", "#", class: "btn btn-primary" %>
       </div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -43,28 +46,37 @@
     <hr>
     <% @reviews.each do |review| %>
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="product">
-        <div class="product-image">
-        <%= cl_image_tag @client.photo, class: "product-image hidden-xs" %>
+      <div class="review">
+        <div class="review-image">
+        <%= cl_image_tag review.author.photo, class: "avatar-large" %>
         </div>
-        <div class="product-body">
+        <div class="review-body">
           <% review.rating.times do %>
           <i class="fa fa-star"></i>
           <% end %>
           <% (5 - review.rating).times do %>
           <i class="fa fa-star-o"></i>
           <% end %>
-          <%= review.description %>
+          <p><%= review.description %></p>
         </div>
       </div>
     </div>
     <% end %>
   </div>
+</div>
 
-  <h2>Recommended by:</h2>
-  <%  @recommendations.each do |recommendation|%>
-  <p>- <%= recommendation.content  %></p>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <h2 class="text-center">Recommendations</h2>
+    <%  @recommendations.each do |recommendation|%>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= cl_image_tag recommendation.author.photo, class: "avatar" %>
+      <p>- <%= recommendation.content  %></p>
+      <% end %>
 
-  <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
+      <% if developer_signed_in? || client_signed_in? %>
+      <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
+    </div>
+    <% end %>
+  </div>
 </div>
