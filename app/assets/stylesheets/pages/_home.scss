@@ -17,13 +17,14 @@
 
 .landing-page {
   width: 100vw;
+  display: flex;
 }
 
 .client-section {
   color: #3a4750;
   background-color: #eeeeee;
   width: 50vw;
-  float: left;
+  flex: 1;
   hr {
     width: 5em;
     border-top: solid 1px #3a4750;
@@ -34,7 +35,7 @@
   color: #eeeeee;
   background-color: #3a4750;
   width: 50vw;
-  float: left;
+  flex: 1;
   hr {
     width: 5em;
     border-top: solid 1px #eeeeee;
@@ -80,15 +81,15 @@
     transition: all 0.2s ease;
   }
 
-  .client-section,
-  .info-icon:hover {
-    color: #4f616e;
-  }
+  // .client-section,
+  // .info-icon:hover {
+  //   color: #4f616e;
+  // }
 
-  .developer-section,
-  .info-icon:hover {
-    color: red;
-  }
+  // .developer-section,
+  // .info-icon:hover {
+  //   color: red;
+  // }
 }
 
 .section-description {
@@ -106,9 +107,19 @@
 .landing-client {
   height: 300px;
   background-color: red;
+  display: block;
 }
 
 .landing-developer {
   height: 300px;
   background-color: green;
+  display: block;
 }
+
+
+// client
+.list-images {
+
+}
+
+

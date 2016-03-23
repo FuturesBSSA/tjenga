@@ -8,7 +8,7 @@
         <p class="section-description">A new website is just a click away.</p>
         <%= link_to "Post a job ", new_client_job_path, class: 'btn btn-danger' %>
 
-        <i class="fa fa-info-circle fa-2x info-icon info-client"></i>
+        <a href="#client" class="info-icon"><i class="fa fa-info-circle fa-2x info-client"></i></a>
         <%= image_tag 'client.png' %>
       </div>
     </div>
@@ -21,21 +21,41 @@
         <p class="section-description">Epic new jobs start here, from beginners to experts.</p>
         <%= link_to "Search Jobs", jobs_path, class: 'btn btn-danger' %>
 
-        <i class="fa fa-info-circle fa-2x info-icon info-developer"></i>
+        <a href="#developer" class="info-icon"><i class="fa fa-info-circle fa-2x info-developer"></i></a>
         <%= image_tag 'developer.png' %>
       </div>
     </div>
   </div>
-
-  <div class="landing-client">
-
-  </div>
-
-  <div class="landing-developer">
-
-  </div>
 </div>
 
+
+<div class="wrapper-info">
+  <div class="landing-client" id="client">
+    <ul class="list-inline list-images">
+      <li>
+        <%= image_tag 'idea.png'  %>
+        <p>Very nice</p>
+      </li>
+
+      <li>
+        <%= image_tag 'no-clue.png'  %>
+        <p>Very nice</p>
+      </li>
+
+      <li>
+        <%= image_tag 'find-tjenga.png'  %>
+        <p>Very nice</p>
+      </li>
+
+      <li>
+        <%= image_tag 'love-tjenga.png'  %>
+        <p>Very nice</p>
+      </li>
+    </ul>
+  </div>
+  <div class="landing-developer" id="developer">
+  </div>
+</div>
 
 <!-- <div class="wrapper-footer">
 
