@@ -8,11 +8,12 @@ class RecommendationsController < ApplicationController
 
   def create
     @recommendation = Recommendation.new(recommendation_params)
-
-    @developer = Developer.find(params[:developer_id])
+    developer =  Developer.find(params[:developer_id])
+    @recommendation.developer = developer
+    @recommendation.author = current_client || current_developer
 
     if @recommendation.save
-      redirect_to developer_path(@developer)
+      redirect_to developer_path(developer)
     else
       render :new
     end

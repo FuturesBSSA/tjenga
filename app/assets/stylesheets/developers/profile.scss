@@ -59,6 +59,8 @@ ul {
   list-style-type: none;
 }
 
+
+// review lay-out
 .product {
   display: flex;
   align-items: center;
@@ -82,8 +84,7 @@ ul {
   margin-top: 0;
 }
 .product-body p {
-  font-weight: lighter;
-  color: #999999;
+  color: black;
   margin-bottom: 0;
 }
 
@@ -142,18 +143,18 @@ ul {
 
 /* Hover effects */
 .product:hover {
-  background: #ffffff;
+  background: yellow;
   cursor: pointer;
 
   a:hover {
     text-decoration: none !important;
   }
 }
-.product-upvote:hover {
-  color: #5898f1;
-  cursor: pointer;
-}
-.product:hover .product-upvote { transform: scale(1.2) }
-.product:hover .product-controls-hidden a { color: #E6E6E6 }
-.product-upvote:hover .product-arrow { border-bottom: 9px solid #5898f1 }
+// .product-upvote:hover {
+//   color: #5898f1;
+//   cursor: pointer;
+// }
+// .product:hover .product-upvote { transform: scale(1.2) }
+// .product:hover .product-controls-hidden a { color: #E6E6E6 }
+// .product-upvote:hover .product-arrow { border-bottom: 9px solid #5898f1 }
 

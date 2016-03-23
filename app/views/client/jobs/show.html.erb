@@ -12,6 +12,7 @@
         <%= @job.budget %>
 
         <ul class="list-inline padded">
+        <li>  <%= link_to "View applications", client_applications_path, class: "btn btn-primary" %></li>
           <li><%= link_to "Edit", edit_client_job_path(@job), class: "btn btn-primary" %></li>
           <li><%= link_to "Delete", client_job_path(@job), class: "btn btn-primary",
             method: :delete,
