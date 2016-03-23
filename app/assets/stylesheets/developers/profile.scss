@@ -177,9 +177,8 @@ ul {
 // .review:hover .review-controls-hidden a { color: #E6E6E6 }
 // .review-upvote:hover .review-arrow { border-bottom: 9px solid #5898f1 }
 
-.work {
-  background-color: black;
-  .work-image {
-    background-color: white;
+.work-description {
+  h4 {
+    font-weight: bold;
   }
 }
