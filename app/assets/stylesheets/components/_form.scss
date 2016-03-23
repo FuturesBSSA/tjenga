@@ -11,6 +11,12 @@
   margin: auto;
 }
 
+#new_job {
+  font-size: 14px !important;
+  font-weight: lighter !important;
+  color: $blue-gray !important;
+}
+
 // vanaf hier css voor job-form
 
 .job-form-container {
@@ -18,7 +24,10 @@
 
   @media (max-width: 700px) {
     flex-flow: column;
-    max-width: 500px;
+
+    .banner {
+      min-height: 420px;
+    }
   }
 
   .banner, .job-form {

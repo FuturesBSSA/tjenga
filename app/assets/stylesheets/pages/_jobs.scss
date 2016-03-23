@@ -11,10 +11,7 @@
   }
 }
 
-.btn-primary:hover {
-  background: #2BBC2D;
-  border-style: solid 5px #33E036 ;
-}
+
 
 
 .job {
@@ -65,60 +62,5 @@ ul {
 }
 
 
-.job-box {
-  color: black;
-  background-color: $babyblue;
-  position: relative;
-  height: 130px;
-  padding-bottom: 70px;
-  margin-bottom: 20px;
-}
-
-.job-title-box {
-  background-color: $blue-grayer;
-  color: $offwhite;
-  position: absolute;
-  height: 30px;
-  width: 100%;
-}
-
-.job-link {
-
-}
-
-.job-title {
-  position: absolute;
-  left: 20px;
-  top: 5px;
-  color: white;
-}
-
-.job-date {
-  position: absolute;
-  left: 98px;
-  top: 25px;
-  color: white;
-}
-
-.job-budget {
-  position: absolute;
-  left: 98px;
-  top: 45px;
-  color: white;
-}
 
 
-.job-img {
-  position: absolute;
-  height: 78px;
-  width: 78px;
-  bottom: 10px;
-  left: 10px;
-  background-color: $offwhite;
-}
-
-.job-button {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-}

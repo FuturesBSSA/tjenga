@@ -1,35 +1,34 @@
-<div class="banner">
-  <div class="banner-content">
+<div class="job-wrapper">
     <h1>Find an awesome job</h1>
-  </div>
 </div>
 
-<div class="container">
-<h1>Search for a job</h1>
+<div class="job-wrapper-gray">
+  <div class="container">
+  <h1>Search for a job</h1>
 
-    <% @jobs.each do |job| %>
-      <div class="job-box">
-        <div class="job-link">
+      <% @jobs.each do |job| %>
+        <div class="job-box">
+        <%= link_to "", job_path(job), class: "job-link" %>
+
           <div class="job-title-box">
             <div class="job-title">
-              <%= job.title %>
+              <strong><%= job.title %></strong> - <%= job.client.company %>
             </div>
           </div>
-          <div class="job-date">
-            <p>Apply before: <%= job.start_date %></p>
-            <p>Enddate: <%= job.deadline %></p>
-          </div>
-          <div class="job-budget">
-            <i class="fa fa-money"></i><%= job.budget %>
-          </div>
-          <div class="job-button">
-            <%= link_to "view", job_path(job), class: "btn btn-primary" %>
-          </div>
-          <div class="job-img">
 
+          <div class='job-body-box'>
+            <div>
+              <%= cl_image_tag job.client.photo, height: 80, width: 80, crop: :fill, class: "job-img" %>
+            </div>
+
+            <div class="job-content">
+              <div class="job-margin"><strong>Project type - <%= job.request_type %></strong></div>
+              <div class="job-margin"><strong><i class="fa fa-clock-o"></i> Start date</strong> - <%= job.start_date %></div>
+              <div class="job-margin"><p><strong><i class="fa fa-hourglass-half"></i> Duration</strong> - <%= job.duration %></div>
+              <div class="job-margin"><p><strong><i class="fa fa-money"></i> You earn</strong> - <%= job.budget %></p></div>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-
+      <% end %>
+  </div>
 </div>
