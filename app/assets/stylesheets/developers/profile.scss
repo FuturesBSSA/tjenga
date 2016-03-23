@@ -61,7 +61,7 @@ ul {
 
 
 // review lay-out
-.product {
+.review {
   display: flex;
   align-items: center;
   padding: 20px;
@@ -75,28 +75,41 @@ ul {
 }
 
 /* Body design */
-.product-body {
+.review-body {
   flex: 1 1 auto;
+  .fa-star:before {
+    // color: #D38312;
+    // background: linear-gradient(to left, #D38312 , #A83279);
+    background: linear-gradient(to left, #F0C27B , #4B1248);
+
+    display: initial;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+  }
+  .fa-star-o {
+    color: grey;
+  }
 }
-.product-body h3 {
+.review-body h3 {
   font-weight: bold;
   font-size: 23px;
   margin-top: 0;
 }
-.product-body p {
+.review-body p {
   color: black;
   margin-bottom: 0;
 }
 
-/* Product image */
-.product-image {
+/* review image */
+.review-image {
   border-radius: 10px;
   margin-right: 20px;
   width: 175px;
 }
 
 /* Upvote design */
-// .product-upvote {
+// .review-upvote {
 //   padding-right: 20px;
 //   text-align: center;
 //   transition: all 0.15s ease;
@@ -104,10 +117,10 @@ ul {
 //   font-size: 13px;
 //   line-height: 20px;
 // }
-// .product-count {
+// .review-count {
 //   margin: 2px 0 0;
 // }
-// .product-arrow {
+// .review-arrow {
 //   transition: all 0.15s ease;
 //   width: 0;
 //   height: 0;
@@ -120,21 +133,21 @@ ul {
 // }
 
 /* Controls design */
-.product-controls {
+.review-controls {
   display: flex;
   align-items: center;
   text-align: center;
   margin: 0px;
 }
-.product-controls a {
+.review-controls a {
   padding: 0 20px;
   font-size: 17px;
   color: #E6E6E6;
 }
-.product-controls a:hover {
+.review-controls a:hover {
   color: #D3473C !important
 }
-.product-controls-hidden a {
+.review-controls-hidden a {
   color: transparent;
   font-size: 15px;
   transition: all 0.15s ease;
@@ -142,7 +155,7 @@ ul {
 }
 
 /* Hover effects */
-.product:hover {
+.review:hover {
   background: yellow;
   cursor: pointer;
 
@@ -150,11 +163,11 @@ ul {
     text-decoration: none !important;
   }
 }
-// .product-upvote:hover {
+// .review-upvote:hover {
 //   color: #5898f1;
 //   cursor: pointer;
 // }
-// .product:hover .product-upvote { transform: scale(1.2) }
-// .product:hover .product-controls-hidden a { color: #E6E6E6 }
-// .product-upvote:hover .product-arrow { border-bottom: 9px solid #5898f1 }
+// .review:hover .review-upvote { transform: scale(1.2) }
+// .review:hover .review-controls-hidden a { color: #E6E6E6 }
+// .review-upvote:hover .review-arrow { border-bottom: 9px solid #5898f1 }
 

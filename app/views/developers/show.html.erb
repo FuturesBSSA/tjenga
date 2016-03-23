@@ -46,11 +46,11 @@
     <hr>
     <% @reviews.each do |review| %>
     <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="product">
-        <div class="product-image">
-          <%= cl_image_tag @client.photo, class: "avatar-large" %>
+      <div class="review">
+        <div class="review-image">
+        <%= cl_image_tag review.author.photo, class: "avatar-large" %>
         </div>
-        <div class="product-body">
+        <div class="review-body">
           <% review.rating.times do %>
           <i class="fa fa-star"></i>
           <% end %>
@@ -66,14 +66,17 @@
 </div>
 
 <div class="container">
+  <div class="row">
+    <h2 class="text-center">Recommendations</h2>
+    <%  @recommendations.each do |recommendation|%>
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <%= cl_image_tag recommendation.author.photo, class: "avatar" %>
+      <p>- <%= recommendation.content  %></p>
+      <% end %>
 
-  <h2 class="text-center">Recommendations</h2>
-  <%  @recommendations.each do |recommendation|%>
-  <%= cl_image_tag recommendation.author.photo, class: "avatar" %>
-  <p>- <%= recommendation.content  %></p>
-  <% end %>
-
-  <% if developer_signed_in? || client_signed_in? %>
-  <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
-  <% end %>
+      <% if developer_signed_in? || client_signed_in? %>
+      <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
+    </div>
+    <% end %>
+  </div>
 </div>
