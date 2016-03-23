@@ -118,7 +118,36 @@
 }
 
 
-// client
+// client /////////////////////////////
+.wrapper-client-info {
+  background-color: $ggray-light
+}
+
+.client-images {
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
+
+
+.image-description {
+  display: flex;
+  text-align: justify;
+
+  .description-left {
+    flex: 1;
+    padding: 25px 100px 0px 100px;
+  }
+
+  .description-right {
+    flex: 1;
+    padding: 25px 100px 0px 100px;
+  }
+
+  img {
+    width: 50%;
+  }
+}
+
 .list-images {
   display: flex;
   padding-top: 6em;
@@ -146,6 +175,13 @@
   flex: 1;
   padding-right: 100px;
   padding-left: 100px;
+}
+
+// developer /////////////////////////////////
+
+.wrapper-developer-info {
+  height: 600px;
+  background-color: #2e3840;
 }
 
 
