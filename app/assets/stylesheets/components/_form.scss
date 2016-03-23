@@ -9,21 +9,28 @@
 .form-container {
   max-width: 500px;
   margin: auto;
-  padding-bottom: 90px
 }
+
+// vanaf hier css voor job-form
 
 .job-form-container {
   display: flex;
 
   @media (max-width: 700px) {
     flex-flow: column;
+    max-width: 500px;
   }
 
   .banner, .job-form {
     flex: 1;
+    padding-bottom: 70px;
+  }
+
+  .job-form {
+    margin: auto;
+    padding: 20px;
   }
 }
-
 
 form {
   .form-control {
