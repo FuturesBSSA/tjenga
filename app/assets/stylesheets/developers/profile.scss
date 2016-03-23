@@ -3,21 +3,43 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .dev-banner {
-  background: #03040F;
-  height: 40vh;
+  background: $blue-grayer;
   color: white;
   h3 {
     font-weight: bold;
   }
+  p {
+    margin: 0 0 1px;
+  }
 }
 
 
-.dev-name {
-  margin-top: 120px;
+@media(max-width: 770px) {
+  .dev.banner {
+    height: 100vh;
+  }
+  .dev-name {
+    text-align: center;
+    margin-left: 0px;
+  }
+  .dev-details {
+    text-align: center;
+  }
+  .photo {
+    text-align: center;
+  }
+}
+
+@media(min-width: $screen-sm) {
+  .dev-name {
+    margin-top: 120px;
+    margin-left: 50px;
+  }
 }
 
 .dev-btn {
-  margin-top: 160px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 
   .btn-primary {
     font-weight: bold;
@@ -26,7 +48,7 @@
 }
 
 .photo {
-  margin-top: 160px;
+  margin-top: 120px;
 }
 
 .dev-details {
@@ -73,28 +95,28 @@ ul {
 }
 
 /* Upvote design */
-.product-upvote {
-  padding-right: 20px;
-  text-align: center;
-  transition: all 0.15s ease;
-  font-weight: bold;
-  font-size: 13px;
-  line-height: 20px;
-}
-.product-count {
-  margin: 2px 0 0;
-}
-.product-arrow {
-  transition: all 0.15s ease;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid transparent;
-  border-bottom: 9px solid black;
-  border-radius: 2px;
-  margin: auto;
-}
+// .product-upvote {
+//   padding-right: 20px;
+//   text-align: center;
+//   transition: all 0.15s ease;
+//   font-weight: bold;
+//   font-size: 13px;
+//   line-height: 20px;
+// }
+// .product-count {
+//   margin: 2px 0 0;
+// }
+// .product-arrow {
+//   transition: all 0.15s ease;
+//   width: 0;
+//   height: 0;
+//   border-left: 6px solid transparent;
+//   border-right: 6px solid transparent;
+//   border-top: 6px solid transparent;
+//   border-bottom: 9px solid black;
+//   border-radius: 2px;
+//   margin: auto;
+// }
 
 /* Controls design */
 .product-controls {
