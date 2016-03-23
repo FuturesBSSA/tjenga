@@ -1,4 +1,5 @@
-<%  @categories = ['Portfolio', 'Webshop', 'Internal application'] %>
+<%  @categories = ['Front-end', 'Back-end', 'Full-stack'] %>
+<%  @level = ["no experience required", "some experience required", "experience required", "rockstar", "super ninja"] %>
 
 <!-- <div class="container form"> -->
   <div class="form-container">
@@ -7,11 +8,11 @@
       <%= simple_form_for([:client, @job]) do |f| %>
       <%= f.error_notification %>
 
-      <%= f.input :title%>
-      <%= f.input :description %>
-      <%= f.input :budget %>
-      <%= f.input :duration %>
-      <%= f.input :difficulty_level %>
+      <%= f.input :title, placeholder: "What is the job title?" %>
+      <%= f.input :description, placeholder: "Tell some details about the job" %>
+      <%= f.input :budget, placeholder: "Per month" %>
+      <%= f.input :duration, placeholder: "In months" %>
+      <%= f.input :difficulty_level, :collection => @level %>
       <%= f.input :start_date %>
       <%= f.input :deadline %>
       <%= f.input :request_type, :collection => @categories %>
