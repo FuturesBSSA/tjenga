@@ -4,46 +4,35 @@
     <hr style="border-top: 1px solid grey;">
     <div class="developer-header">
       <div class="developer-info">
-         <div class="photo">
-          <%= cl_image_tag @developer.photo, class: "avatar-xlarge" %>
-        </div>
-      </div>
-
-      <div class="developer-info">
-        <div class="dev-name">
-          <em><p>Expertise:</p></em>
-          <p><%= @developer.expertise.capitalize %></p>
-          <em><p>Availability:</p></em>
-          <p><%= @developer.availability.capitalize %></p>
-        </div>
-      </div>
-
-      <div class="developer-info">
-        <div class="dev-details">
-
-          <h3 style="margin-top: 0px;">Contact Details</h3>
-          <p><i class="fa fa-envelope-o"></i><%= @developer.email %> </p>
-          <p><i class="fa fa-phone"></i><%= @developer.phone_number %></p>
-        </div>
-      </div>
-
-      <div class="developer-info">
-        <% #link_to "Work with me", class: "btn btn-success" %>
-        <%= mail_to "matthijs@gmail.com", "Contact me", class: "btn btn-success" %>
+       <div class="photo">
+        <%= cl_image_tag @developer.photo, class: "avatar-xlarge" %>
       </div>
     </div>
 
-
-      <div class="developer-info">
-        <% if developer_signed_in? || client_signed_in? %>
-          <hr style="border-top: 1px solid grey;">
-          <div class="dev-btn text-center">
-            <%= link_to "Edit profile", edit_developer_profile_path, class: "btn btn-default" %>
-          </div>
-        <% end %>
+    <div class="developer-info">
+      <div class="dev-name">
+        <em><p>Expertise:</p></em>
+        <p><%= @developer.expertise.capitalize %></p>
+        <em><p>Availability:</p></em>
+        <p><%= @developer.availability.capitalize %></p>
       </div>
+    </div>
+
+    <div class="developer-info">
+      <div class="dev-details">
+
+        <h3 style="margin-top: 0px;">Contact Details</h3>
+        <p><i class="fa fa-envelope-o"></i><%= @developer.email %> </p>
+        <p><i class="fa fa-phone"></i><%= @developer.phone_number %></p>
+      </div>
+    </div>
+
+    <div class="developer-info">
+      <% #link_to "Work with me", class: "btn btn-success" %>
+      <%= mail_to "matthijs@gmail.com", "Contact me", class: "btn btn-success" %>
     </div>
   </div>
+</div>
 </div>
 
 
