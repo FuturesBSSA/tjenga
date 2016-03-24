@@ -52,7 +52,7 @@
 
 .developer_card {
   height: 400px;
-  background-color: $offwhite;
+  background-color: $ggray-light;
   background-size: cover !important;
   color: white;
   position: relative;
@@ -71,7 +71,6 @@
   right: 15px;
   z-index: 1;
   background-size: cover;
-  background-image: image-url("work_3.jpg");
 }
 
 .developer_languages {
@@ -88,7 +87,6 @@
   background-size: cover;
   z-index: 1;
   background-color: white;
-  background-image: image-url("profile_5.jpg");
   border-radius: 3px;
 }
 
@@ -134,5 +132,54 @@
   margin-left: -40px;
   z-index: 1;
   border-radius: 5px;
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.developer_languages {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: $blue-gray;
+  font-size: 12px;
+  font-weight: normal;
+  p {
+    margin: 0 0 1px;
+  }
+}
+
+.developer_link {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: $blue-gray;
+  opacity: 0;
+}
+
+.developer_tools {
+  position: absolute;
+  bottom: 15px;
+  color: $blue-gray;
+  font-size: 12px;
+  font-weight: normal;
+  left: 50%;
+  margin-left: 60px;
+  p {
+    margin: 0 0 1px;
+  }
+}
+
+.developer_link:hover {
+  opacity: 0.1;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.5);
+}
+
+.space {
+  height: 50px;
+  background-size: cover !important;
+  background-color: white;
 }
 
