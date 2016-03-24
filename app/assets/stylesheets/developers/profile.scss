@@ -82,20 +82,26 @@ ul {
   padding: 20px;
   border-radius: 3px;
   transition: all 0.15s ease;
-  width: 650px;
+  max-width: 650px;
+  width: 100%;
   padding-left: 80px;
-  background: #D3D3D3;
+  background: white;
   margin-top: 20px;
   margin-bottom: 20px;
   transition: all 0.3s ease 0s;
 }
 
+
+@media(max-width: 600px) {
+  .review {
+    flex-flow: column;
+  }
+}
+
+
 /* Body design */
 .review-body {
-  flex: 1 1 auto;
   .fa-star:before {
-    // color: #D38312;
-    // background: linear-gradient(to left, #D38312 , #A83279);
     background: linear-gradient(to left, #F0C27B , #4B1248);
 
     display: initial;
@@ -124,29 +130,6 @@ ul {
   width: 175px;
 }
 
-/* Upvote design */
-// .review-upvote {
-//   padding-right: 20px;
-//   text-align: center;
-//   transition: all 0.15s ease;
-//   font-weight: bold;
-//   font-size: 13px;
-//   line-height: 20px;
-// }
-// .review-count {
-//   margin: 2px 0 0;
-// }
-// .review-arrow {
-//   transition: all 0.15s ease;
-//   width: 0;
-//   height: 0;
-//   border-left: 6px solid transparent;
-//   border-right: 6px solid transparent;
-//   border-top: 6px solid transparent;
-//   border-bottom: 9px solid black;
-//   border-radius: 2px;
-//   margin: auto;
-// }
 
 /* Controls design */
 .review-controls {
@@ -179,16 +162,36 @@ ul {
     text-decoration: none !important;
   }
 }
-// .review-upvote:hover {
-//   color: #5898f1;
-//   cursor: pointer;
-// }
-// .review:hover .review-upvote { transform: scale(1.2) }
-// .review:hover .review-controls-hidden a { color: #E6E6E6 }
-// .review-upvote:hover .review-arrow { border-bottom: 9px solid #5898f1 }
+
+
+
+.work {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  background: white;
+  .work-image {
+    // padding-left: 70px;
+  }
+}
 
 .work-description {
   h4 {
     font-weight: bold;
   }
+}
+
+// job info section (start-date, deadline, etc)
+.card-dev {
+  margin-top: 40px;
+  padding-top: 15px;
+  background: white;
+  color: black;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  h4 {
+   font-weight: 500;
+   font-size: 15px;
+   opacity: .6
+ }
 }
