@@ -23,10 +23,11 @@
 // from here, the styling of the job divs
 
 .job-box {
-  background: white;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  background: $ggray-light;
   position: relative;
   margin-bottom: 20px;
+  flex: 0 0 50%;
+  padding: 15px;
 }
 
 .job-link {
@@ -38,30 +39,69 @@
 }
 
 .job-title-box {
-  background: $oorange;
-  color: white;
-  padding: 6px;
+  padding: 0;
+  box-sizing: border-box;
+  color: #949494;
+  padding-left: 20px;
 }
 
 .job-title {
-
+  font-size: 20px;
+  color: #2D2D2D;
 }
+
 
 .job-body-box {
   display: flex;
   box-sizing: border-box;
+
+  @media (max-width: 700px) {
+    flex-flow: column
+  }
 }
 
-.job-content {
+.job-avatar-box {
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  box-sizing: border-box;
+
+  @media (max-width: 700px) {
+    justify-content: center;
+    padding: 20px;
+  }
+}
+
+.job-avatar {
+  width: 100px;
+  border-radius: 50%;
+}
+
+.job-content-box {
+  background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  padding: 20px;
+  flex: 3;
+}
+
+.job-row-box {
   display: flex;
   align-items: center;
 }
 
-.job-margin {
+.job-element-box {
+  flex: 1;
   margin: 0 20px;
+  padding: 10px;
+  background-color: white;
+  border-color: $ggray-light;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  strong {
+    text-align: center;
+    font-weight: 500;
+    opacity: .5;
+  }
 }
 
-.job-img {
-  display: flex;
-  margin-left: auto;
-}
