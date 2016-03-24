@@ -23,3 +23,9 @@
 .bg-dark-blue {
   background: #3b5998;
 }
+
+.container {
+  &.is-small {
+    width: 680px;
+  }
+}

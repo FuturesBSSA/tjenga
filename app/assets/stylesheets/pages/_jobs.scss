@@ -1,55 +1,80 @@
-.wrapper-darkblue {
-  color: white;
-  background: #01081C;
-  height: 40vh;
-  .btn-primary {
-    background: #33E036;
-    font-weight: bold;
-    border-radius: 10%;
-    font-size: 20px;
-    letter-spacing: 2px;
-  }
+.light-grey {
+  background: $ggray-light;
+  border: 1px solid rgba(0, 0, 0, 0.09);
 }
 
-
+.wrapper-greyblue {
+  color: white;
+  background: $blue-gray;
+  .btn-primary {
+    background: $nnude;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    opacity: 1;
+    transition: all 0.3s ease 0s;
+  }
+}
+.btn-primary:hover {
+ background: #f58e4f;
+}
 
 
 .job {
   display: flex;
-  position: relative;
+  align-items: center;
+  padding: 50px 0;
 
   .title {
-    position: absolute;
-    left: 100px;
-    top: 120px;
+    flex: 1;
+    p {
+      opacity: .6;
+    }
   }
-  .apply {
-    position: absolute;
-    right: 100px;
-    top: 150px;
-  }
+
 }
 
-hr {
-  height: 15px;
+// job section: about and description
+.wrapper {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .job-about {
-  position: relative;
-  height: 250px;
+  display: flex;
+  align-items: center;
+  padding-right: 60px;
+  padding-left: 60px;
 
   .image {
-  position: absolute;
-  left: 20px;
-  top: 20px;
-  padding-bottom: 10px;
+    flex: 1;
+    padding-bottom: 10px;
+    padding-right: 20px;
   }
   .details {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  padding-bottom: 10px;
+    padding-bottom: 10px;
   }
+  .info {
+    padding-bottom: 10px;
+  }
+}
+
+.job-about h4 {
+  font-weight: bold;
+  opacity: 0.6;
+  font-weight: 500;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.job-about p {
+  margin-bottom: 1px;
+}
+
+.job-about i {
+  margin-top: 15px;
 }
 
 ul {
@@ -58,9 +83,24 @@ ul {
 
 .job-description {
   padding: 10px;
-  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
+// job info section (start-date, deadline, etc)
+.card-job {
+  margin-top: 40px;
+  padding-top: 15px;
+  background: white;
+  color: black;
+  height: 100px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  h4 {
+   font-weight: 500;
+   font-size: 15px;
+   opacity: .6
+ }
+}
 
 
