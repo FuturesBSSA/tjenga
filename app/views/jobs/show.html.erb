@@ -1,5 +1,5 @@
-<div class="wrapper-darkblue">
-  <div class="container">
+<div class="wrapper-greyblue">
+  <div class="container is-small">
     <div class="job">
       <div class="title">
         <h2> <%= @job.title %> </h2>
@@ -14,14 +14,24 @@
 </div>
 
 <div class="wrapper">
+  <div class="container is-small light-grey">
+    <h3 class="text-center">Job description</h3>
+    <div class="job-description">
+      <%= @job.description %>
+    </div>
+  </div>
+</div>
 
-  <div class="container light-grey">
+
+<div class="wrapper">
+
+  <div class="container is-small light-grey">
     <div class="text-center">
 
       <div class="row">
         <div class="col-xs-12 col-sm-3">
           <div class="card-job">
-          <h4>Start date </h4>
+            <h4>Start date </h4>
             <%= @job.start_date %>
           </div>
         </div>
@@ -55,43 +65,40 @@
 
 <div class="wrapper">
 
-  <div class="container light-grey">
-    <div class="row">
-      <div class="col-xs-12 col-sm-5">
-        <h3 class="text-center">About</h3>
-        <div class="job-about">
-          <div class="image">
-              <%= cl_image_tag @client.photo, crop: :fill, class: "avatar-xlarge" %>
-              <br>
-              <p> <strong>City</strong> </p>
-              <p> <%= @client.city %> </p>
+  <div class="container is-small light-grey">
+    <h3 class="text-center">About</h3>
+    <div class="job-about">
+      <div class="image">
+        <%= cl_image_tag @client.photo, crop: :fill, class: "avatar-xlarge" %>
+        <br>
+        <h4> City </h4>
+        <p> <%= @client.city %> </p>
 
-              <i class="fa fa-envelope"> <%= @client.email %> </i>
-          </div>
-
-          <div class="details">
-              <h4>Contact details</h4>
-
-              <p> <strong>Company</strong> </p>
-              <p><%= @client.company %></p>
-              <p> <strong>Address</strong> </p>
-              <p><%= @client.address %></p>
-              <p> <strong>Name</strong> </p>
-              <p><%= @full_name %></p>
-              <br>
-          </div>
-        </div>
+        <i class="fa fa-envelope"> <%= @client.email %> </i>
       </div>
 
-
-      <div class="col-xs-12 col-sm-7">
-        <h3 class="text-center">Description</h3>
-        <div class="job-description">
-          <%= @job.description %>
+      <div class="details">
+        <div class="info">
+          <h4> Company </h4>
+          <p><%= @client.company %></p>
         </div>
+
+        <div class="info">
+          <h4> Address </h4>
+          <p><%= @client.address %></p>
+        </div>
+
+        <div class="info">
+          <h4> Name </h4>
+          <p><%= @full_name %></p>
+        </div>
+        <br>
       </div>
     </div>
   </div>
 </div>
+
+
+
 
 
