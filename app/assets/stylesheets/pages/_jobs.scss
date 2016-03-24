@@ -9,15 +9,15 @@
   .btn-primary {
     background: $nnude;
     font-weight: bold;
-    border-radius: 10%;
+    border-radius: 5px;
     font-size: 20px;
     letter-spacing: 2px;
-    opacity: 0.9;
+    opacity: 1;
     transition: all 0.3s ease 0s;
   }
 }
 .btn-primary:hover {
- opacity: 1;
+ background: #f58e4f;
 }
 
 
@@ -83,7 +83,9 @@ ul {
 
 .job-description {
   padding: 10px;
-  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // job info section (start-date, deadline, etc)
