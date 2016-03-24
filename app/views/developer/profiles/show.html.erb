@@ -39,17 +39,56 @@
 </div>
 </div>
 
+<div class="wrapper">
+
+  <div class="container is-small light-grey">
+    <div class="text-center">
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-3">
+          <div class="card-job">
+            <h4>Programming Languages </h4>
+            <% @developer.programming_languages.each do |pl| %>
+            <li>name: <%= pl.name %></li>
+            <li>level: <%= pl.level %></li>
+            <hr>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3">
+          <div class="card-job">
+          <h4>Tools </h4>
+            <%= @tools %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 cjhgnnnnbol-sm-3">
+          <div class="card-job">
+            <h4>Price per hour </h4>
+            <i class="fa fa-euro"> <%= @developer.price %> </i>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-3">
+          <div class="card-job">
+            <h4>Difficulty </h4>
+            <%= @job.difficulty_level.capitalize %>
+          </div>
+        </div>
+
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
 
 
 
 <div class="container">
   <ul>
     <h4>Programming Languages</h4>
-    <% @developer.programming_languages.each do |pl| %>
-    <li>name: <%= pl.name %></li>
-    <li>level: <%= pl.level %></li>
-    <hr>
-    <% end %>
+
   </ul>
 </div>
 
