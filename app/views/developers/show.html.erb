@@ -1,45 +1,52 @@
 <div class="dev-banner">
+  <div class="container text-center">
+    <h3><%= @developer.first_name %> <%= @developer.last_name %></h3>
+    <hr style="border-top: 1px solid grey;">
+    <div class="developer-header">
+      <div class="developer-info">
+         <div class="photo">
+          <%= cl_image_tag @developer.photo, class: "avatar-xlarge" %>
+        </div>
+      </div>
 
-  <div class="container">
-    <div class="row">
+      <div class="developer-info">
+        <div class="dev-name">
+          <em><p>Expertise:</p></em>
+          <p><%= @developer.expertise.capitalize %></p>
+          <em><p>Availability:</p></em>
+          <p><%= @developer.availability.capitalize %></p>
+        </div>
+      </div>
 
-      <div class="col-xs-12 col-sm-1 col-sm-offset-2">
-       <div class="photo">
-        <%= cl_image_tag @developer.photo, class: "avatar-xlarge" %>
+      <div class="developer-info">
+        <div class="dev-details">
+
+          <h3 style="margin-top: 0px;">Contact Details</h3>
+          <p><i class="fa fa-envelope-o"></i><%= @developer.email %> </p>
+          <p><i class="fa fa-phone"></i><%= @developer.phone_number %></p>
+        </div>
+      </div>
+
+      <div class="developer-info">
+        <% #link_to "Work with me", class: "btn btn-success" %>
+        <%= mail_to "matthijs@gmail.com", "Contact me", class: "btn btn-success" %>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="dev-name">
-        <h3><%= @developer.first_name %> <%= @developer.last_name %></h3>
-        <p><%= @developer.expertise.capitalize %></p>
-        <p><%= @developer.availability.capitalize %></p>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-4">
-      <div class="dev-details">
 
-        <h3>Contact Details</h3>
-        <p><%= @developer.address.capitalize %> </p>
-        <p> <%= @developer.city.capitalize %> </p>
-        <p> <%= @developer.email %> </p>
 
+      <div class="developer-info">
+        <% if developer_signed_in? || client_signed_in? %>
+          <hr>
+          <div class="dev-btn text-center">
+            <%= link_to "Edit profile", edit_developer_profile_path, class: "btn btn-primary" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-  <hr>
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <% if developer_signed_in? || client_signed_in? %>
-      <div class="dev-btn text-center">
-        <%= link_to "Work with me", "#", class: "btn btn-primary" %>
-      </div>
-      <% end %>
-    </div>
-  </div>
-</div>
 </div>
 
-d
+
 <div class="container">
   <div class="row">
    <h2 class="text-center">Work</h2>
