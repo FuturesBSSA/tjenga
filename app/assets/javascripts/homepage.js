@@ -1,9 +1,11 @@
 $(document).ready(function() {
         $("#client-info").click(function() {
-            $("#client").fadeToggle();
+            $("#client").stop().slideToggle(500);
+            return false;
         });
 
         $("#developer-info").click(function() {
-            $("#developer").fadeToggle();
+            $("#developer").stop().slideToggle(500);
+            return false;
         });
     });
