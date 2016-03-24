@@ -47,9 +47,18 @@
   <div class="wrapper-assignments">
     <h3>Your assignments</h3>
     <div class="client-assignments">
-      <div class="assignment">
-
-      </div>
+      <% @jobs.each do |job| %>
+        <div class="assignment">
+          <span>
+            <h2><%= job.title %>
+              <div style="text-align: right;">
+                <p>€<%= job.budget %></p>
+              </div>
+            </h2>
+          </span>
+          <p><%= job.description %></p>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

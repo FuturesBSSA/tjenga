@@ -101,13 +101,18 @@ ul {
 // ////////////////////////CLIENT JOBS////////////
 
 .wrapper-assignments {
-
+ text-align: center;
 }
 
 .client-assignments {
-
+  display: flex;
 }
 
 .assignment {
+  text-align: left;
 
+  flex: 1;
+  padding: 10px 30px 20px 30px;
+  border-top: solid 1px rgba(0,0,0,0.2);
+  background-color: #f85981;
 }

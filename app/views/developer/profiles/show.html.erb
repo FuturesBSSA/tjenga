@@ -30,7 +30,7 @@
 
       <div class="developer-info">
         <% if developer_signed_in? || client_signed_in? %>
-          <div class="text-center">
+          <div class="dev-btn text-center">
             <%= link_to "Edit profile", edit_developer_profile_path, class: "btn btn-default" %>
           </div>
         <% end %>
