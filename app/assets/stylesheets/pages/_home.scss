@@ -108,17 +108,44 @@
   padding-top: 100px;
   padding-bottom: 100px;
   background-color: #f1f1ef;
-  display: block;
-}
-
-.landing-developer {
-  height: 300px;
-  background-color: #302b2c;
-  display: block;
 }
 
 
-// client
+
+// client /////////////////////////////
+#client {
+  display: none;
+}
+
+.wrapper-client-info {
+  background-color: $ggray-light
+}
+
+.client-images {
+  text-align: center;
+  margin: 20px 0px 20px 0px;
+}
+
+
+.image-description {
+  display: flex;
+  text-align: justify;
+
+  .description-left {
+    flex: 1;
+    padding: 25px 100px 0px 100px;
+  }
+
+  .description-right {
+    flex: 1;
+    padding: 25px 100px 0px 100px;
+  }
+
+  img {
+    width: 50%;
+  }
+}
+
 .list-images {
   display: flex;
   padding-top: 6em;
@@ -147,5 +174,18 @@
   padding-right: 100px;
   padding-left: 100px;
 }
+
+// developer /////////////////////////////////
+
+#developer {
+  display: none;
+}
+
+.wrapper-developer-info {
+  height: 600px;
+  background-color: #2e3840;
+}
+
+
 
 
