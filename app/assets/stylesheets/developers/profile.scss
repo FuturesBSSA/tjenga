@@ -38,13 +38,19 @@
 //     text-align: center;
 //     margin-left: 0px;
 //   }
-//   .dev-details {
-//     text-align: center;
-//   }
 //   .photo {
 //     text-align: center;
 //   }
 // }
+.dev-details {
+  p {
+    font-weight: lighter;
+  }
+
+  h3 {
+    font-weight: normal;
+  }
+}
 
 @media(min-width: $screen-sm) {
   .dev-name {
