@@ -1,26 +1,60 @@
-<div class="container">
-  <div class="text-center">
+<div class="client-banner">
+  <div class="container text-center">
+    <h3 style="color: #3A4750;"><%= @fullname %></h3>
+    <hr style="border-top: 1px solid grey;">
+    <div class="client-header">
+      <div class="client-info">
+         <div class="client-photo">
+          <% if current_client.photo.nil? %>
+            <%= image_tag "http://tinyurl.com/jp4gcp8", class: "aavatar-xlarge" %>
+          <% else %>
+            <%= cl_image_tag current_client.photo, height: 100, width: 100, crop: :fill, class: "aavatar-xlarge" %>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="client-info">
+        <div class="client-details">
+          <em><p>Company:</p></em>
+          <p><%= @client.company.capitalize %></p>
+          <em><p>City:</p></em>
+          <p><%= @client.city.capitalize %></p>
+        </div>
+      </div>
+
+      <div class="client-info">
+        <div class="client-contact">
+
+          <h3 style="margin-top: 0px;">Contact Details</h3>
+          <p><i class="fa fa-envelope-o"></i><%= @client.email %> </p>
+          <p><i class="fa fa-phone"></i><%= @client.phone_number %></p>
+        </div>
+      </div>
 
 
-    <h2> I am <%= @fullname %>, yeahhhh baby!! </h2>
-    <% if current_client.photo.nil? %>
-    <%= image_tag "http://tinyurl.com/jp4gcp8", class: "avatar-profile" %>
-    <% else %>
-    <%= cl_image_tag current_client.photo, height: 100, width: 100, crop: :fill, class: "avatar-profile" %>
-    <% end %>
-    <div class="client-description">
-
-      <ul>
-        <li> <%= @client.city %> </li>
-        <li> <%= @client.address %> </li>
-        <li> <%= @client.email %> </li>
-
-      </ul>
-      <%= link_to "Edit profile", edit_client_profile_path, class: "btn btn-primary" %>
+      <div class="client-info">
+        <% if developer_signed_in? || client_signed_in? %>
+          <div class="text-center">
+            <%= link_to "Edit profile", edit_client_profile_path, class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-
   </div>
-  <hr>
+</div>
+
+<div class="container">
+  <div class="wrapper-assignments">
+    <h3>Your assignments</h3>
+    <div class="client-assignments">
+      <div class="assignment">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
   <div class="text-center">
 
     <h1>list of your jobs</h1>
