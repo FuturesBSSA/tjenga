@@ -39,44 +39,69 @@
 </div>
 </div>
 
+<div class="wrapper">
 
+  <div class="container is-small light-grey">
+    <div class="text-center">
 
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-dev">
+            <h4>Languages </h4>
+            <% @developer.programming_languages.each do |pl| %>
+            <p><%= pl.name %></p>
+            <hr>
+            <% end %>
+          </div>
+        </div>
 
-<div class="container">
-  <ul>
-    <h4>Programming Languages</h4>
-    <% @developer.programming_languages.each do |pl| %>
-    <li>name: <%= pl.name %></li>
-    <li>level: <%= pl.level %></li>
-    <hr>
-    <% end %>
-  </ul>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-job">
+            <h4>Tools </h4>
+            <% @developer.tools.each do |tool| %>
+            <p><%= tool.name %></p>
+            <hr>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-job">
+            <h4>Price per hour </h4>
+            <i class="fa fa-euro"> <%= @developer.price_per_hour %> </i>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
 </div>
 
-<div class="container">
-  <div class="row">
+<% if @reviews.size > 0 %>
 
-    <h2 class="text-center">Reviews</h2>
+<div class="wrapper">
+  <div class="container is-small light-grey">
+
+    <h3 class="text-center">Reviews</h3>
     <hr>
     <% @reviews.each do |review| %>
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="review">
-        <div class="review-image">
-          <%= cl_image_tag review.author.photo, class: "avatar-large" %>
-        </div>
-        <div class="review-body">
-          <% review.rating.times do %>
-          <i class="fa fa-star"></i>
-          <% end %>
-          <% (5 - review.rating).times do %>
-          <i class="fa fa-star-o"></i>
-          <% end %>
-          <p><%= review.description %></p>
-        </div>
+    <div class="review">
+      <div class="review-image">
+        <%= cl_image_tag review.author.photo, class: "avatar-large" %>
+      </div>
+      <div class="review-body">
+        <% review.rating.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+        <% (5 - review.rating).times do %>
+        <i class="fa fa-star-o"></i>
+        <% end %>
+        <p><%= review.description %></p>
       </div>
     </div>
     <% end %>
   </div>
 </div>
+<% end %>
 
 

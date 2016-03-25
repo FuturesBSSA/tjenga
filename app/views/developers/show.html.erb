@@ -35,76 +35,111 @@
 </div>
 </div>
 
+<div class="wrapper">
 
-<div class="container">
-  <div class="row">
-   <h2 class="text-center">Work</h2>
-   <hr>
-   <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-     <div class="work">
-       <% @works.each do |work| %>
-       <div class="work-image">
-         <%= link_to work.website_url do %>
-         <%= cl_image_tag work.photo, height: 250, width: 300, crop: :fill %>
-         <% end %>
-         <div class="work-description">
-           <h4><%= work.title %></h4>
-           <%= work.description %>
-         </div>
-       </div>
-       <div class="work-image">
-         <%= link_to work.website_url do %>
-         <%= cl_image_tag work.photo, height: 250, width: 300, crop: :fill %>
-         <% end %>
-         <div class="work-description">
-           <h4><%= work.title %></h4>
-           <%= work.description %>
-         </div>
-       </div>
+  <div class="container is-small light-grey">
+    <div class="text-center">
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-dev">
+            <h4>Languages </h4>
+            <% @developer.programming_languages.each do |pl| %>
+            <p><%= pl.name %></p>
+            <hr>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-job">
+            <h4>Tools </h4>
+            <% @developer.tools.each do |tool| %>
+            <p><%= tool.name %></p>
+            <hr>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-job">
+            <h4>Price per hour </h4>
+            <i class="fa fa-euro"> <%= @developer.price_per_hour %> </i>
+          </div>
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper">
+
+  <div class="container is-small light-grey">
+    <h3 class="text-center">Projects</h3>
+    <hr>
+    <div class="work">
+     <% @works.each do |work| %>
+       <%= link_to work.website_url do %>
        <% end %>
+     <div class="work-image", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path work.photo, crop: :fill %>');">
+       <div class="work-description">
+         <h4><%= work.title %></h4>
+         <%= work.description %>
+       </div>
      </div>
+     <div class="work-image">
+       <%= link_to work.website_url do %>
+       <%= cl_image_tag work.photo, height: 250, width: 300, crop: :fill %>
+       <% end %>
+       <div class="work-description">
+         <h4><%= work.title %></h4>
+         <%= work.description %>
+       </div>
+     </div>
+     <% end %>
    </div>
  </div>
 </div>
 
-<div class="container">
-  <div class="row">
+<% if @reviews.size > 0 %>
 
-    <h2 class="text-center">Reviews</h2>
+<div class="wrapper">
+  <div class="container is-small light-grey">
+
+    <h3 class="text-center">Reviews</h3>
     <hr>
     <% @reviews.each do |review| %>
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <div class="review">
-        <div class="review-image">
-          <%= cl_image_tag review.author.photo, class: "avatar-large" %>
-        </div>
-        <div class="review-body">
-          <% review.rating.times do %>
-          <i class="fa fa-star"></i>
-          <% end %>
-          <% (5 - review.rating).times do %>
-          <i class="fa fa-star-o"></i>
-          <% end %>
-          <p><%= review.description %></p>
-        </div>
+    <div class="review">
+      <div class="review-image">
+        <%= cl_image_tag review.author.photo, class: "avatar-large" %>
+      </div>
+      <div class="review-body">
+        <% review.rating.times do %>
+        <i class="fa fa-star"></i>
+        <% end %>
+        <% (5 - review.rating).times do %>
+        <i class="fa fa-star-o"></i>
+        <% end %>
+        <p><%= review.description %></p>
       </div>
     </div>
     <% end %>
   </div>
 </div>
+<% end %>
 
-<div class="container">
-  <div class="row">
-    <h2 class="text-center">Recommendations</h2>
+<div class="wrapper">
+  <div class="container is-small light-grey">
+    <% if @recommendations.size > 0 %>
+    <h3 class="text-center">Recommendations</h3>
     <%  @recommendations.each do |recommendation|%>
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-      <%= cl_image_tag recommendation.author.photo, class: "avatar" %>
-      <p>- <%= recommendation.content  %></p>
-      <% end %>
-
-      <% if developer_signed_in? || client_signed_in? %>
-      <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
-    </div>
+    <%= cl_image_tag recommendation.author.photo, class: "avatar" %>
+    <p>- <%= recommendation.content  %></p>
+    <% end %>
+<% end %>
+    <% if developer_signed_in? || client_signed_in? %>
+    <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
     <% end %>
   </div>
 </div>
