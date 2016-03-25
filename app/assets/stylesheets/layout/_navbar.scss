@@ -86,15 +86,15 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
-  color: white;
+  background-color: transparent;
+  color: #3A4750;
   font-size: 14px;
-  border: 2px solid #D23333;
+  border: 2px solid #3A4750;
+  transition: all 0.2s ease;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background: #3A4750;
 }
 
 /* Navbar search form */
