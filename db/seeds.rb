@@ -60,7 +60,7 @@ developer_attributes.each do |attributes|
   developer.programming_languages.create!(name: available_languages.sample, level: (1..5).to_a.sample)
   developer.programming_languages.create!(name: available_languages.sample, level: (1..5).to_a.sample)
   developer.programming_languages.create!(name: available_languages.sample, level: (1..5).to_a.sample)
-  developer.works.create!(title: available_titles, description: Faker::Lorem.paragraph(2, false, 4), photo: work, client_name: Faker::Company.name, website_url: Faker::Internet.url)
+  developer.works.create!(title: available_titles.sample, description: Faker::Lorem.paragraph(2, false, 4), photo: work, client_name: Faker::Company.name, website_url: Faker::Internet.url)
   developer.tools.create!(name: available_tools.sample)
   developer.tools.create!(name: available_tools.sample)
   developer.tools.create!(name: available_tools.sample)
