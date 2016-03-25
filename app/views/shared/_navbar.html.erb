@@ -18,14 +18,17 @@
     <% if client_signed_in? %>
 
     <!-- Notification -->
+
+    <%=   link_to "Post Job", new_client_job_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
+
     <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
     <div class="badge-container">
       <i class="fa fa-envelope-o"></i>
       <div class="badge badge-blue">3</div>
     </div>
-    <%= link_to current_client.first_name, client_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
     <% end %>
 
+    <%= link_to current_client.first_name, client_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
@@ -57,13 +60,15 @@
     <% elsif developer_signed_in? %>
 
     <!-- Notification -->
+    <%=   link_to "Search Job", jobs_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
+
     <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
     <div class="badge-container">
       <i class="fa fa-envelope-o"></i>
       <div class="badge badge-blue">3</div>
     </div>
-    <%= link_to current_developer.first_name, developer_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
     <% end %>
+    <%= link_to current_developer.first_name, developer_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
@@ -76,8 +81,8 @@
             <% end %>
           </li>
           <li>
-            <%= link_to "#" do %>
-            <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+            <%= link_to developer_profile_works_path do %>
+            <i class="fa fa-home"></i>  <%= t ".profile", default: "Portfolio" %>
             <% end %>
           </li>
           <li>
