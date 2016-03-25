@@ -10,7 +10,7 @@
     <%= f.input :email, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
     <%= f.input :password_confirmation, required: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
-    <%= f.input :photo, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
+    <%= f.input :photo, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'}, label: 'Company Logo' %>
       <%= f.input :photo_cache, as: :hidden %>
   </div>
 
