@@ -23,7 +23,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
+}
+
+.white {
+  background-color: white;
+  h4 {
+    margin: 30px;
+  }
 }
 
 @media(max-width: 600px) {
@@ -39,7 +45,9 @@
 }
 
 .work-desc {
+
   p {
     color: rgba(78, 65, 65, 0.7);
+    margin: 0px 30px 10px 30px;
   }
 }
