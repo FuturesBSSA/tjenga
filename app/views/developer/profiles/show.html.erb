@@ -77,9 +77,33 @@
   </div>
 </div>
 
-<% if @reviews.size > 0 %>
 
 <div class="wrapper">
+  <div class="container is-small light-grey">
+    <h3 class="text-center">Projects</h3>
+    <hr>
+    <div class="work">
+     <% @works.each do |work| %>
+     <div class="work-item">
+       <div class="work-image", style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('<%= cl_image_path work.photo, crop: :fill %>');">
+         <div class="work-description">
+           <%= link_to work.website_url do %>
+           <h4><%= work.title %></h4>
+           <% end %>
+           <%= work.description %>
+         </div>
+       </div>
+     </div>
+     <% end %>
+   </div>
+   <div class="text-center btn-padding">
+     <%= link_to "Add new project", new_developer_profile_work_path, class: "btn btn-primary" %>
+   </div>
+ </div>
+
+ <% if @reviews.size > 0 %>
+
+ <div class="wrapper">
   <div class="container is-small light-grey">
 
     <h3 class="text-center">Reviews</h3>

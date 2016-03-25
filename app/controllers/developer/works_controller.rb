@@ -14,7 +14,7 @@ class Developer::WorksController < Developer::BaseController
     @developer = current_developer
     @work.developer = @developer
     @work.save!
-    redirect_to developer_profile_works_path
+    redirect_to developer_profile_path
   end
 
   def edit
