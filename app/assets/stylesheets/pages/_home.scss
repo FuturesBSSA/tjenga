@@ -9,7 +9,7 @@
 
 
 .landing-page {
-  // max-width: 100vw;
+  max-width: 100vw;
   display: flex;
 }
 
@@ -22,7 +22,6 @@
 .client-section {
   color: #3a4750;
   background-color: #eeeeee;
-  // width: 50vw;
   flex: 1;
   hr {
     width: 5em;
@@ -33,7 +32,6 @@
 .developer-section {
   color: #eeeeee;
   background-color: #3a4750;
-  // width: 50vw;
   flex: 1;
   hr {
     width: 5em;
