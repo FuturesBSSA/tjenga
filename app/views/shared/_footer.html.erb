@@ -10,34 +10,32 @@
  -->
 <div class="footer-container">
   <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <p class="footer-text">Tjenga FTW</p>
-      </div>
-
-      <div class="col-xs-12 col-sm-6">
-        <p class="footer-text">Contact</p>
-      </div>
-    </div>
-
-    <div class="footer-spacing"></div>
-
-    <p id="follow-text">Follow Us On</p>
-
-    <div class="row">
-      <div class="col-xs-12 col-sm-4">
-
-      </div>
-
-      <div class="col-xs-12 col-sm-4">
-        <ul class="list-inline">
-          <li><a href="https://nl-nl.facebook.com/"><i class="fa fa-facebook-square footer-icon"></i></a></li>
-          <li><a href="https://twitter.com/"><i class="fa fa-twitter-square footer-icon"></i></a></li>
-          <li><a href="https://github.com/FuturesBSSA/boatBnB"><i class="fa fa-github-square footer-icon"></i></a></li>
+    <div class="footer-content">
+      <div class="footer-info">
+        <h4>Info</h4>
+        <ul class="list-style">
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'List jobs', jobs_path %></li>
+          <li><%= link_to 'List developers',  developers_path %></li>
         </ul>
       </div>
 
-      <div class="col-xs-12 col-sm-4">
+      <div class="footer-info">
+        <h4>Client</h4>
+        <ul class="list-style">
+          <li><%= link_to 'Log-in', new_client_session_path %></li>
+          <li><%= link_to 'Sign-up', new_client_registration_path %></li>
+          <li><%= link_to 'Profile', client_profile_path %></li>
+        </ul>
+      </div>
+
+      <div class="footer-info">
+        <h4>Developer</h4>
+        <ul class="list-style">
+          <li><%= link_to 'Log-in', new_developer_session_path %></li>
+          <li><%= link_to 'Sign-up', new_developer_registration_path %></li>
+          <li><%= link_to 'Profile', developer_profile_path %></li>
+        </ul>
       </div>
     </div>
   </div>
