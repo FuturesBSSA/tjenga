@@ -45,23 +45,63 @@
 </div>
 
 
-<div class="container">
-  <div class="wrapper-assignments">
-    <h3>Your assignments</h3>
-    <div class="client-assignments">
-      <% @jobs.each do |job| %>
-        <div class="assignment">
-          <span>
-            <h2><%= job.title %>
-              <div style="text-align: right;">
-                <p>€<%= job.budget %></p>
+<div class="wrapper-assignments">
+  <div class="container">
+    <% @jobs.each do |job| %>
+      <div class="job-box">
+        <%= link_to "", job_path(job), class: "job-link" %>
+
+
+
+        <div class='job-body-box'>
+          <div class='job-avatar-box'>
+            <%= cl_image_tag job.client.photo, height: 100, width: 100, crop: :fill, class: "job-avatar" %>
+          </div>
+
+          <div class="job-content-box">
+
+            <div class="job-title-box">
+              <div class="job-title">
+                <strong><%= job.title.capitalize %></strong>   <%= job.client.company %>
               </div>
-            </h2>
-          </span>
-          <p><%= job.description %></p>
+            </div>
+
+            <div class="job-row-box" style="padding: 20px 0; opacity: .7; padding-right: 150px;">
+              <div style="padding-left: 20px;">
+                <%= job.description %>
+              </div>
+            </div>
+
+            <div class="job-row-box">
+              <div class="job-element-box">
+                <div style="text-align: center;">
+                  <strong>Start date</strong>
+                </div>
+                <div style="text-align: center;">
+                  <%= job.start_date %>
+                </div>
+              </div>
+              <div class="job-element-box">
+                <div style="text-align: center;">
+                  <strong>Duration</strong>
+                </div>
+                <div style="text-align: center;">
+                  <%= job.duration.capitalize %>
+                </div>
+              </div>
+              <div class="job-element-box">
+                <div style="text-align: center;">
+                  <strong>Budget</strong>
+                </div>
+                <div style="text-align: center;">
+                  <i class="fa fa-euro"></i> <%= job.budget %>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>
 
