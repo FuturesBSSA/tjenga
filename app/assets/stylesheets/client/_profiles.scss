@@ -5,10 +5,16 @@
 .client-description ul {
   list-style-type: none;
 }
+.client-wrapper {
+
+}
 
 .client-banner {
   background: $offwhite;
-  color: white;
+  background-image: url(image_path('avatar-client.png'));
+  background-repeat: no-repeat;
+  background-size: 10%;
+  background-position: bottom right;
   h3 {
     font-weight: bold;
   }
