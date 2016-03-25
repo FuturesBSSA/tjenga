@@ -12,6 +12,7 @@
   top: 40px;
   left: 0;
   right: 0;
+  z-index: 2;
 
   &.is-hidden {
     // top: -56px;
@@ -20,7 +21,10 @@
 }
 .alert-info {
   background: $green;
+  z-index: 2;
 }
+
 .alert-warning {
   background: $red;
+  z-index: 2;
 }
