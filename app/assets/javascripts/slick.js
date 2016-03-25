@@ -1,7 +1,8 @@
 $('.work').slick({
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: true,
+  // autoplay: true,
   arrows: true,
-  autoplaySpeed: 4000,
+  dots: true,
+  // autoplaySpeed: 4000,
 });

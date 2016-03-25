@@ -1,0 +1,5 @@
+# Config / meta.yml
+meta_title: "Tjenga"
+meta_description: "Where kick-ass developers meet awesome clients."
+Meta_image: "tjenga.jpg"  # A picture in your app / assets / images /
+twitter_account: "@nomdevotrecompte"  # essential for Twitter Cards
