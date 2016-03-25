@@ -5,7 +5,7 @@
         <h2> <%= @job.title %> </h2>
         <p><%= @full_name %></p>
       </div>
-      <% if client_signed_in? %>
+      <% if developer_signed_in? %>
       <div class="apply">
         <%= link_to "Apply", new_job_application_path(@job), class: "btn btn-primary" %>
       </div>
