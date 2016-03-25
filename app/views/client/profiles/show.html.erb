@@ -9,7 +9,7 @@
           <% if current_client.photo.nil? %>
             <%= image_tag "http://tinyurl.com/jp4gcp8", class: "aavatar-xlarge" %>
           <% else %>
-            <%= cl_image_tag current_client.photo, height: 100, width: 100, crop: :fill, class: "aavatar-xlarge" %>
+            <%= cl_image_tag current_client.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
           <% end %>
         </div>
       </div>
@@ -47,6 +47,7 @@
 
 <div class="wrapper-assignments">
   <div class="container">
+    <h2>Your Assignments</h2>
     <% @jobs.each do |job| %>
       <div class="job-box">
         <%= link_to "", job_path(job), class: "job-link" %>
@@ -54,9 +55,6 @@
 
 
         <div class='job-body-box'>
-          <div class='job-avatar-box'>
-            <%= cl_image_tag job.client.photo, height: 100, width: 100, crop: :fill, class: "job-avatar" %>
-          </div>
 
           <div class="job-content-box">
 

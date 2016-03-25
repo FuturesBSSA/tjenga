@@ -1,5 +1,5 @@
 <%  @categories = ['Front-end', 'Back-end', 'Full-stack'] %>
-<%  @level = ["internship", "traineeship" "no experience required", "some experience required", "experience required", "rockstar needed", "super ninja needed"] %>
+<%  @level = ["internship", "traineeship", "Beginner", "Intermediate", "Seasoned", "Experienced", "Advanced", "Senior", "Expert"] %>
 
 <!-- <div class="container form"> -->
   <div class="form-container">
@@ -11,11 +11,11 @@
       <%= f.input :title, placeholder: "What is the job title?" %>
       <%= f.input :description, placeholder: "Tell some details about the job" %>
       <%= f.input :budget, placeholder: "Per month" %>
+      <%= f.input :difficulty_level, :collection => @level.map(&:capitalize) %>
+      <%= f.input :request_type, :collection => @categories %>
       <%= f.input :duration, placeholder: "In months" %>
-      <%= f.input :difficulty_level, :collection => @level %>
       <%= f.input :start_date %>
       <%= f.input :deadline %>
-      <%= f.input :request_type, :collection => @categories %>
       <%= f.submit class: "btn btn-primary" %>
       <% end %>
   </div>
