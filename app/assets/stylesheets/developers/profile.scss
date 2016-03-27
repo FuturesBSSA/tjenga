@@ -34,18 +34,6 @@
   }
 }
 
-// @media(max-width: 770px) {
-//   .dev.banner {
-//     height: 100vh;
-//   }
-//   .dev-name {
-//     text-align: center;
-//     margin-left: 0px;
-//   }
-//   .photo {
-//     text-align: center;
-//   }
-// }
 .dev-details {
   p {
     font-weight: lighter;
@@ -202,6 +190,9 @@ ul {
   height: 400px;
 }
 
+.wrapper-work {
+  margin-bottom: 20px;
+}
 
 .slick-prev:before, .slick-next:before {
   color: black !important;
@@ -209,6 +200,9 @@ ul {
 
 .btn-padding {
   padding: 10px 0px 10px 0px;
+  .btn-primary {
+    font-size: 12px;
+  }
 }
 
 // job info section (start-date, deadline, etc)
