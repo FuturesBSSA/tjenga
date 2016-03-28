@@ -1,12 +1,10 @@
 
-.job-wrapper {
-  height: 140px;
-  position: relative;
-  background-color: $babyblue;
+.job-wrapper-header {
+  background-color: $blue-grayer;
+  padding: 20px;
   h1 {
-    color: $ggray-dark;
+    color: white;
     text-align: center;
-    padding-top: 140px;
   }
 }
 
