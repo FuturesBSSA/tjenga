@@ -6,8 +6,10 @@
     var start = parseInt(month_start);
     var deadline = parseInt(month_deadline);
 
-    $('p').html('Duration in months: ' + (deadline - start));
-    console.log(deadline - start);
-    $('select').change( calcMonth );
+    $('#duration-form').html('Duration (in months): ' + (deadline - start));
+    // console.log(deadline - start);
   };
 // });
+$('select').change( function() {
+  calcMonth()
+});
