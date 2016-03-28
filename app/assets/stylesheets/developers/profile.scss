@@ -145,6 +145,37 @@ ul {
   border-color: transparent;
 }
 
+.review-empty {
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  p {
+    margin: 10px
+  }
+
+  a:hover {
+    font-style: italic;
+  }
+}
+
+// Recommendations
+
+.review-empty {
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  p {
+    margin: 10px
+  }
+
+  a:hover {
+    font-style: italic;
+  }
+}
 /* Hover effects */
 .review:hover {
   background: $ggray;
@@ -206,8 +237,15 @@ ul {
 }
 
 // job info section (start-date, deadline, etc)
+.card-info {
+  h4 {
+    border-bottom: solid 1px grey;
+    padding-bottom: 10px;
+  }
+}
+
 .card-dev {
-  margin-top: 40px;
+  margin-top: 20px;
   padding-top: 15px;
   background: white;
   color: black;

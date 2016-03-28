@@ -42,29 +42,37 @@
 
       <div class="row">
         <div class="col-xs-12 col-sm-4">
-          <div class="card-dev">
-            <h4>Languages </h4>
-            <% @developer.programming_languages.each do |pl| %>
-            <p><%= pl.name %></p>
-            <hr>
-            <% end %>
+          <div class="card-info">
+          <h4>Languages </h4>
+            <div class="card-dev">
+              <% @developer.programming_languages.each do |pl| %>
+              <p><%= pl.name.capitalize %></p>
+              <hr>
+              <% end %>
+            </div>
           </div>
         </div>
 
         <div class="col-xs-12 col-sm-4">
-          <div class="card-job">
+          <div class="card-info">
             <h4>Tools </h4>
-            <% @developer.tools.each do |tool| %>
-            <p><%= tool.name %></p>
-            <hr>
-            <% end %>
+            <div class="card-dev">
+              <% @developer.tools.each do |tool| %>
+              <p><%= tool.name.capitalize %></p>
+              <hr>
+              <% end %>
+            </div>
           </div>
         </div>
 
         <div class="col-xs-12 col-sm-4">
-          <div class="card-job">
+          <div class="card-info">
             <h4>Price per hour </h4>
-            <i class="fa fa-euro"> <%= @developer.price_per_hour %> </i>
+            <div class="card-dev" style="padding-top: 0px;background: #303841;color: white;">
+              <p style="padding: 10px;">
+                <i class="fa fa-euro"></i> <%= @developer.price_per_hour %>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -120,17 +128,37 @@
     <% end %>
   </div>
 </div>
+
+<!-- THE PATH IS NOT CORRECT -groetjes matthijs :) -->
+<% else %>
+  <div class="wrapper">
+   <div class="container is-small light-grey">
+    <h3 class="text-center">Reviews</h3>
+    <div class="review-empty">
+      <p>No reviews yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new review.</p>
+    </div>
+   </div>
+  </div>
 <% end %>
 
 <div class="wrapper">
   <div class="container is-small light-grey">
     <% if @recommendations.size > 0 %>
-    <h3 class="text-center">Recommendations</h3>
-    <%  @recommendations.each do |recommendation|%>
-    <%= cl_image_tag recommendation.author.photo, class: "avatar" %>
-    <p>- <%= recommendation.content  %></p>
+      <h3 class="text-center">Recommendations</h3>
+      <%  @recommendations.each do |recommendation|%>
+        <%= cl_image_tag recommendation.author.photo, class: "avatar" %>
+        <p>- <%= recommendation.content  %></p>
+      <% end %>
+
+<!-- THE PATH IS NOT CORRECT -groetjes matthijs :) -->
+      <% else %>
+
+      <h3 class="text-center">Recommendations</h3>
+      <div class="review-empty">
+        <p>No recommendations yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new recommendation.</p>
+      </div>
     <% end %>
-    <% end %>
+
     <% if developer_signed_in? || client_signed_in? %>
     <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
     <% end %>

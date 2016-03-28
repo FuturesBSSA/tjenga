@@ -35,21 +35,21 @@
         <div class="col-xs-12 col-sm-3">
           <div class="card-job">
             <h4>Start date </h4>
-            <%= @job.start_date %>
+            <p><%= @job.start_date %></p>
           </div>
         </div>
 
         <div class="col-xs-12 col-sm-3">
           <div class="card-job">
             <h4>Deadline </h4>
-            <%= @job.deadline %>
+            <p><%= @job.deadline %></p>
           </div>
         </div>
 
         <div class="col-xs-12 col-sm-3">
           <div class="card-job">
             <h4>Budget </h4>
-            <i class="fa fa-euro"> <%= @job.budget %> </i>
+            <p><i class="fa fa-euro"></i> <%= @job.budget %> </p>
           </div>
         </div>
 
@@ -72,29 +72,33 @@
     <div class="job-about">
       <div class="image">
         <%= cl_image_tag @client.photo, crop: :fill, class: "avatar-xlarge" %>
-        <br>
-        <h4> City </h4>
-        <p> <%= @client.city %> </p>
-
-        <p> <i class="fa fa-envelope"></i>  <%= @client.email %> </p>
+        <hr style="width: 15em; border-top: solid 1px grey; margin-bottom: 0px; margin-top: 24px;">
+        <div style="padding-left: 45px;">
+          <p> <i class="fa fa-envelope"></i>  <%= @client.email %></p>
+          <p> <i class="fa fa-phone"></i>  <%= @client.phone_number %></p>
+        </div>
       </div>
 
       <div class="details">
         <div class="info">
           <h4> Company </h4>
-          <p><%= @client.company %></p>
-        </div>
-
-        <div class="info">
-          <h4> Address </h4>
-          <p><%= @client.address %></p>
+          <p><%= @client.company.capitalize %></p>
         </div>
 
         <div class="info">
           <h4> Name </h4>
-          <p><%= @full_name %></p>
+          <p><%= @full_name.capitalize %></p>
         </div>
-        <br>
+
+        <div class="info">
+          <h4> City </h4>
+          <p> <%= @client.city %> </p>
+        </div>
+
+        <div class="info">
+          <h4> Address </h4>
+          <p><%= @client.address.capitalize %></p>
+        </div>
       </div>
     </div>
   </div>
