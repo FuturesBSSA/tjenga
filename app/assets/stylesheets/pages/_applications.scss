@@ -1,0 +1,64 @@
+.apply-banner {
+  background: $blue-grayer;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  h3 {
+    font-weight: bold;
+  }
+  p {
+    margin: 0 0 1px;
+  }
+}
+
+.application {
+  display: flex;
+  align-items: center;
+  // justify-content: center;
+  background: white;
+  margin: 20px;
+  border-bottom: solid 1px rgba(0,0,0,0.2);
+  .btn-primary {
+    font-size: 11px;
+  }
+  .show {
+    margin: 20px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+}
+
+.candidate {
+  flex: 1;
+  margin: 15px;
+  display: block;
+}
+
+
+@media(max-width: 600px) {
+  .application {
+    flex-flow: column;
+  }
+}
+
+
+.apply-details {
+  display: inline;
+  h4 {
+    font-weight: lighter;
+    font-size: 12px;
+  }
+  p {
+    font-size: 12px;
+  }
+}
+
+.motivation {
+  margin: 15px;
+  p {
+    color: rgba(51, 51, 51, 0.7)
+  }
+}

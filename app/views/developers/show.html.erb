@@ -5,7 +5,7 @@
     <div class="developer-header">
       <div class="developer-info">
        <div class="photo">
-        <%= cl_image_tag @developer.photo, class: "avatar-xlarge" %>
+        <%= cl_image_tag @developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
       </div>
     </div>
 
