@@ -93,3 +93,4 @@ end
   application = Application.create!(developer: melchior, job: ruby_job, motivation: Faker::Lorem.paragraph(2, false, 4), price: 50)
 
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
