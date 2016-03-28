@@ -42,29 +42,37 @@
 
       <div class="row">
         <div class="col-xs-12 col-sm-4">
-          <div class="card-dev">
-            <h4>Languages </h4>
-            <% @developer.programming_languages.each do |pl| %>
-            <p><%= pl.name %></p>
-            <hr>
-            <% end %>
+          <div class="card-info">
+          <h4>Languages </h4>
+            <div class="card-dev">
+              <% @developer.programming_languages.each do |pl| %>
+              <p><%= pl.name.capitalize %></p>
+              <hr>
+              <% end %>
+            </div>
           </div>
         </div>
 
         <div class="col-xs-12 col-sm-4">
-          <div class="card-job">
+          <div class="card-info">
             <h4>Tools </h4>
-            <% @developer.tools.each do |tool| %>
-            <p><%= tool.name %></p>
-            <hr>
-            <% end %>
+            <div class="card-dev">
+              <% @developer.tools.each do |tool| %>
+              <p><%= tool.name.capitalize %></p>
+              <hr>
+              <% end %>
+            </div>
           </div>
         </div>
 
         <div class="col-xs-12 col-sm-4">
-          <div class="card-job">
+          <div class="card-info">
             <h4>Price per hour </h4>
-            <i class="fa fa-euro"> <%= @developer.price_per_hour %> </i>
+            <div class="card-dev" style="padding-top: 0px;background: #303841;color: white;">
+              <p style="padding: 10px;">
+                <i class="fa fa-euro"></i> <%= @developer.price_per_hour %>
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -120,6 +128,16 @@
     <% end %>
   </div>
 </div>
+
+<% else %>
+  <div class="wrapper">
+   <div class="container is-small light-grey">
+    <h3 class="text-center">Reviews</h3>
+    <div class="review-empty">
+      <p>No reviews yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new review.</p>
+    </div>
+   </div>
+  </div>
 <% end %>
 
 <div class="wrapper">
