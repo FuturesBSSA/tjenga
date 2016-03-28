@@ -6,10 +6,23 @@
     var start = parseInt(month_start);
     var deadline = parseInt(month_deadline);
 
-    $('#duration-form').html('Duration (in months): ' + (deadline - start));
+    $('#duration-form').append('<b>' + (deadline - start) + '</b>' + ' months');
     // console.log(deadline - start);
   };
 // });
+
+// function calcYear() {
+//     var year_start = $('#job_start_date_1i').val();
+//     var year_deadline = $('#job_deadline_1i').val();
+
+//     var start = parseInt(year_start);
+//     var deadline = parseInt(year_deadline);
+
+//     $('#duration-form').append('Duration: ' + '<b>' + (deadline - start) + '</b>');
+//     // console.log(deadline - start);
+//   };
+
+
 $('select').change( function() {
   calcMonth()
 });
