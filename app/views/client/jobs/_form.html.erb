@@ -2,7 +2,6 @@
 <%  @level = ["internship", "traineeship", "Beginner", "Intermediate", "Seasoned", "Experienced", "Advanced", "Senior", "Expert"] %>
 
 <div class="form-container">
-
   <%= simple_form_for([:client, @job]) do |f| %>
   <%= f.error_notification %>
 
@@ -14,6 +13,8 @@
   <%= f.input :duration, placeholder: "In months" %>
   <%= f.input :start_date %>
   <%= f.input :deadline %>
+  <!-- <p id="duration-form">Duration: </p> -->
   <%= f.submit class: "btn btn-primary" %>
   <% end %>
 </div>
+
