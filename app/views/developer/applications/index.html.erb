@@ -1,1 +1,39 @@
-<h1>A list of your applications <%= @developer.first_name %></h1>
+<div class="banner-darkblue">
+  <div class="container is-small">
+    <h1>List of applications</h1>
+  </div>
+</div>
+
+
+<div class="wrapper">
+
+  <div class="container is-small light-grey">
+    <% @applications.each do |application| %>
+    <div class="application">
+      <div class="candidate">
+        <%= cl_image_tag application.developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+      </div>
+      <div class="motivation">
+
+        <h4>Motivation</h4>
+        <p><%= application.motivation %></p>
+        <div class="apply-details">
+          <ul class="list-inline">
+            <li>
+              <h4>Price per hour</h4>
+            </li>
+            <li>
+              <p><%= application.price %> </p>
+            </li>
+            <li><h4>Status</h4></li>
+            <li><p><%= application.status %></p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="show">
+        <%= link_to "Show", client_application_path(application), class: "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

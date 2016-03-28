@@ -5,23 +5,36 @@
 </div>
 
 
+<div class="wrapper">
 
-<% @applications.each do |application| %>
-<div class="container is-small light-grey">
-  <div class="application">
-    <div class="candidate">
-      <%= link_to developer_path(application.developer) do %>
-      <%= application.developer.first_name %> <%= application.developer.last_name %>
-      <% end %>
-      <%= cl_image_tag application.developer.photo %>
-    </div>
-    <div class="motivation">
+  <div class="container is-small light-grey">
+    <% @applications.each do |application| %>
+    <div class="application">
+      <div class="candidate">
+        <h4><%= application.developer.first_name %> <%= application.developer.last_name %></h4>
+        <%= cl_image_tag application.developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+      </div>
+      <div class="motivation">
 
-      <%= application.price %>
-      <%= application.status %>
-      <%= application.motivation %>
+        <h4>Motivation</h4>
+        <p><%= application.motivation %></p>
+        <div class="apply-details">
+          <ul class="list-inline">
+            <li>
+              <h4>Price per hour</h4>
+            </li>
+            <li>
+              <p><%= application.price %> </p>
+            </li>
+            <li><h4>Status</h4></li>
+            <li><p><%= application.status %></p></li>
+          </ul>
+        </div>
+      </div>
+      <div class="show">
+        <%= link_to "Show", client_application_path(application), class: "btn btn-primary" %>
+      </div>
     </div>
-      <%= link_to "Show", client_application_path(application), class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
-<% end %>
