@@ -129,6 +129,7 @@
   </div>
 </div>
 
+<!-- THE PATH IS NOT CORRECT -groetjes matthijs :) -->
 <% else %>
   <div class="wrapper">
    <div class="container is-small light-grey">
@@ -143,12 +144,21 @@
 <div class="wrapper">
   <div class="container is-small light-grey">
     <% if @recommendations.size > 0 %>
-    <h3 class="text-center">Recommendations</h3>
-    <%  @recommendations.each do |recommendation|%>
-    <%= cl_image_tag recommendation.author.photo, class: "avatar" %>
-    <p>- <%= recommendation.content  %></p>
+      <h3 class="text-center">Recommendations</h3>
+      <%  @recommendations.each do |recommendation|%>
+        <%= cl_image_tag recommendation.author.photo, class: "avatar" %>
+        <p>- <%= recommendation.content  %></p>
+      <% end %>
+
+<!-- THE PATH IS NOT CORRECT -groetjes matthijs :) -->
+      <% else %>
+
+      <h3 class="text-center">Recommendations</h3>
+      <div class="review-empty">
+        <p>No recommendations yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new recommendation.</p>
+      </div>
     <% end %>
-    <% end %>
+
     <% if developer_signed_in? || client_signed_in? %>
     <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-default' %>
     <% end %>

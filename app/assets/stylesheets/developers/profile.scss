@@ -160,6 +160,22 @@ ul {
   }
 }
 
+// Recommendations
+
+.review-empty {
+  background-color: white;
+  padding: 20px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  p {
+    margin: 10px
+  }
+
+  a:hover {
+    font-style: italic;
+  }
+}
 /* Hover effects */
 .review:hover {
   background: $ggray;
