@@ -5,6 +5,7 @@ class Developer::ProfilesController < Developer::BaseController
     @reviews = @developer.job_reviews
     @works = @developer.works
     @fullname = current_developer.first_name + " " + current_developer.last_name
+    @recommendations =  Recommendation.where(developer_id: @developer.id)
   end
 
   def edit
