@@ -1,10 +1,10 @@
-<div class="modal fade" id="signup-modal-client" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="signup-modal-developer" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="loginmodal-container">
       <div class="login-content">
-        <h2 style="margin-top: 11px;">Sign-up Client</h2>
+        <h2 style="margin-top: 11px;">Sign-up developer</h2>
         <hr style="border-top: solid 1px #DADADA; width: 100%;">
-        <%= simple_form_for(:client, url: registration_path(:client)) do |f| %>
+        <%= simple_form_for(:developer, url: registration_path(:developer)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: 'First name', :input_html => {class: 'name'} %>
@@ -13,8 +13,6 @@
           <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'E-mail', :input_html => {class: 'email'} %>
           <%= f.input :password, required: true, label: false, placeholder: 'Password', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => {class: 'password'} %>
           <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Password confirmation', :input_html => {class: 'password-confirm'} %>
-          <%= f.input :photo, as: :file, :input_html => {:style=> 'text-align: center; margin: 0 auto;'}, label: 'Company Logo' %>
-          <%= f.input :photo_cache, as: :hidden %>
         </div>
 
 
@@ -27,10 +25,10 @@
         <hr style="border-top: solid 1px #DADADA; width: 100%;">
         <ul class="list-inline options">
           <li>
-            Already have an account? <%= link_to "Log in", new_session_path(:client) %>
+            Already have an account? <%= link_to "Log in", new_session_path(:developer) %>
           </li>
         </ul>
-        <% # render "devise/shared/links", resource_name: :client, devise_mapping: Devise.mappings[:client] %>
+        <% # render "devise/shared/links", resource_name: :developer, devise_mapping: Devise.mappings[:developer] %>
       </div>
     </div>
   </div>
