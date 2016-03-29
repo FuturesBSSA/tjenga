@@ -13,8 +13,15 @@
           <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'E-mail', :input_html => {class: 'email'} %>
           <%= f.input :password, required: true, label: false, placeholder: 'Password', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => {class: 'password'} %>
           <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Password confirmation', :input_html => {class: 'password-confirm'} %>
-          <%= f.input :photo, as: :file, :input_html => {:style=> 'text-align: center; margin: 0 auto;'}, label: 'Company Logo' %>
-          <%= f.input :photo_cache, as: :hidden %>
+          <div class="upload-form">
+            <div style="display: none;">
+            <%= f.input_field :photo, as: :file, label: false, placeholder: 'Company logo' %>
+            <%= f.input :photo_cache, as: :hidden %>
+            </div>
+            <span>
+              <label for="client_photo">Choose image</label> | Company logo
+            </span>
+          </div>
         </div>
 
 
