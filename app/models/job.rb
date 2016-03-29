@@ -5,7 +5,7 @@ class Job < ActiveRecord::Base
   has_one :accepted_developer, through: :accepted_application, source: "developer"
 
   has_many :applications, dependent: :destroy
-  has_many :reviews, dependent: :destroy
+  has_many :reviews#, dependent: :destroy
 
   validates :budget, presence: true, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/}
 end

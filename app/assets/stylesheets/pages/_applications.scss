@@ -49,10 +49,10 @@
   display: inline;
   h4 {
     font-weight: lighter;
-    font-size: 12px;
+    font-size: 15px;
   }
   p {
-    font-size: 12px;
+    font-size: 15px;
   }
 }
 
@@ -61,4 +61,16 @@
   p {
     color: rgba(51, 51, 51, 0.7)
   }
+}
+
+
+////// CLIENT/APPLICATION SHOW //////
+.dev-candidate {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.notice {
+  margin: 13px 0px 15px 0px;
 }

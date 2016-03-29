@@ -1,13 +1,53 @@
 
-<div class="container">
+<div class="apply-banner">
+  <div class="container is-small">
+    <div class="dev-candidate">
+      <div class="details-candidate">
 
-  <%= @application.motivation %>
-  <%= @application.price %>
+        <%= cl_image_tag @application.developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+        <h1><%= @application.developer.first_name %> <%= @application.developer.last_name %></h1>
+        <p> Applied for <%= @application.job.title %></p>
+        <hr>
+        <%= link_to "Accept", accept_client_application_path(@application.id), method: :patch, class: "btn btn-primary" %>
+        <%= link_to "Decline", decline_client_application_path(@application.id), method: :patch, class: "btn btn-primary"%>
 
-  <p> Please accept or deny this booking within 2 days. </p>
-  <hr>
-  <%= link_to "Accept", accept_client_application_path(@application.id), method: :patch, class: "btn btn-primary" %>
-  <%= link_to "Decline", decline_client_application_path(@application.id), method: :patch, class: "btn btn-primary"%>
+        <%= link_to "Back", client_applications_path, class: "btn btn-primary" %>
+        <div class="notice">
+          <p> Please accept or deny this application within two weeks. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-  <%= link_to "Back", client_applications_path, class: "btn btn-primary" %>
+
+<div class="wrapper">
+
+  <div class="container is-small light-grey">
+    <div class="application">
+      <div class="candidate">
+        <h4><%= @application.developer.first_name %> <%= @application.developer.last_name %></h4>
+      </div>
+      <div class="motivation">
+        <h4>Motivation</h4>
+        <p><%= @application.motivation %></p>
+        <div class="apply-details">
+          <ul class="list-inline">
+            <li>
+              <h4>Price per hour</h4>
+            </li>
+            <li>
+              <p><%= @application.price %> </p>
+            </li>
+            <li><h4>Status</h4></li>
+            <li><p><%= @application.status %></p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container is-small">
+
 </div>
