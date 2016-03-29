@@ -113,6 +113,37 @@
   }
 }
 
+// Modal input form css
+
+.loginmodal-container {
+  .form-control {
+    margin: 0 auto;
+    text-align: left !important;
+    margin: 0 auto !important;
+    background-position: right !important;
+    background-repeat: no-repeat !important;
+    padding-right: 8px !important;
+    background-size: 6% !important;
+    background-position: 95% !important;
+    &.name {
+      background-image: url('http://i.imgur.com/mMljlFL.png') !important;
+    }
+    &.email {
+      background-image: url('http://i.imgur.com/k26aVHT.png') !important;
+    }
+    &.password {
+      background-image: url('http://i.imgur.com/uCpqYKR.png') !important;
+    }
+    &.password-confirm {
+      background-image: url('http://i.imgur.com/QkpDZ3h.png') !important;
+    }
+    &.company {
+      background-image: url('http://i.imgur.com/QLhgqgt.png') !important;
+    }
+  }
+}
+
+
 
 
 
