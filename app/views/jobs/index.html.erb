@@ -5,30 +5,23 @@
 <div class="job-wrapper-gray">
   <div class="container">
       <% @jobs.each do |job| %>
-
         <div class="job-box">
         <%= link_to "", job_path(job), class: "job-link" %>
-
           <div class='job-body-box'>
-
-          <div class='job-avatar-box'>
-            <%= cl_image_tag job.client.photo, height: 100, width: 100, crop: :fill, class: "job-avatar" %>
-          </div>
-
+            <div class='job-avatar-box'>
+              <%= cl_image_tag job.client.photo, height: 100, width: 100, crop: :fill, class: "job-avatar" %>
+            </div>
             <div class="job-content-box">
-
               <div class="job-title-box">
                 <div class="job-title">
                   <strong><%= job.title.capitalize %></strong>   <%= job.client.company %>
                 </div>
               </div>
-
               <div class="job-row-box" style="padding: 20px 0; opacity: .7; padding-right: 150px;">
                 <div style="padding-left: 20px;">
                   <%= job.description %>
                 </div>
               </div>
-
               <div class="job-row-box">
                 <div class="job-element-box">
                   <div style="text-align: center;">
@@ -55,11 +48,9 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
-
       <% end %>
   </div>
 </div>

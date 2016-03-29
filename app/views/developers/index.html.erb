@@ -1,4 +1,4 @@
-<div class="banner red">
+<div class="index-banner">
   <div class="banner-content">
     <h1>Find a kick ass developer</h1>
     <div class="form-width">
@@ -8,55 +8,80 @@
       <% end %>
     </div>
   </div>
+  <%= image_tag('love-tjenga.png', class: "love") %>
 </div>
 
-<div class="wrapper">
 
+<div class="wrapper">
   <div class="container">
     <div class="row">
 
 
       <% @developers.each do |developer| %>
       <div class="col-xs-12 col-sm-6">
-        <div class="developer_card">
-          <%= link_to "", developer_path(developer), class: "developer_link" %>
+        <div class="dev-box">
+
+
           <% if developer.works.blank? %>
-          <div class="developer_card_img" style="background-image: url('http://placeholder.it')" >
-          </div>
+            <div class="dev-card-img-box" style="background-image: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.55) 100%)">
+              <%= link_to " ", developer_path(developer), class: "dev-link" %>
+              <%= image_tag "", class: "dev-card-img-box" %>
+              <div class="dev-content-box">
+                <div class="dev-avatar-box">
+                  <%= cl_image_tag developer.photo, height: 40, width: 40, crop: :fill, class: "dev-avatar" %>
+                </div>
+                <div class="dev-title-box">
+                  <div><%= developer.first_name %> <%= developer.last_name %></div>
+                  <div><%= developer.expertise.capitalize %> developer</div>
+                </div>
+              </div>
+            </div>
           <% else %>
-          <div class="developer_card_img" style="background-image: url('<%= developer.works.first.photo.url %>')">
-          </div>
+
+            <div class="dev-card-img-box" style="background-image: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.55) 100%), url('<%= developer.works.first.photo.url %>')">
+              <%= link_to " ", developer_path(developer), class: "dev-link" %>
+
+              <div class="dev-content-box">
+                <div class="dev-avatar-box">
+                  <%= cl_image_tag developer.photo, height: 40, width: 40, crop: :fill, class: "dev-avatar" %>
+                </div>
+                <div class="dev-title-box">
+                  <div><%= developer.first_name %> <%= developer.last_name %></div>
+                  <div><%= developer.expertise.capitalize %> developer</div>
+                </div>
+              </div>
+            </div>
+
           <% end %>
-          <div class="developer_avatar" style="background-image: url('<%= developer.photo.url %>')" >
-          </div>
-          <div class="developer_stars">
-            <i class="fa fa-star"></i>
-            <i class="fa fa-star-o" ></i>
-          </div>
-          <div class="developer_expertise_box">
-            <div class="developer_name"><strong><%= developer.first_name %> <%= developer.last_name %></strong></div>
-            <div class="developer_expertise"><%= developer.expertise %> developer</div>
-          </div>
-          <div class="developer_languages">
-            <p><strong>Programming languages</strong></p>
-            <% developer.programming_languages.each do |l| %>
-            <%= l.name %>  <% l.level.times do %>
-            <i class="fa fa-star"></i>
-            <% end %>
-            <% end %>
-          </div>
-          <div class="developer_tools">
-            <p><strong>Tools</strong></p>
-            <% developer.tools.each do |t| %>
-            <%= t.name %>
-            <% end %>
+
+          <div class="dev-skill-box">
+            <div class="dev-element-box">
+              <div class="program_lang">Specialties</div>
+              <table>
+                <tbody>
+                  <% developer.programming_languages[0..2].each do |l| %>
+                    <tr>
+                      <td class="skill-name"><span><%= l.name %></span></td>
+                      <td class="skill-level"><span><% l.level.times do %>
+                        <i class="fa fa-star"></i>
+                        <% end %></span>
+                      </td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+            <div class="dev-element-box">
+             <div class="program_lang">Tools</div>
+              <% developer.tools[0..2].each do |t| %>
+                <div class="skill-name"><%= t.name.capitalize %></div>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
       <% end %>
     </div>
-
-
   </div>
 </div>
 
