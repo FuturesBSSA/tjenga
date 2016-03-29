@@ -43,7 +43,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-4">
           <div class="card-info">
-          <h4>Languages </h4>
+            <h4>Languages </h4>
             <div class="card-dev">
               <% @developer.programming_languages.each do |pl| %>
               <p><%= pl.name.capitalize %></p>
@@ -132,56 +132,60 @@
 
 <!-- THE PATH IS NOT CORRECT -->
 <% else %>
-  <div class="wrapper">
-   <div class="container is-small light-grey">
-    <h3 class="text-center">Reviews</h3>
-    <div class="review-empty">
-      <p>No reviews yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new review.</p>
-    </div>
-   </div>
+<div class="wrapper">
+ <div class="container is-small light-grey">
+  <h3 class="text-center">Reviews</h3>
+  <div class="review-empty">
+    <p>No reviews yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new review.</p>
   </div>
+</div>
+</div>
 <% end %>
 
 <div class="wrapper">
   <div class="container is-small light-grey">
     <% if @recommendations.size > 0 %>
-        <h3 class="text-center">Recommendations</h3>
-            <%  @recommendations.each do |recommendation|%>
-              <div class="recommendation">
+    <h3 class="text-center">Recommendations</h3>
+    <%  @recommendations.each do |recommendation|%>
+    <div class="recommendation">
 
-                <div class="recommendation-left">
-                    <div class="recommendation-left-container">
-                      <div class="recommendation-left-image">
-                          <%= cl_image_tag recommendation.author.photo, class: "avatar-large" %>
-                      </div>
+      <div class="recommendation-left">
+        <div class="recommendation-left-container">
+          <div class="recommendation-left-image">
+            <%= cl_image_tag recommendation.author.photo, class: "avatar-large" %>
+          </div>
 
-                      <div class="recommendation-left-info">
-                        <p><strong><%= recommendation.author.first_name %> <%= recommendation.author.last_name %></strong></p>
-                        <p style="font-weight: 300;"><%= recommendation.author_type %></p>
-                      </div>
-                    </div>
-                </div>
-
-                <div class="recommendation-right">
-                  <i class="fa fa-quote-left"></i>
-                  <p><%= recommendation.content  %></p>
-                  <!-- <i class="fa fa-quote-right"></i> -->
-                </div>
-
-              </div>
-            <% end %>
-
-<!-- THE PATH IS NOT CORRECT -->
-      <% else %>
-
-      <h3 class="text-center">Recommendations</h3>
-      <div class="review-empty">
-        <p>No recommendations yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new recommendation.</p>
+          <div class="recommendation-left-info">
+            <p><strong><%= recommendation.author.first_name %> <%= recommendation.author.last_name %></strong></p>
+            <p style="font-weight: 300;"><%= recommendation.author_type %></p>
+          </div>
+        </div>
       </div>
+
+      <div class="recommendation-right">
+        <i class="fa fa-quote-left"></i>
+        <p><%= recommendation.content  %></p>
+        <!-- <i class="fa fa-quote-right"></i> -->
+      </div>
+
+    </div>
+    <% end %>
+
+    <!-- THE PATH IS NOT CORRECT -->
+    <% else %>
+
+    <h3 class="text-center">Recommendations</h3>
+    <div class="review-empty">
+      <p>No recommendations yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new recommendation.</p>
+    </div>
     <% end %>
 
     <% if developer_signed_in? || client_signed_in? %>
-    <%= link_to "Write a recommendation for #{@developer.first_name}", new_developer_recommendation_path(@developer), class: 'btn btn-success', style: "margin-bottom: 15px;" %>
+    <div class="text-center">
+
+      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#write-recommendation"><p>Write a recommendation <%= @developer.first_name %> </p></a>
+      <%= render 'shared/modal_new_recommendations' %>
+    </div>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,22 @@
+<div class="modal fade" id="write-recommendation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <div class="login-content">
+        <h3 style="margin-top: 11px;">Create Recommendation</h3>
+        <hr style="border-top: solid 1px #DADADA; width: 100%;">
+
+        <%= simple_form_for(:recommendation, url:  developer_recommendations_path(@developer)) do |f| %>
+        <div class="form-inputs">
+          <%= f.error_notification %>
+          <%= f.input :title, placeholder: 'What kind of work did you do together?' %>
+          <%= f.input :content, placeholder: "What was working with #{@developer.first_name} like?" %>
+          <%= f.input :author_type, label: 'Relation', collection: ['Colleague', 'Manager', 'Client', 'Developer', 'Classmate'] %>
+          <br>
+          <%= f.submit class: "btn btn-success" %>
+          <% f.input :status, value: 'pending' %>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
