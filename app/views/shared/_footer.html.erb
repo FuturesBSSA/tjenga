@@ -24,6 +24,8 @@
         <h4>Client</h4>
         <ul class="list-style">
           <li><%= link_to 'Log-in', new_client_session_path %></li>
+          <li><a href="#" data-toggle="modal" data-target="#login-modal">Log-in Modal</a>
+          <%= render 'shared/modal_client_login' %></li>
           <li><%= link_to 'Sign-up', new_client_registration_path %></li>
           <li><%= link_to 'Profile', client_profile_path %></li>
         </ul>
