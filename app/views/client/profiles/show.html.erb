@@ -5,116 +5,103 @@
     <hr style="border-top: 1px solid grey;">
     <div class="client-header">
       <div class="client-info">
-         <div class="client-photo">
-          <% if current_client.photo.nil? %>
-            <%= image_tag "http://tinyurl.com/jp4gcp8", class: "aavatar-xlarge" %>
-          <% else %>
-            <%= cl_image_tag current_client.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="client-info">
-        <div class="client-details">
-          <em><p>Company:</p></em>
-          <p><%= @client.company.capitalize %></p>
-          <em><p>City:</p></em>
-          <p><%= @client.city.capitalize %></p>
-        </div>
-      </div>
-
-      <div class="client-info">
-        <div class="client-contact">
-
-          <h3 style="margin-top: 0px;">Contact Details</h3>
-          <p><i class="fa fa-envelope-o"></i><%= @client.email %> </p>
-          <p><i class="fa fa-phone"></i><%= @client.phone_number %></p>
-        </div>
-      </div>
-
-
-      <div class="client-info">
-        <% if developer_signed_in? || client_signed_in? %>
-          <div class="text-center">
-            <%= link_to "Edit profile", edit_client_profile_path, class: "btn btn-primary" %>
-          </div>
+       <div class="client-photo">
+        <% if current_client.photo.nil? %>
+        <%= image_tag "http://tinyurl.com/jp4gcp8", class: "aavatar-xlarge" %>
+        <% else %>
+        <%= cl_image_tag current_client.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
         <% end %>
       </div>
     </div>
+
+    <div class="client-info">
+      <div class="client-details">
+        <em><p>Company:</p></em>
+        <p><%= @client.company.capitalize %></p>
+        <em><p>City:</p></em>
+        <p><%= @client.city.capitalize %></p>
+      </div>
+    </div>
+
+    <div class="client-info">
+      <div class="client-contact">
+
+        <h3 style="margin-top: 0px;">Contact Details</h3>
+        <p><i class="fa fa-envelope-o"></i><%= @client.email %> </p>
+        <p><i class="fa fa-phone"></i><%= @client.phone_number %></p>
+      </div>
+    </div>
+
+
+    <div class="client-info">
+      <% if developer_signed_in? || client_signed_in? %>
+      <div class="text-center">
+        <%= link_to "Edit profile", edit_client_profile_path, class: "btn btn-primary" %>
+      </div>
+      <% end %>
+    </div>
   </div>
+</div>
 </div>
 
 
 <div class="wrapper-assignments">
-  <div class="container">
+  <div class="container is-small">
     <h2>Your Assignments</h2>
     <% @jobs.each do |job| %>
-      <div class="job-box">
-        <%= link_to "", job_path(job), class: "job-link" %>
+    <div class="job-box">
+      <%= link_to "", job_path(job), class: "job-link" %>
 
 
 
-        <div class='job-body-box'>
+      <div class='job-body-box'>
 
-          <div class="job-content-box">
+        <div class="job-content-box">
 
-            <div class="job-title-box">
-              <div class="job-title">
-                <strong><%= job.title.capitalize %></strong>   <%= job.client.company %>
+          <div class="job-title-box">
+            <div class="job-title">
+              <strong><%= job.title.capitalize %></strong>   <%= job.client.company %>
+            </div>
+          </div>
+
+          <div class="job-row-box" style="padding: 20px 0; opacity: .7; padding-right: 150px;">
+            <div style="padding-left: 20px;">
+              <%= job.description %>
+            </div>
+          </div>
+
+          <div class="job-row-box">
+            <div class="job-element-box">
+              <div style="text-align: center;">
+                <strong>Start date</strong>
+              </div>
+              <div style="text-align: center;">
+                <%= job.start_date %>
               </div>
             </div>
-
-            <div class="job-row-box" style="padding: 20px 0; opacity: .7; padding-right: 150px;">
-              <div style="padding-left: 20px;">
-                <%= job.description %>
+            <div class="job-element-box">
+              <div style="text-align: center;">
+                <strong>Duration</strong>
+              </div>
+              <div style="text-align: center;">
+                <%= job.duration.capitalize %>
               </div>
             </div>
-
-            <div class="job-row-box">
-              <div class="job-element-box">
-                <div style="text-align: center;">
-                  <strong>Start date</strong>
-                </div>
-                <div style="text-align: center;">
-                  <%= job.start_date %>
-                </div>
+            <div class="job-element-box">
+              <div style="text-align: center;">
+                <strong>Budget</strong>
               </div>
-              <div class="job-element-box">
-                <div style="text-align: center;">
-                  <strong>Duration</strong>
-                </div>
-                <div style="text-align: center;">
-                  <%= job.duration.capitalize %>
-                </div>
-              </div>
-              <div class="job-element-box">
-                <div style="text-align: center;">
-                  <strong>Budget</strong>
-                </div>
-                <div style="text-align: center;">
-                  <i class="fa fa-euro"></i> <%= job.budget %>
-                </div>
+              <div style="text-align: center;">
+                <i class="fa fa-euro"></i> <%= job.budget %>
               </div>
             </div>
           </div>
+          <div class="view-btn text-center">
+              <%= link_to "View", client_job_path(job), class: "btn btn-primary" %>
+            </div>
         </div>
       </div>
-    <% end %>
-  </div>
-</div>
-
-
-  <div class="text-center">
-
-    <h1>list of your jobs</h1>
-
-    <div class="container">
-      <div class="text-center">
-        <% @jobs.each do |job| %>
-        <%= job.title %>
-        <%= link_to "View", client_job_path(job), class: "btn btn-primary" %>
-        <% end %>
-      </div>
     </div>
+    <% end %>
   </div>
 </div>

@@ -1,18 +1,13 @@
-<div class="container">
-
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
-
-      <div class="box-job">
-
-        <h1><%=  @job.title %></h1>
-        <hr>
-
-        <%= @job.description %>
-        <%= @job.budget %>
-
-        <ul class="list-inline padded">
-        <li>  <%= link_to "View applications", client_applications_path, class: "btn btn-primary" %></li>
+<div class="wrapper-greyblue">
+  <div class="container is-small">
+    <div class="job">
+      <div class="title">
+        <h2> <%= @job.title %> </h2>
+        <p><%= @job.client.first_name %> <%= @job.client.last_name %></p>
+        <p> <%= @job.status.capitalize %> </p>
+      </div>
+      <div class="text-center">
+        <ul class="list-inline">
           <li><%= link_to "Edit", edit_client_job_path(@job), class: "btn btn-primary" %></li>
           <li><%= link_to "Delete", client_job_path(@job), class: "btn btn-primary",
             method: :delete,
@@ -21,22 +16,116 @@
         </div>
       </div>
     </div>
-
-    <hr>
-    <% if @job.status != "Closed" && @job.status != "Finished"  %>
-    <%= link_to "Close", close_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
-    data: { confirm: "Are you sure?" } %>
-    <% end %>
-    <% if @job.status != "Finished"  %>
-    <%= link_to "Finish", finish_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
-    data: { confirm: "Are you sure?" } %>
-    <% end %>
-    <% if @job.status == "Finished"  %>
-    <%= link_to "Add Review", new_client_job_review_path(@job), class: "btn btn-primary" %>
-    <% end %>
-
   </div>
 
-  <div class="text-center">
-    <%= link_to "Back", client_jobs_path, class: "btn btn-primary" %>
+  <div class="wrapper">
+    <div class="container is-small">
+      <h3 class="text-center">Job description</h3>
+      <div class="job-description">
+        <div class="job-text">
+          <%= @job.description %>
+        </div>
+      </div>
+    </div>
   </div>
+
+
+  <div class="wrapper">
+
+    <div class="container is-small light-grey">
+      <div class="text-center">
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-3">
+            <div class="card-job">
+              <h4>Start date </h4>
+              <p><%= @job.start_date %></p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-3">
+            <div class="card-job">
+              <h4>Deadline </h4>
+              <p><%= @job.deadline %></p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-3">
+            <div class="card-job">
+              <h4>Budget </h4>
+              <p><i class="fa fa-euro"></i> <%= @job.budget %> </p>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-3">
+            <div class="card-job">
+              <h4>Difficulty </h4>
+              <%= @job.difficulty_level.capitalize %>
+            </div>
+          </div>
+
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="container is-small light-grey">
+      <div class="job-about">
+        <div class="image">
+          <%= cl_image_tag @job.client.photo, height: 200, width: 200, crop: :fill, class: "avatar-xlarge" %>
+          <hr style="width: 15em; border-top: solid 1px grey; margin-bottom: 0px; margin-top: 24px;">
+          <div style="padding-left: 45px;">
+            <p> <i class="fa fa-envelope"></i>  <%= @job.client.email %></p>
+            <p> <i class="fa fa-phone"></i>  <%= @job.client.phone_number %></p>
+          </div>
+        </div>
+
+        <div class="details">
+          <div class="info">
+            <h4> Company </h4>
+            <p><%= @job.client.company %></p>
+          </div>
+
+          <div class="info">
+            <h4> Name </h4>
+            <p><%= @job.client.first_name %> <%= @job.client.last_name %></p>
+          </div>
+
+          <div class="info">
+            <h4> City </h4>
+            <p> <%= @job.client.city %> </p>
+          </div>
+
+          <div class="info">
+            <h4> Address </h4>
+            <p><%= @job.client.address.capitalize %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <div class="text-center">
+      <ul class="list-inline">
+        <li>  <%= link_to "View applications", client_applications_path, class: "btn btn-primary" %></li>
+        <% if @job.status != "Closed" && @job.status != "Finished"  %>
+        <li><%= link_to "Close", close_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
+          data: { confirm: "Are you sure?" } %></li>
+          <% end %>
+          <% if @job.status != "Finished"  %>
+          <li><%= link_to "Finish", finish_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
+            data: { confirm: "Are you sure?" } %></li>
+            <% end %>
+            <% if @job.status == "Finished"  %>
+            <li><%= link_to "Add Review", new_client_job_review_path(@job), class: "btn btn-primary" %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+
+
+
