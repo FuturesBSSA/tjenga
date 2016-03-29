@@ -49,10 +49,8 @@
   <div class="container is-small">
     <h2>Your Assignments</h2>
     <% @jobs.each do |job| %>
+    <%= link_to client_job_path(job) do %>
     <div class="job-box">
-      <%= link_to "", job_path(job), class: "job-link" %>
-
-
 
       <div class='job-body-box'>
 
@@ -64,10 +62,8 @@
             </div>
           </div>
 
-          <div class="job-row-box" style="padding: 20px 0; opacity: .7; padding-right: 150px;">
-            <div style="padding-left: 20px;">
-              <%= job.description %>
-            </div>
+          <div class="job-row-box" style="padding: 20px 0; opacity: .7;">
+            <%= job.description %>
           </div>
 
           <div class="job-row-box">
@@ -96,12 +92,10 @@
               </div>
             </div>
           </div>
-          <div class="view-btn text-center">
-              <%= link_to "View", client_job_path(job), class: "btn btn-primary" %>
-            </div>
         </div>
       </div>
     </div>
+    <% end %>
     <% end %>
   </div>
 </div>
