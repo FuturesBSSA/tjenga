@@ -16,7 +16,7 @@
 .application {
   display: flex;
   align-items: center;
-  // justify-content: center;
+  justify-content: center;
   background: white;
   margin: 20px;
   border-bottom: solid 1px rgba(0,0,0,0.2);
@@ -30,13 +30,6 @@
     font-size: 18px;
   }
 }
-
-.candidate {
-  flex: 1;
-  margin: 15px;
-  display: block;
-}
-
 
 @media(max-width: 600px) {
   .application {
@@ -68,9 +61,57 @@
 .dev-candidate {
   display: flex;
   justify-content: center;
-  text-align: center;
+  // text-align: center;
+  align-items: center;
+
+  .candidate-img{
+    margin-right: 10px;
+  }
 }
 
+@media(max-width: 600px) {
+  .dev-candidate {
+    flex-flow: column;
+  }
+}
+
+@media(max-width: 600px) {
+  .details-candidate {
+    flex-flow: column;
+  }
+}
+
+
 .notice {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 13px 0px 15px 0px;
+}
+
+.details-candidate {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.dont-break-out {
+
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+
 }
