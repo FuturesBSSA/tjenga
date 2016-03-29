@@ -1,11 +1,7 @@
 # Add this line at the beginning, before `ActiveAdmin.setup do |config|`
-def authenticate_admin!
-  redirect_to new_developer_session_path unless current_developer && current_developer.admin
-end
-
-# Edit those four lines, to reuse existing `User` model.
-ActiveAdmin.setup do |config|
-end
+# def authenticate_admin!
+#   redirect_to new_developer_session_path unless current_developer && current_developer.admin
+# end
 
 
 ActiveAdmin.setup do |config|
@@ -64,8 +60,8 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # within the application controller.
-  # config.authentication_method = :authenticate_admin_user!
-  config.authentication_method = :authenticate_admin!
+  config.authentication_method = :authenticate_admin_user!
+  # config.authentication_method = :authenticate_admin!
 
   # == User Authorization
   #
@@ -97,9 +93,9 @@ ActiveAdmin.setup do |config|
   #
   # This setting changes the method which Active Admin calls
   # (within the application controller) to return the currently logged in user.
-  # config.current_user_method = :current_admin_user
+  config.current_user_method = :current_admin_user
 
-  config.current_user_method = :current_developer
+  # config.current_user_method = :current_developer
   # == Logging Out
   #
   # Active Admin displays a logout link on each screen. These
@@ -110,9 +106,9 @@ ActiveAdmin.setup do |config|
   # will call the method to return the path.
   #
   # Default:
-  # config.logout_link_path = :destroy_admin_user_session_path
+  config.logout_link_path = :destroy_admin_user_session_path
 
-  config.logout_link_path = :destroy_developer_session_path
+  # config.logout_link_path = :destroy_developer_session_path
   # This setting changes the http method used when rendering the
   # link. For example :get, :delete, :put, etc..
   #

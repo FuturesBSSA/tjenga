@@ -23,6 +23,11 @@
   display: flex;
   align-items: center;
   padding: 50px 0;
+  justify-content: center;
+
+  .btn-primary {
+    font-size: 14px;
+  }
 
   .title {
     flex: 1;
@@ -115,6 +120,12 @@ ul {
 
 @media(max-width: 600px) {
   .job-about {
+    flex-flow: column;
+  }
+}
+
+@media(max-width: 600px) {
+  .job {
     flex-flow: column;
   }
 }

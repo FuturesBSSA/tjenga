@@ -119,3 +119,30 @@ ul {
   border-top: solid 1px rgba(0,0,0,0.2);
   background-color: #f85981;
 }
+
+.view-btn {
+  padding: 20px 0px 10px 0px;
+}
+
+.job-row-box {
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+@media(max-width: 600px) {
+  .job-row-box {
+    flex-flow: column;
+  }
+}
+
+.job-box:hover {
+  background: $ggray;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: none;
+
+}
+

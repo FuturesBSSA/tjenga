@@ -30,6 +30,7 @@ class Client::JobsController < Client::BaseController
   end
 
   def destroy
+    binding.pry
     @job.destroy!
     redirect_to client_jobs_path
   end
