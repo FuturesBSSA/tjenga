@@ -1,12 +1,62 @@
-<h1>list of your jobs</h1>
+<div class="wrapper-greyblue">
+  <div class="container is-small">
+  <h1 class="text-center">list of your jobs</h1>
+  </div>
+</div>
 
-<div class="container">
-  <div class="text-center">
-    <% @jobs.each do |job| %>
-    <%= job.title %>
-    <%= job.description %>
-    <%= job.budget %>
-    <%= link_to "View", client_job_path(job) %>
-    <% end %>
+<div class="wrapper">
+
+  <div class="wrapper-assignments">
+    <div class="container is-small">
+      <% @jobs.each do |job| %>
+      <%= link_to client_job_path(job) do %>
+      <div class="job-box">
+
+        <div class='job-body-box'>
+
+          <div class="job-content-box">
+
+            <div class="job-title-box">
+              <div class="job-title">
+                <strong><%= job.title.capitalize %></strong>   <%= job.client.company %>
+              </div>
+            </div>
+
+            <div class="job-row-box" style="padding: 20px 0; opacity: .7;">
+              <%= job.description %>
+            </div>
+
+            <div class="job-row-box">
+              <div class="job-element-box">
+                <div style="text-align: center;">
+                  <strong>Start date</strong>
+                </div>
+                <div style="text-align: center;">
+                  <%= job.start_date %>
+                </div>
+              </div>
+              <div class="job-element-box">
+                <div style="text-align: center;">
+                  <strong>Duration</strong>
+                </div>
+                <div style="text-align: center;">
+                  <%= job.duration.capitalize %>
+                </div>
+              </div>
+              <div class="job-element-box">
+                <div style="text-align: center;">
+                  <strong>Budget</strong>
+                </div>
+                <div style="text-align: center;">
+                  <i class="fa fa-euro"></i> <%= job.budget %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
