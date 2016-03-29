@@ -18,7 +18,7 @@ available_emails = ["rianne1@hotmail.com", "matthias2@email.com", "roy3@email.co
 
 developer_attributes = [
   { email: "rianne_w@gmail.com", password: "12345678", first_name: "Rianne", last_name: "Westgeest", phone_number: "06 22 05 09 33", city: "Ouderkerk a/d Amstel", address: "Aart van der Neerweg 25", photo: File.open(Rails.root.join("db/fixtures/images", "profile_5.jpg")), price_per_hour: 28, expertise: "full-stack", availability: "fulltime" },
-  { email: "melchior_r@gmail.com", password: "12345678", first_name: "Melchior", last_name: "Rutte", phone_number: "06 16 85 45 90", city: "Nijmegen", address: "Neptunus 25", photo: File.open(Rails.root.join("db/fixtures/images", "melchior.jpg")), price_per_hour: 32, expertise: "full-stack", availability: "fulltime", admin: true },
+  { email: "melchior_r@gmail.com", password: "12345678", first_name: "Melchior", last_name: "Rutte", phone_number: "06 16 85 45 90", city: "Nijmegen", address: "Neptunus 25", photo: File.open(Rails.root.join("db/fixtures/images", "melchior.jpg")), price_per_hour: 32, expertise: "full-stack", availability: "fulltime" },
   { email: "matthijs_k@gmail.com", password: "12345678", first_name: "Matthijs", last_name: "Kolkman", phone_number: "06 87 74 21 37", city: "Amsterdam", address: "Tweede hugo de grootstraat 30", photo: File.open(Rails.root.join("db/fixtures/images", "matthijs.jpg")), price_per_hour: 23, expertise: "full-stack", availability: "fulltime" },
   { email: "henk@hotmail.com", password: "12345678", first_name: "Henk", last_name: "de Groot", phone_number: "06 78 22 10 87", city: "Almere", address: "Stadhuisplein 1", photo: File.open(Rails.root.join("db/fixtures/images", "profile_1.jpg")), price_per_hour: 34, expertise: "front-end", availability: "parttime" },
   { email: "david@hotmail.com", password: "12345678", first_name: "David", last_name: "Fernandez", phone_number: "06 37 98 10 47", city: "Amsterdam", address: "Admiraal de ruijterweg 22", photo: File.open(Rails.root.join("db/fixtures/images", "profile_2.jpg")), price_per_hour: 53, expertise: "back-end", availability: "parttime" },
@@ -93,4 +93,6 @@ end
   application = Application.create!(developer: melchior, job: ruby_job, motivation: Faker::Lorem.paragraph(2, false, 4), price: 50)
 
 
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'admin.tjenga@example.com', password: 'password', password_confirmation: 'password')
+
+tjenga = AdminUser.create!(email: "tjenga.admin@gmail.com", password: "9876543210", password_confirmation: "9876543210")

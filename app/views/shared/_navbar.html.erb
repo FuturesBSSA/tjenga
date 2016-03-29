@@ -60,10 +60,6 @@
     <% elsif developer_signed_in? %>
 
     <!-- Notification -->
-    <% if current_developer.admin == true %>
-    <%= link_to "Dashboard", admin_root_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
-    <% end %>
-
     <%=   link_to "Search Job", jobs_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
     <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
