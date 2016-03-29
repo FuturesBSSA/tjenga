@@ -1,0 +1,36 @@
+<div class="modal fade" id="signup-modal-client" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <div class="login-content">
+        <h2 style="margin-top: 11px;">Sign-up Client</h2>
+        <hr style="border-top: solid 1px #DADADA; width: 100%;">
+        <%= simple_form_for(:client, url: registration_path(:client)) do |f| %>
+        <%= f.error_notification %>
+        <div class="form-inputs">
+          <%= f.input :first_name, required: true, autofocus: true, :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
+          <%= f.input :last_name, required: true, autofocus: true, :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
+          <%= f.input :email, required: true, autofocus: true, :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
+          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
+          <%= f.input :password_confirmation, required: true, :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
+          <%= f.input :photo, :input_html => {:style=> 'text-align: center; margin: 0 auto;'}, label: 'Company Logo' %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+
+
+        <div class="form-actions">
+          <%= f.button :submit, "Log in", class: "btn btn-success" %>
+        </div>
+          <%= f.input :remember_me, as: :boolean %>
+        <% end %>
+
+        <hr style="border-top: solid 1px #DADADA; width: 100%;">
+        <ul class="list-inline options">
+          <li>
+            Already have an account? <%= link_to "Log in", new_session_path(:client) %>
+          </li>
+        </ul>
+        <% # render "devise/shared/links", resource_name: :client, devise_mapping: Devise.mappings[:client] %>
+      </div>
+    </div>
+  </div>
+</div>
