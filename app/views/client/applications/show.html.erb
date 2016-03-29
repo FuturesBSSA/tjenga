@@ -13,13 +13,15 @@
 
       </div>
     </div>
+    <% if @application.status == "Pending" %>
+
     <div class="details-candidate">
       <div class="accept">
-        <%= link_to "Accept", accept_client_application_path(@application.id), method: :patch, class: "btn btn-primary" %>
+      <%= link_to "Accept", accept_client_application_path(@application.id), method: :patch, class: "btn btn-primary", data: { confirm: "Are you sure?" } %>
       </div>
 
       <div class="decline">
-        <%= link_to "Decline", decline_client_application_path(@application.id), method: :patch, class: "btn btn-primary"%>
+        <%= link_to "Decline", decline_client_application_path(@application.id), method: :patch, class: "btn btn-primary", data: { confirm: "Are you sure?" }%>
       </div>
 
       <div class="back">
@@ -29,6 +31,7 @@
     <div class="notice">
       <p> Please accept or deny this application within two weeks. </p>
     </div>
+    <% end %>
   </div>
 </div>
 
