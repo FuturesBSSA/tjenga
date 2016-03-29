@@ -183,8 +183,8 @@
     <% if developer_signed_in? || client_signed_in? %>
     <div class="text-center">
 
-      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#write-recommendation"><p>Write a recommendation <%= @developer.first_name %> </p></a>
-      <%= render 'shared/modal_new_recommendations' %>
+      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#write-recommendation"><p>Write a recommendation for <%= @developer.first_name %> </p></a>
+      <%= render 'recommendations/modal_new_recommendations' %>
     </div>
     <% end %>
   </div>
