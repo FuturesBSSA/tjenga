@@ -7,12 +7,13 @@
         <%= simple_form_for(:client, url: registration_path(:client)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
-          <%= f.input :first_name, required: true, autofocus: true, :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
-          <%= f.input :last_name, required: true, autofocus: true, :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
-          <%= f.input :email, required: true, autofocus: true, :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
-          <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
-          <%= f.input :password_confirmation, required: true, :input_html => {:style=> 'text-align: center; margin: 0 auto;'} %>
-          <%= f.input :photo, :input_html => {:style=> 'text-align: center; margin: 0 auto;'}, label: 'Company Logo' %>
+          <%= f.input :first_name, required: true, autofocus: true, label: false, placeholder: 'First name', :input_html => {class: 'name'} %>
+
+          <%= f.input :last_name, required: true, autofocus: true, label: false, placeholder: 'Last name', :input_html => {class: 'name'} %>
+          <%= f.input :email, required: true, autofocus: true, label: false, placeholder: 'E-mail', :input_html => {class: 'email'} %>
+          <%= f.input :password, required: true, label: false, placeholder: 'Password', hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => {class: 'password'} %>
+          <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Password confirmation', :input_html => {class: 'password-confirm'} %>
+          <%= f.input :photo, as: :file, :input_html => {:style=> 'text-align: center; margin: 0 auto;'}, label: 'Company Logo' %>
           <%= f.input :photo_cache, as: :hidden %>
         </div>
 

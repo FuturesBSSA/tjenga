@@ -5,7 +5,7 @@ class Developer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :first_name, :last_name, presence: true
-  validates :price_per_hour, presence: true, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/}
+  # validates :price_per_hour, presence: true, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/}
 
   has_many :applications, dependent: :destroy
   has_many :accepted_applications, -> { where(status: "Accepted") }, class_name: "Application"
