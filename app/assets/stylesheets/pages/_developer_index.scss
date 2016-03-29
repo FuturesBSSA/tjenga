@@ -1,0 +1,161 @@
+// styling of the developer banners
+.index-banner {
+  background: $blue-grayer;
+  background-position: bottom right;
+  color: white;
+  background-size: cover !important;
+  display: flex;
+  height: 50vh;
+  align-items: center;
+  justify-content: center;
+  h3 {
+    font-weight: bold;
+  }
+  p {
+    margin: 0 0 1px;
+  }
+}
+
+.love {
+  height: 150px;
+  width: 150px;
+}
+
+// styling of the developer cards
+.dev-box {
+  background: $ggray-light;
+  position: relative;
+  margin-bottom: 20px;
+  flex: 0 0 50%;
+  padding: 2px;
+}
+
+.dev-link {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.dev-link:hover {
+  background-image: linear-gradient(rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.65) 100%)
+}
+
+.dev-card-img-box {
+  display: flex;
+  box-sizing: border-box;
+  align-items: center;
+  background-size: cover !important;
+  position: relative;
+  height: 270px;
+}
+
+.dev-card-img-fail {
+  width: 150px;
+  margin: auto;
+}
+
+.dev-card-img {
+  width: 100% !important;
+}
+
+.dev-content-box {
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  background: rgba(100, 100, 100, 0.07);
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+}
+
+.dev-avatar-box {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.dev-avatar {
+  width: 40px;
+  border-radius: 50%;
+  z-index: 1;
+  display: flex;
+}
+
+.dev-title-box {
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  padding-left: 20px;
+}
+
+.dev-skill-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  padding: 15px;
+}
+
+.skill-name {
+  font-size: 14px;
+  color: $blue-gray;
+  font-weight: normal;
+}
+
+.skill-level {
+  font-size: 9px;
+  color: $blue-gray;
+  font-weight: normal;
+  justify-content: right;
+  padding-left: 20px;
+  opacity: 0.8;
+}
+
+.dev-element-box {
+  flex: 1;
+  margin: 0 5px;
+  padding: 10px;
+  background-color: white;
+  border-color: $ggray-light;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 1px;
+  thead {
+    font-size: 14px;
+    color: #949494;
+  }
+}
+
+.program_lang{
+  color: $blue-gray;
+  font-weight: 500;
+  opacity: .5;
+  margin-bottom: 5px;
+}
+
+.dev-title {
+  font-size: 20px;
+  color: #2D2D2D;
+}
+
+.dev-body-box {
+  display: flex;
+  box-sizing: border-box;
+
+  @media (max-width: 700px) {
+    flex-flow: column
+  }
+}
+
+.dev-row-box {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
