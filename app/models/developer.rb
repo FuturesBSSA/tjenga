@@ -19,6 +19,7 @@ class Developer < ActiveRecord::Base
   has_many :references, class_name: "Recommendation", dependent: :destroy
   has_many :recommendations, as: :author, dependent: :destroy
   has_many :reviews, as: :author, dependent: :destroy
+
   mount_uploader :photo, PhotoUploader
 
   accepts_nested_attributes_for :programming_languages, reject_if: :all_blank, allow_destroy: true
@@ -32,7 +33,8 @@ class Developer < ActiveRecord::Base
       developer.password = Devise.friendly_token[0,20]  # Fake password for validation
       developer.first_name = auth.info.first_name
       developer.last_name = auth.info.last_name
-      developer.picture = auth.info.image
+      developer.linkedin_picture = auth.info.image
+      developer.city = auth.info.location.name
       developer.token = auth.credentials.token
       developer.token_expiry = Time.at(auth.credentials.expires_at)
     end

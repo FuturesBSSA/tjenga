@@ -12,9 +12,17 @@
     <div class="developer-info">
       <div class="dev-name">
         <em><p>Expertise:</p></em>
-        <p><%= @developer.expertise.capitalize %></p>
+        <% if @developer.expertise.nil? %>
+          <p>Please add an expertise</p>
+        <% else %>
+          <p><%= @developer.expertise.capitalize %></p>
+        <% end %>
         <em><p>Availability:</p></em>
-        <p><%= @developer.availability.capitalize %></p>
+        <% if @developer.availability.nil? %>
+          <p>Please add an availability</p>
+        <% else %>
+          <p><%= @developer.availability.capitalize %></p>
+        <% end %>
       </div>
     </div>
 
