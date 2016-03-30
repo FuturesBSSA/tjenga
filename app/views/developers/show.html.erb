@@ -89,7 +89,7 @@
     <div class="work">
      <% @works.each do |work| %>
      <div class="work-item">
-       <div class="work-image", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path work.photo, crop: :fill %>');">
+       <div class="work-image", style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.55)), url('<%= cl_image_path work.photo, crop: :fill %>');">
          <div class="work-description">
            <%= link_to work.website_url do %>
            <h4><%= work.title %></h4>
