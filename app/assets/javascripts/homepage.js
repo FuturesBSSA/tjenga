@@ -9,3 +9,8 @@ $("#developer-info").click(function() {
     return false;
 });
     // });
+
+$("#navbar-button").click(function() {
+    $("#navbar").toggleClass('hide-height');
+    $('#landing-page').toggleClass('darken');
+});
