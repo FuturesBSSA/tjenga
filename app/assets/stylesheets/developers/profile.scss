@@ -80,7 +80,7 @@ ul {
   background: white;
   margin-top: 20px;
   margin-bottom: 20px;
-  transition: all 0.3s ease 0s;
+  transition: all 0.3s ease;
 }
 
 
@@ -178,7 +178,7 @@ ul {
 }
 /* Hover effects */
 .review:hover {
-  background: $ggray;
+  background: rgba(218, 218, 218, 0.76);;
   cursor: pointer;
 
   a:hover {
