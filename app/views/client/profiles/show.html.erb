@@ -16,9 +16,9 @@
 
     <div class="client-info">
       <div class="client-details">
-        <em><p>Company:</p></em>
+        <h4>Company:</h4>
         <p><%= @client.company.capitalize %></p>
-        <em><p>City:</p></em>
+        <h4>City:</h4>
         <p><%= @client.city.capitalize %></p>
       </div>
     </div>
@@ -26,7 +26,7 @@
     <div class="client-info">
       <div class="client-contact">
 
-        <h3 style="margin-top: 0px;">Contact Details</h3>
+        <h4 style="margin-top: 0px;">Contact Details</h4>
         <p><i class="fa fa-envelope-o"></i><%= @client.email %> </p>
         <p><i class="fa fa-phone"></i><%= @client.phone_number %></p>
       </div>
