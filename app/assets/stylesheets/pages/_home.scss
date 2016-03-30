@@ -11,6 +11,7 @@
 .landing-page {
   max-width: 100vw;
   display: flex;
+  position: relative;
 }
 
 @media(max-width: 600px) {
@@ -183,6 +184,19 @@
   background-color: #2e3840;
 }
 
-
-
+// navbar button ////////////
+.navbar-button {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-top: 10px;
+  background-color: #ED4E44;
+  z-index: 2;
+  margin-left: -25px;
+  left: 50%;
+  position: absolute;
+ img {
+  width: 100%;
+ }
+}
 
