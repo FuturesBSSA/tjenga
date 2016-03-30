@@ -5,7 +5,11 @@
     <div class="developer-header">
       <div class="developer-info">
        <div class="photo">
-        <%= cl_image_tag @developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+        <% if @developer.photo.file.nil? %>
+          <%= cl_image_tag @developer.linkedin_picture, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+        <% else %>
+          <%= cl_image_tag @developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+        <% end %>
       </div>
     </div>
 

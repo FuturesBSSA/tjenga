@@ -46,7 +46,9 @@
 
 @media(min-width: $screen-sm) {
   .dev-name {
-
+    em{
+      font-weight: 300;
+    }
   }
 }
 

@@ -4,6 +4,14 @@
       <div class="login-content">
         <h2 style="margin-top: 11px;">Sign-up developer</h2>
         <hr style="border-top: solid 1px #DADADA; width: 100%;">
+
+        <%= link_to omniauth_authorize_path(:developer, :linkedin), class: 'btn-linkedin-link' do %>
+          <div class="btn-linkedin">
+            <span><i class="fa fa-linkedin"></i><p style="display: inline-block;">Continue with LinkedIn</p></span>
+          </div>
+        <% end %>
+        <hr style="border-top: solid 1px #DADADA; width: 100%;">
+
         <%= simple_form_for(:developer, url: registration_path(:developer)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">

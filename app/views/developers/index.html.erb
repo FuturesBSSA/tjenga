@@ -32,7 +32,11 @@
                 </div>
                 <div class="dev-title-box">
                   <div><%= developer.first_name %> <%= developer.last_name %></div>
-                  <div><%= developer.expertise.capitalize %> developer</div>
+                  <% if developer.expertise.nil?  %>
+                    <p>No expertise</p>
+                  <% else %>
+                    <div><%= developer.expertise.capitalize %> developer</div>
+                  <% end %>
                 </div>
               </div>
             </div>
@@ -47,7 +51,11 @@
                 </div>
                 <div class="dev-title-box">
                   <div><%= developer.first_name %> <%= developer.last_name %></div>
-                  <div><%= developer.expertise.capitalize %> developer</div>
+                  <% if developer.expertise.nil?  %>
+                    <p>No expertise</p>
+                  <% else %>
+                    <div><%= developer.expertise.capitalize %> developer</div>
+                  <% end %>
                 </div>
               </div>
             </div>
