@@ -13,6 +13,8 @@
   }
 }
 
+////// CLIENT/APPLICATION INDEX //////
+
 .application {
   display: flex;
   align-items: center;
@@ -49,10 +51,31 @@
   }
 }
 
-.motivation {
+.motivation-details {
   margin: 15px;
   p {
     color: rgba(51, 51, 51, 0.7)
+  }
+}
+
+.candidate-index {
+  flex: initial;
+  margin: 0 50px;
+  text-align: center;
+}
+
+.motivation-details {
+  flex: 1;
+}
+
+.show {
+  text-align: center;
+}
+
+
+@media(max-width: 600px) {
+  .candidate-index {
+    margin-top: 30px;
   }
 }
 
@@ -83,13 +106,6 @@
     flex-flow: column;
   }
 }
-
-@media(max-width: 600px) {
-  .details-candidate {
-    flex-flow: column;
-  }
-}
-
 
 .notice {
   display: flex;

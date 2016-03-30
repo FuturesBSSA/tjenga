@@ -1,6 +1,6 @@
 <div class="job-wrapper-header">
   <div class="index-job-flexbox">
-  <div class="index-job-img">
+    <div class="index-job-img">
       <%= image_tag('no-clue.png', class: "love") %>
     </div>
     <div class="index-job">
@@ -14,14 +14,15 @@
   <div class="container is-small light-grey">
     <% @applications.each do |application| %>
     <div class="application">
-      <div class="candidate">
-        <h4><%= application.developer.first_name %> <%= application.developer.last_name %></h4>
+    <div class="candidate-index">
         <%= cl_image_tag application.developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+        <h4><%= application.developer.first_name %> <%= application.developer.last_name %></h4>
       </div>
-      <div class="motivation">
-
-        <h4>Motivation</h4>
-        <p><%= application.motivation %></p>
+      <div class="motivation-details">
+        <div class="motivation">
+          <h4>Motivation</h4>
+        </div>
+        <p class="dont-break-out"><%= application.motivation %></p>
         <div class="apply-details">
           <ul class="list-inline">
             <li>
