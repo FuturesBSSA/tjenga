@@ -110,7 +110,22 @@
   display: flex;
   align-items: center;
   transition: color 0.3s ease;
+
+  @media (max-width: 700px) {
+    padding-right: 0px;
+  }
 }
+
+.job-row-box-style {
+  padding: 20px 0;
+  opacity: .7;
+  padding-right: 150px;
+
+  @media (max-width: 700px) {
+    padding-right: 0px;
+  }
+}
+
 
 .job-element-box {
   flex: 1;
@@ -126,5 +141,15 @@
     font-weight: 500;
     opacity: .5;
   }
+
+  @media (max-width: 700px) {
+    flex-flow: column;
+    margin-bottom: 8px;
+  }
 }
+
+
+
+
+
 

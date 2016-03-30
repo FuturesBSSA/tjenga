@@ -21,6 +21,8 @@ gem 'faker'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'cocoon'
+gem 'pg_search'
+
 
 group :development, :test do
   gem 'binding_of_caller'

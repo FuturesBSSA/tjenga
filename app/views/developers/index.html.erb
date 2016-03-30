@@ -1,15 +1,61 @@
 <div class="index-banner">
-  <div class="banner-content">
-    <h1>Find a kick ass developer</h1>
-    <div class="form-width">
-      <%= form_tag developers_path, method: "get", class: "flex-form" do %>
-      <%= text_field_tag :programming_language, @search, placeholder: "Search by programming language" %>
-      <%= text_field_tag :budget, @search, placeholder: "Budget" %>
+  <div class="banner-content dev-control">
+      <h1>Find a kick ass developer</h1>
+      <button class="btn btn-danger" style="outline: none;" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      Search by
+      </button>
+  </div>
+    <%= image_tag('love-tjenga.png', class: "love") %>
+</div>
+
+
+<div class="collapse" id="collapseExample">
+  <div class="wrapper-search">
+    <div class="search-by">
+      EXPERTISE
+    </div>
+    <div class="container dev-control">
+      <% @available_expertises.each do |expertise| %>
+        <% if @selected_expertise == expertise %>
+          <%= link_to expertise, developers_path(developer_filters(expertise: nil)), class: "search-elements active" %>
+        <% else %>
+          <%= link_to expertise, developers_path(developer_filters(expertise: expertise)), class: "search-elements" %>
+        <% end %>
       <% end %>
     </div>
   </div>
-  <%= image_tag('love-tjenga.png', class: "love") %>
+
+  <div class="wrapper-search">
+    <div class="search-by">
+      PROGRAMMING LANGUAGE
+    </div>
+    <div class="container dev-control">
+      <% @available_programming_languages.each do |programming_language| %>
+        <% if @selected_programming_language == programming_language %>
+          <%= link_to programming_language, developers_path(developer_filters(programming_language: nil)), class: "search-elements active" %>
+        <% else %>
+          <%= link_to programming_language, developers_path(developer_filters(programming_language: programming_language)), class: "search-elements" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="wrapper-search">
+    <div class="search-by">
+      SKILL
+    </div>
+    <div class="container dev-control">
+      <% @available_tools.each do |tool| %>
+        <% if @selected_tool == tool %>
+          <%= link_to tool, developers_path(developer_filters(tool: nil)), class: "search-elements active" %>
+        <% else %>
+          <%= link_to tool, developers_path(developer_filters(tool: tool)), class: "search-elements" %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
+
 
 
 <div class="wrapper">
@@ -56,7 +102,7 @@
 
           <div class="dev-skill-box">
             <div class="dev-element-box">
-              <div class="program_lang">Specialties</div>
+              <div class="program_lang">Languages</div>
               <table>
                 <tbody>
                   <% developer.programming_languages[0..2].each do |l| %>
@@ -72,7 +118,7 @@
               </table>
             </div>
             <div class="dev-element-box">
-             <div class="program_lang">Tools</div>
+             <div class="program_lang">Skills</div>
               <% developer.tools[0..2].each do |t| %>
                 <div class="skill-name"><%= t.name.capitalize %></div>
               <% end %>
