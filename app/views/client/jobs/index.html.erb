@@ -1,6 +1,11 @@
-<div class="wrapper-greyblue">
-  <div class="container is-small">
-  <h1 class="text-center">list of your jobs</h1>
+<div class="job-wrapper-header">
+  <div class="index-job-flexbox">
+  <div class="index-job-img">
+      <%= image_tag('find-tjenga.png', class: "love") %>
+    </div>
+    <div class="index-job">
+      <h1>List of your jobs </h1>
+    </div>
   </div>
 </div>
 
@@ -32,7 +37,7 @@
                   <strong>Start date</strong>
                 </div>
                 <div style="text-align: center;">
-                  <%= job.start_date %>
+                  <%= job.start_date.strftime('%b %d, %Y') %>
                 </div>
               </div>
               <div class="job-element-box">
