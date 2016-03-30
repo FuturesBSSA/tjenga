@@ -89,7 +89,7 @@
     <div class="work">
      <% @works.each do |work| %>
      <div class="work-item">
-       <div class="work-image", style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path work.photo, crop: :fill %>');">
+       <div class="work-image", style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.55)), url('<%= cl_image_path work.photo, crop: :fill %>');">
          <div class="work-description">
            <%= link_to work.website_url do %>
            <h4><%= work.title %></h4>
@@ -136,7 +136,7 @@
  <div class="container is-small light-grey">
   <h3 class="text-center">Reviews</h3>
   <div class="review-empty">
-    <p>No reviews yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new review.</p>
+    <p>No reviews yet. <%= link_to 'Log in', root_path %> to write a new review.</p>
   </div>
 </div>
 </div>
@@ -176,14 +176,14 @@
 
     <h3 class="text-center">Recommendations</h3>
     <div class="review-empty">
-      <p>No recommendations yet. <%= link_to 'Log in', new_developer_application_review_path(@developer) %> to write a new recommendation.</p>
+      <p>No recommendations yet. <%= link_to 'Log in', root_path %> to write a new recommendation.</p>
     </div>
     <% end %>
 
     <% if developer_signed_in? || client_signed_in? %>
     <div class="text-center">
 
-      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#write-recommendation"><p>Write a recommendation for <%= @developer.first_name %> </p></a>
+      <a href="#" class="btn btn-primary new-margin" data-toggle="modal" data-target="#write-recommendation"><p>Write a recommendation for <%= @developer.first_name %> </p></a>
       <%= render 'recommendations/modal_new_recommendations' %>
     </div>
     <% end %>

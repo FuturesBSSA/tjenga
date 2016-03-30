@@ -1,43 +1,67 @@
-<div class="port-banner">
-  <div class="container is-small">
-    <div class="port-show">
-      <div class="port-title">
-        <h1>Your portfolio</h1>
-      </div>
+<div class="job-wrapper-header">
+  <div class="index-job-flexbox">
+    <div class="index-job-img">
+      <%= image_tag('find-tjenga.png', class: "love") %>
+    </div>
+    <div class="index-job">
+      <h1>Your portfolio </h1>
     </div>
   </div>
 </div>
 
 <div class="wrapper">
+  <div class="container">
+    <div class="row">
 
-  <% @works.each do |work| %>
-  <div class="container is-small light-grey">
-    <div class="porfolio white">
-      <div class="port-title">
-        <h4><%= work.title %></h4>
-      </div>
-      <div class="work-desc">
-        <p><%= work.description %></p>
-      </div>
 
-      <div class="port-img">
+      <% @works.each do |work| %>
+      <div class="col-xs-12 col-sm-6">
+        <div class="dev-box">
 
-        <%= link_to work.website_url do %>
-        <%= cl_image_tag work.photo, height: 200, width: 300, crop: :fill, class: "port-img" %>
-        <% end %>
-      </div>
-      <div class="text-center">
-        <p><%= work.client_name %></p>
-      </div>
 
-      <div class="text-center">
+          <% if current_developer.works.blank? %>
+          <div class="dev-card-img-box" style="background-image: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.55) 100%)">
+            <%= link_to "", work.website_url, class: "dev-link" %>
+            <%= image_tag "", class: "dev-card-img-box" %>
+            <div class="dev-content-box">
+              <div class="dev-title-box">
+                <h4><%= work.title %></h4>
+                <p><%= work.client_name %></p>
+              </div>
+            </div>
+          </div>
+          <% else %>
 
-        <%= link_to "Delete", developer_profile_work_path(work), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %>
-        <%= link_to "Edit", edit_developer_profile_work_path(work), class: "btn btn-primary" %>
+          <div class="dev-card-img-box" style="background-image: linear-gradient(to bottom,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.55) 100%), url('<%= work.photo.url %>')">
+
+          <%= link_to "", work.website_url, class: "dev-link" %>
+            <div class="dev-content-box">
+              <div class="dev-title-box">
+                <h4><%= work.title %></h4>
+                <p><%= work.client_name %></p>
+
+              </div>
+            </div>
+          </div>
+
+          <% end %>
+
+          <div class="dev-work-box">
+           <div class="work-desc">
+             <p><%= work.description %></p>
+           </div>
+
+           <div class="actions text-center">
+            <ul class="list-inline">
+
+              <li>  <%= link_to "Delete", developer_profile_work_path(work), class: "btn btn-danger", method: :delete, data: { confirm: "Are you sure?" } %> </li>
+              <li><%= link_to "Edit", edit_developer_profile_work_path(work), class: "btn btn-primary" %></li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <hr>
     </div>
+    <% end %>
   </div>
-  <% end %>
 </div>
-
+</div>
