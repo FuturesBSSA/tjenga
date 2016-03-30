@@ -1,13 +1,13 @@
 
-<div class="navbar-wagon">
+<div class="navbar-wagon hide-height" id="navbar">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
   <% if current_page?(root_url)  %>
-  <%= image_tag "tjenga-logo-white.png", class: "white-logo grow" %>
+    <%= image_tag "tjenga-logo-white.png", class: "white-logo grow" %>
   <% elsif current_page?(developers_url)  %>
-  <%= image_tag "tjenga-logo-white.png", class: "white-logo grow" %>
+    <%= image_tag "tjenga-logo-white.png", class: "white-logo grow" %>
   <% else %>
-  <%= image_tag "tjenga-logo-blue-grey.png", class: "black-logo grow" %>
+    <%= image_tag "tjenga-logo-blue-grey.png", class: "black-logo grow" %>
   <% end %>
 
   <% end %>
@@ -23,10 +23,10 @@
     <%=   link_to "Post Job", new_client_job_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
     <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-    <div class="badge-container">
-      <i class="fa fa-envelope-o"></i>
-      <div class="badge badge-blue">3</div>
-    </div>
+      <div class="badge-container">
+        <i class="fa fa-envelope-o"></i>
+        <div class="badge badge-blue">3</div>
+      </div>
     <% end %>
 
     <%= link_to current_client.first_name, client_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
@@ -38,31 +38,31 @@
         <% else %>
         <%= cl_image_tag current_client.photo, height: 50, width: 50, crop: :fill, class: "avatar-large dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
         <% end %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li>
-            <%= link_to client_profile_path do %>
-            <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to client_jobs_path do %>
-            <i class="fa fa-shopping-bag"></i>  <%= t ".profile", default: "Jobs" %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to client_applications_path do %>
-            <i class="fa fa-envelope"></i>  <%= t ".profile", default: "Applications" %>
-            <% end %>
-          </li>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li>
+              <%= link_to client_profile_path do %>
+              <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to client_jobs_path do %>
+              <i class="fa fa-shopping-bag"></i>  <%= t ".profile", default: "Jobs" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to client_applications_path do %>
+              <i class="fa fa-envelope"></i>  <%= t ".profile", default: "Applications" %>
+              <% end %>
+            </li>
 
-          <li>
-            <%= link_to destroy_client_session_path, method: :delete do %>
-            <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
-            <% end %>
-          </li>
-        </ul>
+            <li>
+              <%= link_to destroy_client_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
 
     <% elsif developer_signed_in? %>
 
@@ -70,10 +70,10 @@
     <%=   link_to "Search Job", jobs_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
     <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-    <div class="badge-container">
-      <i class="fa fa-envelope-o"></i>
-      <div class="badge badge-blue">3</div>
-    </div>
+      <div class="badge-container">
+        <i class="fa fa-envelope-o"></i>
+        <div class="badge badge-blue">3</div>
+      </div>
     <% end %>
     <%= link_to current_developer.first_name, developer_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
