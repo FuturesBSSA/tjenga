@@ -23,11 +23,27 @@
 .client-header {
   margin: 30px 0px 60px 0px;
   display: flex;
-  text-align: left;
-  align-items: flex-start;
+  align-items: center;
   color: #3A4750;
+  justify-content: center;
   img {
     text-align: center;
+  }
+}
+
+
+@media(max-width: 600px) {
+  .client-header {
+    flex-flow: column;
+  }
+  .client-photo {
+    margin-bottom: 15px;
+  }
+  .client-contact {
+    margin-bottom: 15px;
+  }
+  .client-details {
+    margin-bottom: 15px;
   }
 }
 
@@ -48,11 +64,12 @@
 
 .client-details {
   p {
-    font-weight: lighter;
+    font-weight: normal;
   }
 
-  h3 {
-    font-weight: normal;
+  h4 {
+    font-weight: lighter;
+    font-size: 15px;
   }
 }
 
@@ -137,7 +154,7 @@ ul {
 }
 
 .job-box:hover {
-  background: $ggray;
+  background: rgba(218, 218, 218, 0.76);
   cursor: pointer;
 }
 

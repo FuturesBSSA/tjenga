@@ -1,7 +1,7 @@
 
 .job-wrapper-header {
   background-color: $blue-grayer;
-  padding: 20px;
+  padding: 60px;
   h1 {
     color: white;
     text-align: center;
@@ -18,6 +18,23 @@
 }
 
 
+.index-job-flexbox {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+@media(max-width: 600px) {
+  .index-job-flexbox {
+    flex-flow: column;
+  }
+}
+
+
+.index-job-img {
+  margin-right: 40px;
+}
+
 // from here, the styling of the job divs
 
 .job-box {
@@ -25,7 +42,14 @@
   position: relative;
   margin-bottom: 20px;
   flex: 0 0 50%;
-  padding: 15px;
+  padding: 15px 15px 15px 15px;
+  margin-top: 20px;
+  transition: background 0.3s ease;
+}
+
+.job-box:hover {
+  background: rgba(218, 218, 218, 0.76);
+  cursor: pointer;
 }
 
 .job-link {
