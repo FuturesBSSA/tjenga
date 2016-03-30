@@ -19,5 +19,7 @@
   <% end %>
   <br>
   <%= render "devise/shared/links" %>
-
+  <hr>
+  <h2>Sign up linked in</h2>
+  <%= link_to "Sign in with Linkedin", omniauth_authorize_path(:developer, :linkedin) %>
 </div>

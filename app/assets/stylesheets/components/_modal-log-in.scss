@@ -143,6 +143,34 @@
   }
 }
 
+.btn-linkedin-link {
+  width: 100%;
+  opacity: 1 !important;
+}
+
+
+
+.btn-linkedin {
+  padding: 20px;
+  color: white;
+  background: #1482BA;
+  text-align: left;
+  transition: all 0.2s ease;
+  i {
+    margin-right: 50px;
+    font-size: 18px;
+  }
+  p {
+    font-size: 14px;
+    opacity: 1;
+    color: white;
+    margin-bottom: 0px;
+  }
+}
+
+.btn-linkedin:hover {
+  background: #0E6794;
+}
 
 
 

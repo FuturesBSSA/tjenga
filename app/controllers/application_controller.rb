@@ -5,14 +5,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def default_url_options
-   { host: ENV['HOST'] || 'localhost: 3000' }
- end
-
+    { host: ENV['HOST'] || 'localhost:3000' }
+  end
 
   protected
+
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :password, :password_confirmation, :first_name, :last_name, :photo) }
   end
-
-
 end

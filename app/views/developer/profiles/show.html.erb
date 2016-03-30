@@ -5,16 +5,28 @@
     <div class="developer-header">
       <div class="developer-info">
        <div class="photo">
-        <%= cl_image_tag @developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+        <% if @developer.photo.file.nil? %>
+          <%= cl_image_tag @developer.linkedin_picture, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+        <% else %>
+          <%= cl_image_tag @developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+        <% end %>
       </div>
     </div>
 
     <div class="developer-info">
       <div class="dev-name">
-        <h4>Expertise:</h4>
-        <p><%= @developer.expertise.capitalize %></p>
-        <h4>Availability:</h4>
-        <p><%= @developer.availability.capitalize %></p>
+        <h4>Expertise:<h4>
+        <% if @developer.expertise.nil? %>
+          <p>Please add an expertise</p>
+        <% else %>
+          <p><%= @developer.expertise.capitalize %></p>
+        <% end %>
+        <h4>Availability:<h4>
+        <% if @developer.availability.nil? %>
+          <p>Please add an availability</p>
+        <% else %>
+          <p><%= @developer.availability.capitalize %></p>
+        <% end %>
       </div>
     </div>
 
