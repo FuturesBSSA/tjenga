@@ -4,6 +4,15 @@ class Developer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # search
+  include PgSearch
+  pg_search_scope :global_search,
+    against: [ :city, :expertise ],
+    associated_against: {
+      programming_languages: [:name],
+      tools: [:name]
+    }
+
   validates :first_name, :last_name, presence: true
   # validates :price_per_hour, presence: true, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/}
 
