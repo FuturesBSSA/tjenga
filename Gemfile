@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'redis'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'omniauth-linkedin-oauth2'
 
 gem 'sass-rails'
 gem 'jquery-rails'
