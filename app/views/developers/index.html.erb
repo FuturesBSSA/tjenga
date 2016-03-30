@@ -1,25 +1,22 @@
 <div class="index-banner">
   <div class="banner-content dev-control">
       <h1>Find a kick ass developer</h1>
-      <button class="btn btn-danger" style="outline: none;" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      Search by
-      </button>
   </div>
     <%= image_tag('love-tjenga.png', class: "love") %>
 </div>
 
 
-<div class="collapse" id="collapseExample">
+<div class='is-flex'>
   <div class="wrapper-search">
     <div class="search-by">
       EXPERTISE
     </div>
-    <div class="container dev-control">
+    <div class="dev-control">
       <% @available_expertises.each do |expertise| %>
         <% if @selected_expertise == expertise %>
-          <%= link_to expertise, developers_path(developer_filters(expertise: nil)), class: "search-elements active" %>
+          <%= link_to expertise.capitalize, developers_path(developer_filters(expertise: nil)), class: "search-elements active" %>
         <% else %>
-          <%= link_to expertise, developers_path(developer_filters(expertise: expertise)), class: "search-elements" %>
+          <%= link_to expertise.capitalize, developers_path(developer_filters(expertise: expertise)), class: "search-elements" %>
         <% end %>
       <% end %>
     </div>
@@ -29,7 +26,7 @@
     <div class="search-by">
       PROGRAMMING LANGUAGE
     </div>
-    <div class="container dev-control">
+    <div class="dev-control">
       <% @available_programming_languages.each do |programming_language| %>
         <% if @selected_programming_language == programming_language %>
           <%= link_to programming_language, developers_path(developer_filters(programming_language: nil)), class: "search-elements active" %>
@@ -44,12 +41,12 @@
     <div class="search-by">
       SKILL
     </div>
-    <div class="container dev-control">
+    <div class="dev-control">
       <% @available_tools.each do |tool| %>
         <% if @selected_tool == tool %>
-          <%= link_to tool, developers_path(developer_filters(tool: nil)), class: "search-elements active" %>
+          <%= link_to tool.capitalize, developers_path(developer_filters(tool: nil)), class: "search-elements active" %>
         <% else %>
-          <%= link_to tool, developers_path(developer_filters(tool: tool)), class: "search-elements" %>
+          <%= link_to tool.capitalize, developers_path(developer_filters(tool: tool)), class: "search-elements" %>
         <% end %>
       <% end %>
     </div>
@@ -61,8 +58,12 @@
 <div class="wrapper">
   <div class="container">
     <div class="row">
-
-
+      <div class="developer-empty">
+        <% if @developers.empty? %>
+          <div style="margin-top: 50px;"><%= image_tag "no-clue.png", class: "no-clue-control" %></div>
+          <div style="padding-top: 36px;">No developers available with the choosen search options</div>
+        <% end %>
+      </div>
       <% @developers.each do |developer| %>
       <div class="col-xs-12 col-sm-6">
         <div class="dev-box">
