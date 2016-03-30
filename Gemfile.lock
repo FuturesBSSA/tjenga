@@ -182,6 +182,10 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.18.4)
+    pg_search (1.0.5)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     polyamorous (1.3.0)
       activerecord (>= 3.0)
     pry (0.10.3)
@@ -297,6 +301,7 @@ DEPENDENCIES
   omniauth-linkedin-oauth2
   omniauth-oauth2 (= 1.3.1)
   pg
+  pg_search
   pry-byebug
   pry-rails
   puma

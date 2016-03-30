@@ -10,6 +10,7 @@
         <h2><%= @application.developer.first_name %> <%= @application.developer.last_name %></h2>
         <% end %>
         <p> Applied for <%= @application.job.title %></p>
+        <p><%= @application.created_at.strftime('%b %d, %Y') %></p>
 
       </div>
     </div>

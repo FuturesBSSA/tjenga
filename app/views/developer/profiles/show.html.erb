@@ -15,13 +15,13 @@
 
     <div class="developer-info">
       <div class="dev-name">
-        <em><p>Expertise:</p></em>
+        <h4>Expertise:<h4>
         <% if @developer.expertise.nil? %>
           <p>Please add an expertise</p>
         <% else %>
           <p><%= @developer.expertise.capitalize %></p>
         <% end %>
-        <em><p>Availability:</p></em>
+        <h4>Availability:<h4>
         <% if @developer.availability.nil? %>
           <p>Please add an availability</p>
         <% else %>
@@ -33,7 +33,7 @@
     <div class="developer-info">
       <div class="dev-details">
 
-        <h3 style="margin-top: 0px;">Contact Details</h3>
+        <h4 style="margin-top: 0px;">Contact Details</h4>
         <p><i class="fa fa-envelope-o"></i><%= @developer.email %> </p>
         <p><i class="fa fa-phone"></i><%= @developer.phone_number %></p>
       </div>
