@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root to: "pages#home"
 
-  devise_for :developers, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+  devise_for :developers, controllers: { omniauth_callbacks: 'devleopers/omniauth_callbacks' }
   devise_for :clients
 
   resources :jobs, only: [:index, :show] do
