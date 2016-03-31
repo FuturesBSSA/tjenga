@@ -6,7 +6,7 @@
         <%= cl_image_tag @application.developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
       </div>
       <div class="candidate-name">
-        <%= link_to developer_profile_path(@developer) do %>
+        <%= link_to developer_path(@developer) do %>
         <h2><%= @application.developer.first_name %> <%= @application.developer.last_name %></h2>
         <% end %>
         <p> Applied for <%= @application.job.title %></p>
