@@ -42,7 +42,7 @@ class Client::JobsController < Client::BaseController
 
   def finish
     @job.update!(status: "Finished")
-    redirect_to client_jobs_path
+    redirect_to client_job_path(@job)
   end
 
   private

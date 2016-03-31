@@ -109,10 +109,6 @@
     <div class="text-center">
       <ul class="list-inline">
         <li>  <%= link_to "View applications", client_applications_path, class: "btn btn-primary" %></li>
-        <% if @job.status != "Closed" && @job.status != "Finished"  %>
-        <li><%= link_to "Close", close_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
-          data: { confirm: "Are you sure?" } %></li>
-          <% end %>
           <% if @job.status != "Finished"  %>
           <li><%= link_to "Finish", finish_client_job_path(@job.id), method: :patch, class: "btn btn-primary",
             data: { confirm: "Are you sure?" } %></li>
