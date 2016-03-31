@@ -12,7 +12,7 @@
 <div class="job-wrapper-gray">
   <div class="container">
     <% @jobs.each do |job| %>
-    <% if job.status == "open" %>
+    <% if job.status == "open" || job.status == "Open" %>
     <div class="job-box">
       <%= link_to "", job_path(job), class: "job-link" %>
       <div class='job-body-box'>
