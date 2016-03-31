@@ -7,8 +7,10 @@
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
   <% if current_page?(root_url)  %>
-    <%= image_tag "tjenga-logo-white.png", class: "white-logo grow" %>
+    <%= image_tag "tjenga-logo-blue-grey.png", class: "white-logo grow" %>
   <% elsif current_page?(developers_url)  %>
+    <%= image_tag "tjenga-logo-white.png", class: "white-logo grow" %>
+  <% elsif current_page?(jobs_url) %>
     <%= image_tag "tjenga-logo-white.png", class: "white-logo grow" %>
   <% else %>
     <%= image_tag "tjenga-logo-blue-grey.png", class: "black-logo grow" %>
@@ -25,11 +27,11 @@
 
     <!-- Notification -->
 
-    <%=   link_to "Search Developer", developers_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
+    <%=   link_to "Search Developer", developers_path, class: "navbar-wagon-item navbar-wagon-link border-left nav-btn-control-white" %>
 
-    <%=   link_to "Post Job", new_client_job_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
+    <%=   link_to "Post Job", new_client_job_path, class: "navbar-wagon-item navbar-wagon-link border-left nav-btn-control-white" %>
 
-    | <%= link_to current_client.first_name, client_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
+    <%= link_to current_client.first_name, client_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">

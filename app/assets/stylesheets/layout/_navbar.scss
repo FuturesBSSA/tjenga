@@ -31,6 +31,13 @@
 .developers-index,
 .jobs-index,
 .client-applications-index {
+  .nav-btn-control-white {
+    border: 2px solid white;
+    border-radius: 50px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    margin-left: 15px;
+  }
   .navbar-wagon {
     position: absolute;
     background: transparent;
@@ -97,7 +104,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $ggreen;
   text-decoration: none;
 }
 
@@ -224,3 +231,12 @@
     padding-top: 17px;
   }
 }
+
+.nav-btn-control-white {
+  border: 2px solid $blue-gray;
+  border-radius: 50px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  margin-right: 15px;
+}
+
