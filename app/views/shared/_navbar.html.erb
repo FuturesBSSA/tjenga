@@ -22,18 +22,14 @@
     <!-- Different navigation if login or not -->
     <% if client_signed_in? %>
 
+
     <!-- Notification -->
+
+    <%=   link_to "Search Developer", developers_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
     <%=   link_to "Post Job", new_client_job_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
-    <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-      <div class="badge-container">
-        <i class="fa fa-envelope-o"></i>
-        <div class="badge badge-blue">3</div>
-      </div>
-    <% end %>
-
-    <%= link_to current_client.first_name, client_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
+    | <%= link_to current_client.first_name, client_profile_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
     <!-- Profile picture and dropdown -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
