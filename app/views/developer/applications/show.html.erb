@@ -9,9 +9,10 @@
 
   <div class="container is-small light-grey">
     <div class="application">
-      <div class="candidate">
-        <h4><%= @application.developer.first_name %> <%= @application.developer.last_name %></h4>
-        <%= cl_image_tag @application.developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
+      <div class="candidate-show">
+        <div><%= @application.developer.first_name %></div>
+        <div><%= @application.developer.last_name %></div>
+        <%= cl_image_tag @application.developer.photo, height: 50, width: 50, crop: :fill, class: "avatar-large" %>
       </div>
       <div class="motivation">
 

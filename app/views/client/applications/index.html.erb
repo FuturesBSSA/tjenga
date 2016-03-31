@@ -18,6 +18,7 @@
         <%= cl_image_tag application.developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
         <h4><%= application.developer.first_name %> <%= application.developer.last_name %></h4>
         <%= link_to "View profile", developer_path(application.developer.id), class: "btn btn-primary" %>
+        <%= mail_to application.developer.email, "Contact", class: "btn btn-primary" %>
       </div>
       <div class="motivation-details">
         <div class="motivation">
@@ -25,23 +26,13 @@
         </div>
         <p class="dont-break-out"><%= application.motivation %></p>
         <div class="apply-details">
-          <ul class="list-inline">
-            <li>
-              <h4>Price per hour</h4>
-            </li>
-            <li>
-              <p><%= application.price %> </p>
-            </li>
-            <li><h4>Status</h4></li>
-            <li><p><%= application.status %></p></li>
-          </ul>
-          <ul>
-            <li><p><%= application.created_at.strftime('%b %d, %Y') %></p></li>
-          </ul>
+            <div>Price per hour <span style="font-weight: lighter"><%= application.price %></span></div>
+            <div>Status <span style="font-weight: lighter"><%= application.status %></span></div>
+            <div style="margin-top: 10px;"><%= application.created_at.strftime('%b %d, %Y') %>s</div>
         </div>
       </div>
       <div class="show">
-        <%= link_to "Application details", client_application_path(application), class: "btn btn-primary" %>
+        <%= link_to "Details", client_application_path(application), class: "btn btn-primary" %>
       </div>
     </div>
     <% end %>
