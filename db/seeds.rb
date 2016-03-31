@@ -8,8 +8,8 @@
 Developer.destroy_all
 Client.destroy_all
 
-available_languages = ["Ruby", "Python", "Javascript", "CSS", "HTML"]
-available_tools = ["git", "github", "sketch", "photoshop", "command line", "bootstrap", "middleman", "indesign"]
+available_languages = ["Ruby", "Python", "Javascript", "CSS", "HTML", "JAVA", "Node.js", "C#", "SQL", "PHP", "Angular", "React", "Ruby on Rails", "iOS", "Android"]
+available_tools = ["git", "github", "sketch", "photoshop", "command line", "bootstrap", "middleman", "indesign", "UX/UI", "Sublime Text", "illustrator", "wordpress", "magento", "API's", ]
 available_works = ["work_1.jpg", "work_2.jpg", "work_3.jpg", "work_4.jpg", "work_5.jpg", "works_6.jpg", "works_7.jpg", "works_8.jpg", "works_9.jpg", "works_10.jpg", "works_11.jpg", "works_12.jpg", "works_13.jpg", "works_14.jpg", "works_15.jpg", "works_16.jpg", "works_18.jpg", "works_19.jpg", "works_20.jpg", "works_21.jpg"]
 available_job_titles = ["Full-stack webdeveloper gezocht", "Senior Ruby on Rails developer", "Junior full-stack phyton developer", "Stage voor Ruby developers", "Traineeship voor JavaScript master", "Traineeship voor Ruby developer", "Front-end wizard gezocht", "Cool project voor nieuwe start-up", "Tech start-up zoekt developers", "Full-stack engineer", "Portfolio website", "Java technical team leader", "CTO / Senior RoR developer", "Lead iOs developer" ]
 available_titles = ["Project voor start-up", "Portfolio website", "Front-end design", "Back-end production", "Freelance Project"]
@@ -41,7 +41,7 @@ client_attributes = [
   { email: "wave_restaurant@gmail.com", password: "12345678", first_name: "Melvin" , last_name: "Potters", company: "Wave Restaurants", city: "Amsterdam", address: "herengracht 82", photo: File.open(Rails.root.join("db/fixtures/images", "logo_3.jpg")) },
   { email: "zazzy@gmail.com", password: "12345678", first_name: "Gert Jan" , last_name: "Spriensma", company: "Zazzy", city: "Amsterdam", address: "Prinsengracht 182", photo: File.open(Rails.root.join("db/fixtures/images", "logo_4.jpg")) },
   { email: "adidas@gmail.com", password: "12345678", first_name: "Robert" , last_name: "Peters", company: "Adidas", city: "Amsterdam", address: "johan huizingalaan 763a", photo: File.open(Rails.root.join("db/fixtures/images", "logo_5.jpg")) },
-  { email: "wehkamp@gmail.com", password: "12345678", first_name: "Anita" , last_name: "de la Croix", company: "Wehkamp", city: "Utrech", address: "stadsplateau 6", photo: File.open(Rails.root.join("db/fixtures/images", "logo_6.jpg")) },
+  { email: "wehkamp@gmail.com", password: "12345678", first_name: "Anita" , last_name: "de la Croix", company: "Wehkamp", city: "Utrecht", address: "stadsplateau 6", photo: File.open(Rails.root.join("db/fixtures/images", "logo_6.jpg")) },
   { email: "kpn@gmail.com", password: "12345678", first_name: "Bernard" , last_name: "Flinkers", company: "KPN", city: "Amsterdam", address: "johan huizingalaan 763a", photo: File.open(Rails.root.join("db/fixtures/images", "logo_7.jpg")) },
   { email: "thenextcloset@gmail.com", password: "12345678", first_name: "Lieke" , last_name: "Pijpers", company: "The Next Closet", city: "Amsterdam", address: "kinkerstraat 30", photo: File.open(Rails.root.join("db/fixtures/images", "logo_8.jpg")) },
   { email: "fabrique@gmail.com", password: "12345678", first_name: "Janneke" , last_name: "Tapert", company: "Fabrique", city: "Delft", address: "jaffalaan 5", photo: File.open(Rails.root.join("db/fixtures/images", "logo_9.jpg")) },
@@ -80,7 +80,7 @@ client_attributes.each do |client_attributes|
     start_date: Faker::Date.between(Date.today, 1.year.from_now),
     deadline: Faker::Date.between(1.year.from_now, 2.year.from_now),
     request_type: ["full-time", "part-time", "project base"].sample,
-    status: ["open", "interviews started", "fullfilled"].sample,
+    status: ["Open", "interviews started", "fullfilled"].sample,
     client: client
   )
 end

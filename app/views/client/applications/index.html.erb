@@ -17,6 +17,7 @@
     <div class="candidate-index">
         <%= cl_image_tag application.developer.photo, height: 100, width: 100, crop: :fill, class: "avatar-xlarge" %>
         <h4><%= application.developer.first_name %> <%= application.developer.last_name %></h4>
+        <%= link_to "View profile", developer_path(application.developer.id), class: "btn btn-primary" %>
       </div>
       <div class="motivation-details">
         <div class="motivation">
@@ -40,7 +41,7 @@
         </div>
       </div>
       <div class="show">
-        <%= link_to "Show", client_application_path(application), class: "btn btn-primary" %>
+        <%= link_to "Application details", client_application_path(application), class: "btn btn-primary" %>
       </div>
     </div>
     <% end %>

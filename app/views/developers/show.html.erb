@@ -29,7 +29,7 @@
 
     <div class="developer-info">
       <% #link_to "Work with me", class: "btn btn-success" %>
-      <%= mail_to "matthijs@gmail.com", "Contact me", class: "btn btn-success" %>
+      <%= mail_to @developer.email, "Contact me", class: "btn btn-success" %>
     </div>
   </div>
 </div>
