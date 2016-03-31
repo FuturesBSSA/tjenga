@@ -28,7 +28,9 @@
   }
 }
 
-.developers-index {
+.developers-index,
+.jobs-index,
+.client-applications-index {
   .navbar-wagon {
     position: absolute;
     background: transparent;
@@ -44,6 +46,15 @@
       border: 2px solid $offwhite;
       background: none;
       color: $offwhite;
+    }
+
+    .navbar-btn-style {
+    color: #F0F8EA;
+    border-radius: 50px;
+    padding-bottom: 7px;
+    padding-top: 6px;
+    border: 2px solid $offwhite;
+    margin-right: 10px;
     }
 
     .dropdown {
