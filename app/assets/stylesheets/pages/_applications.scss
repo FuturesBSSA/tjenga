@@ -41,7 +41,8 @@
 
 
 .apply-details {
-  display: inline;
+  display: flex;
+  flex-direction: column;
   h4 {
     font-weight: lighter;
     font-size: 15px;

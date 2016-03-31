@@ -25,7 +25,19 @@
         </div>
         <p class="dont-break-out"><%= application.motivation %></p>
         <div class="apply-details">
-          <ul class="list-inline">
+          <div class="apply-detail">
+            <h4>Price per month:</h4><p style="display: inline-block;"><%= application.price %></p>
+          </div>
+
+          <div class="apply-detail">
+            <h4>Status:</h4><p style="display: inline-block;"><%= application.status %></p>
+          </div>
+
+          <div class="apply-detail">
+            <h4>Created at:</h4><p style="display: inline-block;"><%= application.created_at.strftime('%b %d, %Y') %></p>
+          </div>
+
+          <!-- <ul class="list-inline">
             <li>
               <h4>Price per hour</h4>
             </li>
@@ -37,7 +49,7 @@
           </ul>
           <ul>
             <li><p><%= application.created_at.strftime('%b %d, %Y') %></p></li>
-          </ul>
+          </ul> -->
         </div>
       </div>
       <div class="show">
