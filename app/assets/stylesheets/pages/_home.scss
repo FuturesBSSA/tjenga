@@ -237,6 +237,12 @@
   border-color: #CCC2C2;
 }
 
+.dev-btn-control:active {
+  color: #3A4750;
+  background-color: #CCC2C2;
+  border-color: #CCC2C2;
+}
+
 .client-btn-control {
   color: #EEEEEE;
   border-color: none;
@@ -245,6 +251,12 @@
 }
 
 .client-btn-control:hover {
+  color: #EEEEEE;
+  background-color: #252C31;
+  border-color: #252C31;
+}
+
+.client-btn-control:active {
   color: #EEEEEE;
   background-color: #252C31;
   border-color: #252C31;
