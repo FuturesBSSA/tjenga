@@ -17,8 +17,12 @@ class Client::JobsController < Client::BaseController
     @job = Job.new(job_param)
     @client = current_client
     @job.client = @client
-    @job.save!
-    redirect_to client_job_path(@job)
+    if @job.save!
+      flash[:success] = "You successfully created a job!"
+      redirect_to client_job_path(@job)
+    else
+      render 'new'
+    end
   end
 
   def edit
