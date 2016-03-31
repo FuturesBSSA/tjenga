@@ -13,4 +13,5 @@ $("#developer-info").click(function() {
 $("#navbar-button").click(function() {
     $("#navbar").toggleClass('hide-height');
     $('#landing-page').toggleClass('darken');
+    $('#chevron-navbar').toggleClass('fa-rotate-180');
 });

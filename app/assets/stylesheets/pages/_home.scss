@@ -20,28 +20,34 @@
 
 // navbar button ////////////
 .navbar-button {
-  text-align: center;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  margin-top: 10px;
-  background-color: #ED4E44;
-  z-index: 2;
-  margin-left: -20px;
-  left: 50%;
-  position: absolute;
+    text-align: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-top: 10px;
+    background-color: #969696;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.14);
+    z-index: 2;
+    margin-left: -15px;
+    left: 50%;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    justify-content: center;
   transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
  img {
   width: 100%;
   transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
  }
  &:hover{
-  height: 50px;
-  width: 50px;
-  margin-left: -25px;
+  height: 35px;
+  width: 35px;
+  margin-left: -17.5px;
   cursor: pointer;
-  border-bottom: solid 3px #8E302A;
-  background-color: #FF564B;
+  border-bottom: solid 3px #B7B7B7;
+  color: #B7B7B7;
+  background-color: #FFFFFF;
   img {
     transform: rotateX(18deg);
     width: 95%;
