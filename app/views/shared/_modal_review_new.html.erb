@@ -1,0 +1,19 @@
+<% @ratings = [1, 2, 3, 4, 5] %>
+
+<div class="modal fade" id="review-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="loginmodal-container">
+      <div class="modal-review">
+        <h2 style="margin-top: 11px;">Write a review</h2>
+        <hr style="border-top: solid 1px #DADADA; width: 100%;">
+        <%= simple_form_for(:review, url: client_job_reviews_path(current_client.jobs.find(params[:id]))) do |f| %>
+        <%= f.error_notification %>
+
+        <%= f.input :description, :input_html => {style: 'margin: 0 auto;'} %>
+        <%= f.input :rating, :collection => @ratings, :input_html => {style: 'margin: 0 auto;'} %>
+        <%= f.submit class: "btn btn-primary", :input_html => {style: 'margin: 0 auto;'} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
