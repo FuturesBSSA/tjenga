@@ -22,7 +22,10 @@
     <!-- Different navigation if login or not -->
     <% if client_signed_in? %>
 
+
     <!-- Notification -->
+
+    <%=   link_to "Search Developer", developers_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
     <%=   link_to "Post Job", new_client_job_path, class: "navbar-wagon-item navbar-wagon-link border-left" %>
 
