@@ -6,11 +6,13 @@
         <hr style="width: 20em;">
         <%= simple_form_for(@applications, url: job_applications_path(@job)) do |f| %>
         <%= f.error_notification %>
-        <%= f.input :price, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
+        <%= f.input :price, placeholder: "Hourly rate", :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
         <%= f.input :motivation, :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
         <%= f.submit class: "btn btn-primary", :input_html => {style: 'width: 20em; margin: 0 auto;'} %>
         <% end %>
       </div>
     </div>
+  </div>
+  <div class="space">
   </div>
 </div>

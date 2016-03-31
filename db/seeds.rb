@@ -9,7 +9,7 @@ Developer.destroy_all
 Client.destroy_all
 
 available_languages = ["Ruby", "Python", "Javascript", "CSS", "HTML", "JAVA", "Node.js", "C#", "SQL", "PHP", "Angular", "React", "Ruby on Rails", "iOS", "Android"]
-available_tools = ["git", "github", "sketch", "photoshop", "command line", "bootstrap", "middleman", "indesign", "UX/UI", "Sublime Text", "illustrator", "wordpress", "magento", "API's", ]
+available_tools = ["git", "github", "sketch", "photoshop", "command line", "bootstrap", "middleman", "indesign", "UX/UI", "Sublime Text", "illustrator", "wordpress", "magento", "API's"]
 available_works = ["work_1.jpg", "work_2.jpg", "work_3.jpg", "work_4.jpg", "work_5.jpg", "works_6.jpg", "works_7.jpg", "works_8.jpg", "works_9.jpg", "works_10.jpg", "works_11.jpg", "works_12.jpg", "works_13.jpg", "works_14.jpg", "works_15.jpg", "works_16.jpg", "works_18.jpg", "works_19.jpg", "works_20.jpg", "works_21.jpg"]
 available_job_titles = ["Full-stack webdeveloper gezocht", "Senior Ruby on Rails developer", "Junior full-stack phyton developer", "Stage voor Ruby developers", "Traineeship voor JavaScript master", "Traineeship voor Ruby developer", "Front-end wizard gezocht", "Cool project voor nieuwe start-up", "Tech start-up zoekt developers", "Full-stack engineer", "Portfolio website", "Java technical team leader", "CTO / Senior RoR developer", "Lead iOs developer" ]
 available_titles = ["Project voor start-up", "Portfolio website", "Front-end design", "Back-end production", "Freelance Project"]
