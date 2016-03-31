@@ -36,14 +36,14 @@
           <div class="col-xs-12 col-sm-3">
             <div class="card-job">
               <h4>Start date </h4>
-              <p><%= @job.start_date %></p>
+              <p><%= @job.start_date.strftime('%b %d, %Y') %></p>
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-3">
             <div class="card-job">
               <h4>Deadline </h4>
-              <p><%= @job.deadline %></p>
+              <p><%= @job.deadline.strftime('%b %d, %Y') %></p>
             </div>
           </div>
 
