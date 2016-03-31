@@ -1,5 +1,9 @@
-
+<% if current_page?(root_url) %>
 <div class="navbar-wagon hide-height" id="navbar">
+<% else %>
+<div class="navbar-wagon" id="navbar">
+<% end %>
+
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
   <% if current_page?(root_url)  %>
