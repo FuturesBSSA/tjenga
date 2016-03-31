@@ -13,7 +13,7 @@
     </div>
     <div class="dev-control">
       <% @available_expertises.each do |expertise| %>
-        <% if @selected_expertise == nil %>
+        <% if @selected_expertise == expertise %>
           <%= link_to expertise.capitalize, developers_path(developer_filters(expertise: nil)), class: "search-elements active" %>
         <% else %>
           <%= link_to expertise.capitalize, developers_path(developer_filters(expertise: expertise)), class: "search-elements" %>
@@ -21,7 +21,6 @@
       <% end %>
     </div>
   </div>
-
   <div class="wrapper-search">
     <div class="search-by">
       PROGRAMMING LANGUAGE
