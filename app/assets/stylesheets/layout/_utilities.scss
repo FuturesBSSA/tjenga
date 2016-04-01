@@ -34,3 +34,11 @@
 .is-flex{
   display: flex;
 }
+
+.devise-sessions-new {
+  .site-content {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+}
