@@ -15,7 +15,7 @@
           <%= f.input :password_confirmation, required: true, label: false, placeholder: 'Password confirmation', :input_html => {class: 'password-confirm'} %>
           <div class="upload-form">
             <div style="display: none;">
-            <%= f.input_field :photo, as: :file, label: false, placeholder: 'Company logo' %>
+            <%= f.input_field :photo, required: true, as: :file, label: false, placeholder: 'Company logo' %>
             <%= f.input :photo_cache, as: :hidden %>
             </div>
             <span>
