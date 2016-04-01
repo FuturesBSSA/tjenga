@@ -104,42 +104,29 @@
 </div>
 
 <% if @reviews.size > 0 %>
+  <div class="wrapper">
+    <div class="container is-small light-grey">
 
-<div class="wrapper">
-  <div class="container is-small light-grey">
-
-    <h3 class="text-center">Reviews</h3>
-    <hr>
-    <% @reviews.each do |review| %>
-    <div class="review">
-      <div class="review-image">
-        <%= cl_image_tag review.author.photo, class: "avatar-large" %>
+      <h3 class="text-center">Reviews</h3>
+      <hr>
+      <% @reviews.each do |review| %>
+      <div class="review">
+        <div class="review-image">
+          <%= cl_image_tag review.author.photo, class: "avatar-large" %>
+        </div>
+        <div class="review-body">
+          <% review.rating.times do %>
+          <i class="fa fa-star"></i>
+          <% end %>
+          <% (5 - review.rating).times do %>
+          <i class="fa fa-star-o"></i>
+          <% end %>
+          <p><%= review.description %></p>
+        </div>
       </div>
-      <div class="review-body">
-        <% review.rating.times do %>
-        <i class="fa fa-star"></i>
-        <% end %>
-        <% (5 - review.rating).times do %>
-        <i class="fa fa-star-o"></i>
-        <% end %>
-        <p><%= review.description %></p>
-      </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
-</div>
-
-
-<!-- THE PATH IS NOT CORRECT -->
-<% else %>
-<div class="wrapper">
- <div class="container is-small light-grey">
-  <h3 class="text-center">Reviews</h3>
-  <div class="review-empty">
-    <p>No reviews yet. <%= link_to 'Log in', root_path %> to write a new review.</p>
-  </div>
-</div>
-</div>
 <% end %>
 
 <div class="wrapper">
@@ -147,7 +134,7 @@
     <% if @recommendations.size > 0 %>
     <h3 class="text-center">Recommendations</h3>
     <%  @recommendations.each do |recommendation|%>
-    <div class="recommendation">
+    <div class="recommendation-box">
 
       <div class="recommendation-left">
         <div class="recommendation-left-container">

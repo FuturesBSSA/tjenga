@@ -124,9 +124,7 @@
       <%= link_to t(".top_call_to_action", default: "Login"), new_developer_registration_path, class: "navbar-wagon-item navbar-wagon-button btn dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <li class="dropdown-element">
-          <%= link_to new_client_session_path do %>
-          <%= t ".profile", default: "Client" %>
-          <% end %>
+          <a href="#" data-toggle="modal" data-target="#login-modal-client">Client</a>
         </li>
         <li>
           <%= link_to new_developer_session_path do %>
