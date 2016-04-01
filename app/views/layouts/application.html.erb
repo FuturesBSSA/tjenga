@@ -35,10 +35,12 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.9/slick-theme.css"/>
   </head>
 
-  <body class='<%= "#{params[:controller]}-#{params[:action]}".gsub('/', '-') %>'>
+  <body class='<%= "#{params[:controller]}-#{params[:action]}".gsub('/', '-') %> site'>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <div class="site-content">
     <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
   </body>
