@@ -1,5 +1,6 @@
-ActiveAdmin.register Review do
-  permit_params :rating, :description, :author_type, :author_id, :job_id
+ActiveAdmin.register Recommendation do
+  permit_params :content, :title, :author_type, :author_id, :status, :developer_id
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
