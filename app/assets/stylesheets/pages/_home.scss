@@ -243,6 +243,12 @@
   border-color: #CCC2C2;
 }
 
+.dev-btn-control:focus {
+  color: #3A4750;
+  background-color: #dbdbdb !important;
+  border-color: #eee !important;
+}
+
 .client-btn-control {
   color: #EEEEEE;
   border-color: none;
@@ -262,3 +268,8 @@
   border-color: #252C31;
 }
 
+.client-btn-control:focus {
+  color: #3A4750;
+  background-color: #576A77 !important;
+  border-color: #718694 !important;
+}
