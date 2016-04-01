@@ -80,7 +80,7 @@ client_attributes.each do |client_attributes|
     start_date: Faker::Date.between(Date.today, 1.year.from_now),
     deadline: Faker::Date.between(1.year.from_now, 2.year.from_now),
     request_type: ["full-time", "part-time", "project base"].sample,
-    status: ["Open", "interviews started", "fullfilled"].sample,
+    status: ["Open"].sample,
     client: client
   )
 end
@@ -93,7 +93,7 @@ end
   melchior.programming_languages.create!(name: available_languages.sample, level: (1..5).to_a.sample)
   melchior.programming_languages.create!(name: available_languages.sample, level: (1..5).to_a.sample)
 
-  hamza = Client.create!(email: "hamza@manpower.nl", password: "12345678", first_name: "Hamza", last_name: "de Groot", company: "Manpower", city: "Amsterdam", address: Faker::Address.street_address, photo: "profile_2.jpg" )
+  hamza = Client.create!(email: "hamza@manpower.nl", password: "12345678", first_name: "Hamza", last_name: "de Groot", company: "Manpower", city: "Amsterdam", address: Faker::Address.street_address, photo: File.open(Rails.root.join("db/fixtures/images", "profile_2.jpg")))
   ruby_job = Job.create!(title: "Cool platform to connect people", description: Faker::Lorem.paragraph(2, false, 4), difficulty_level: "junior", budget: "unknown", duration: "half year", start_date: Faker::Date.between(Date.today, 1.year.from_now), deadline: Faker::Date.between(1.year.from_now, 2.year.from_now), request_type: "full-time", status: "open", client: hamza)
 
   application = Application.create!(developer: melchior, job: ruby_job, motivation: Faker::Lorem.paragraph(2, false, 4), price: 50)
