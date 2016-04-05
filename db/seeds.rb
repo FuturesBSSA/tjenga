@@ -98,7 +98,7 @@ end
 
   application = Application.create!(developer: melchior, job: ruby_job, motivation: Faker::Lorem.paragraph(2, false, 4), price: 50)
 
-
+AdminUser.destroy_all
 AdminUser.create!(email: 'admin.tjenga@example.com', password: 'password', password_confirmation: 'password')
 
 tjenga = AdminUser.create!(email: "tjenga.admin@gmail.com", password: "9876543210", password_confirmation: "9876543210")
