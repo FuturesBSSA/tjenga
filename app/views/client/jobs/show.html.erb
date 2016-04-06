@@ -115,6 +115,8 @@
             <% end %>
             <% if @job.status == "Finished"  %>
             <li><%= link_to "Add Review", new_client_job_review_path(@job), class: "btn btn-primary" %></li>
+            <li><a class="btn btn-primary" href="#" data-toggle="modal" data-target="#review-modal">Review add</a>
+            <%= render 'shared/modal_review_new' %></li>
             <% end %>
           </ul>
         </div>
