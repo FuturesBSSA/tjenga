@@ -1,3 +1,4 @@
+<%  @categories = ['Front-end', 'Back-end', 'Full-stack'] %>
 <div class="form-in text-center">
 
   <h2>Sign up as Developer</h2>
@@ -9,6 +10,7 @@
     <%= f.input :first_name, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
     <%= f.input :last_name, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
     <%= f.input :email, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
+    <%= f.input :expertise, :collection => @categories, required: true, autofocus: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
     <%= f.input :password_confirmation, required: true, :input_html => {:style=> 'width: 20em; text-align: center; margin: 0 auto;'} %>
   </div>
