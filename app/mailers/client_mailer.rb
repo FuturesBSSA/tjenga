@@ -9,7 +9,7 @@ class ClientMailer < ApplicationMailer
  def welcome(client)
     @client = client  # Instance variable => available in view
 
-    mail(to: @client.email, subject: ' #{@client.first_name} welcome to Tjenga')
+    mail(to: @client.email, subject: "#{@client.first_name} welcome to Tjenga")
     # This will render a view in `app/views/user_mailer`!
   end
 
