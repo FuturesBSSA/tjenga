@@ -16,7 +16,7 @@ class Developer < ActiveRecord::Base
     }
 
   validates :first_name, :last_name, presence: true
-  validates :expertise, presence: true
+  # validates :expertise, presence: true
   # validates :price_per_hour, presence: true, :format => {:with => /\A\d+(?:\.\d{0,2})?\z/}
 
   has_many :applications, dependent: :destroy
