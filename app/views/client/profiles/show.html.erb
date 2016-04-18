@@ -16,10 +16,20 @@
 
     <div class="client-info">
       <div class="client-details">
+      <% if @client.company != nil  %>
         <h4>Company</h4>
         <p><%= @client.company.capitalize %></p>
+        <% else %>
+        <h4>Company</h4>
+        <p>Unknown</p>
+      <% end %>
+      <% if @client.city != nil  %>
         <h4>City</h4>
         <p><%= @client.city.capitalize %></p>
+        <% else %>
+        <h4>City</h4>
+        <p>Unknown</p>
+      <% end %>
       </div>
     </div>
 
