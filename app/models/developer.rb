@@ -1,9 +1,10 @@
 class Developer < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:linkedin]
+  after_create :send_welcome_email
 
   # search
   include PgSearch
@@ -48,5 +49,11 @@ class Developer < ActiveRecord::Base
       developer.token = auth.credentials.token
       developer.token_expiry = Time.at(auth.credentials.expires_at)
     end
+  end
+
+  private
+
+  def send_welcome_email
+    DeveloperMailer.welcome(self).deliver_now
   end
 end
