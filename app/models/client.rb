@@ -3,6 +3,7 @@ class Client < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
+  after_create :send_welcome_email
 
   has_many :jobs, dependent: :destroy
   has_many :applications, through: :jobs
@@ -12,4 +13,11 @@ class Client < ActiveRecord::Base
 
   validates :first_name, :last_name, :photo, presence: true
   mount_uploader :photo, PhotoUploader
+
+
+  private
+
+  def send_welcome_email
+    ClientMailer.welcome(self).deliver_now
+  end
 end

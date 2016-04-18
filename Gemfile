@@ -35,6 +35,8 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'spring'
+
+  gem 'letter_opener_web', '~> 1.2.0'
 end
 
 group :production do
