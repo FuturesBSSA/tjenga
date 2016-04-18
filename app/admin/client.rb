@@ -12,6 +12,20 @@ ActiveAdmin.register Client do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
+#
+ index do
+    selectable_column
+    id_column
+    column :email
+    column :first_name
+    column :last_name
+    column :city
+    column :company
+    column :address
+    column :photo
+    column :phone_number
+    actions
+  end
 
 
 end
